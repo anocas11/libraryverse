@@ -4,7 +4,7 @@ Ou seja incluindo a ideia, uma pequena pesquisa sobre o contexto que se insere, 
 
 
 
-# Nome do projeto e libraryverse
+# Nome do projeto é libraryverse
 
 ###### Este projeto serve para a organizacao de livros, filmes e jogos num so sitio de facil acesso e pesquisa.
 
