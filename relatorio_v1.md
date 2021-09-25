@@ -3,8 +3,12 @@ Enquadramento do projeto;
 Ou seja incluindo a ideia, uma pequena pesquisa sobre o contexto que se insere, desrcrição dos objetivos, definição do publico-alvo e pesquisa sobre outras ferramentas que já existam;
 
 
-fd
-fd
+
+# Nome do projeto e libraryverse
+
+# Este projeto serve para a organizacao de livros, filmes e jogos num so sitio de facil acesso e pesquisa.
+
+
 
 
 fg
