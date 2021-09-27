@@ -1,4 +1,4 @@
-O presente relatório visa propor um projeto de desenvolvimento móvel que contribuirá para a organização de livros, filmes e jogos, cujo nome será Libraryverse. 
+O presente relatório visa propor um projeto de desenvolvimento móvel que contribuirá para a organização de livros, filmes e jogos para computador, telemóvel e outras consolas, cujo nome será Libraryverse e o público-alvo que tencionamos atingir são os bibliófilos, gamers e cinéfilos.
 
 Esta aplicação tem como objetivo criar uma biblioteca para de livros, filmes e/ou jogos, uma vez que depende do gosto do utilizador. A principal ideia é o utilizador poder criar diversas listas de livros/filmes/jogos, assim como, uma lista de já vistos/lidos/jogados, lista para ler/ver/jogar e fazer uma listagem daquilo que tem ou não em casa, de maneira a conseguir ter noção de quantos livros/jogos/filmes tem e se existem repetições. Caso o utilizador empreste ou peça emprestado a alguém também poderá guardar essa informação na Libraryverse.  
 
@@ -6,6 +6,5 @@ A aplicação poderá ainda mostrar informações sobre os livros/filmes/jogos, 
 
 A Libraryverse contará ainda com a utilização da localização tendo em conta o Regulamento Geral da Proteção de Dados e com este recurso poderemos mostrar os eventos por perto, relacionados com livros, filmes e jogos.
 
-Tendo em conta a descrição acima do projeto, o público-alvo que tencionamos atingir são os bibliófilos, gamers e cinéfilos. 
-
-Outras ferramentas que já existam para este tipo de aplicação são a steam para jogos, goodreads para livros e o imdb para filmes. Isto são só exemplos existindo outras aplicações. 
+As ferramentas que já existem não englobam todos estes temas juntos (livros/jogos/filmes). A Steam é uma aplicação que apenas faz uma listagem de jogos para computador, tem chat para falar com amigos e uma lista de desejos onde às vezes mostra promoções para os jogos aí listados. A aplicação Goodreads mostra informações sobre os livros, tem uma listagem de livros lidos, para ler e favoritos, também há a possibilidade de falar com pessoas, seguir listas de outras pessoas e também manda emails com sugestões de livros para ler. Na base de dados IMDB podemos obter dados sobre os filmes, séries e atores, podemos fazer listas, ver as próximas estreias e ainda ver as próximas estreias.
+ 
