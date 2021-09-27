@@ -1,6 +1,11 @@
 O presente relatório visa propor um projeto de desenvolvimento móvel que contribuirá para a organização de livros, filmes e jogos, cujo nome será Libraryverse. 
+
 Esta aplicação tem como objetivo criar uma biblioteca para de livros, filmes e/ou jogos, uma vez que depende do gosto do utilizador. A principal ideia é o utilizador poder criar diversas listas de livros/filmes/jogos, assim como, uma lista de já vistos/lidos/jogados, lista para ler/ver/jogar e fazer uma listagem daquilo que tem ou não em casa, de maneira a conseguir ter noção de quantos livros/jogos/filmes tem e se existem repetições. Caso o utilizador empreste ou peça emprestado a alguém também poderá guardar essa informação na Libraryverse.  
-A aplicação poderá ainda mostrar informações sobre os livros/filmes/jogos, ou seja, haverá sempre a possibilidade de o utilizador procurar o título, autor, ator, editor, produtor, entre outros e de obter os dados que procura. Devido ao ISBN, os livros terão a particularidade de ao apontar a câmara do seu dispositivo móvel para o código ISBN, o utilizador obterá logo os detalhes do livro em questão. 
-A Libraryverse contará ainda com a utilização da localização tendo em conta o Regulamento Geral da Proteção de Dados e com este recurso poderemos mostrar os eventos por perto, relacionados com livros, filmes e jogos. 
+
+A aplicação poderá ainda mostrar informações sobre os livros/filmes/jogos, ou seja, haverá sempre a possibilidade de o utilizador procurar o título, autor, ator, editor, produtor, entre outros e de obter os dados que procura. Devido ao ISBN, os livros terão a particularidade de ao apontar a câmara do seu dispositivo móvel para o código ISBN, o utilizador obterá logo os detalhes do livro em questão.
+
+A Libraryverse contará ainda com a utilização da localização tendo em conta o Regulamento Geral da Proteção de Dados e com este recurso poderemos mostrar os eventos por perto, relacionados com livros, filmes e jogos.
+
 Tendo em conta a descrição acima do projeto, o público-alvo que tencionamos atingir são os bibliófilos, gamers e cinéfilos. 
+
 Outras ferramentas que já existam para este tipo de aplicação são a steam para jogos, goodreads para livros e o imdb para filmes. Isto são só exemplos existindo outras aplicações. 
