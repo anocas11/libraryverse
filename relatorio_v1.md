@@ -2,11 +2,17 @@
 
 ###### Feito por: Ana Bernardino e Marta Sousa
 
+
+
 ***
 
 
 ## UCs: 
       Projeto de Desenvolvimento Móvel, Programação Orientada a Objetos, Programação de Dispositivos Móveis, Bases de Dados, Competências Comunicacionais.
+
+
+
+
 
 
 ***
@@ -16,11 +22,19 @@
       O nosso projeto de desenvolvimento móvel contribuirá para a organização de livros, filmes e jogos, cujo o nome será libraryverse e o público-alvo que tencionamos atingir são os bibliófilos, gamers e cinéfilos.
 
 
+
+
+
+
 ***
 
 
 ## Palavras-Chave: 
       Livros, Organização, Biblioteca, ISBN, Acessibilidade, Empréstimos, Listas, Catálogo.
+
+
+
+
 
 
 ***
@@ -30,11 +44,18 @@
       Hoje em dia, temos a casa desorganizada e cheia de livros, jogos e filmes. É mais fácil comprá-los do que organizá-los, por isso acabamos por os amontoar em prateleiras sem qualquer tipo de ordem. Com isto, torna-se fácil de perder a noção de onde estão os livros ou de quantos livros, jogos ou filmes se tem ou até os que emprestamos. Apesar de serem feitas listas para manter a organização, nem sempre é fácil pois com o aumento de livros, jogos ou filmes torna-se difícil de manter as listas organizadas.
 
 
+
+
+
+
 ***
 
 
 ## Objetivos: 
       Para solucionar este problema, pretendemos desenvolver uma aplicação que ajude os bibliófilos, gamers ou cinéfilos na organização dos seus livros, jogos, filmes. Pretendemos criar um catálogo digital que permita saber aquilo que o utilizador tem de uma forma fácil, tornando a experiencia do utili<adpr mais apreciativa. Com esta aplicação também vem a facilidade de organização de livros, jogos e filmes sendo mais fácil inserir os dados para tornar a lista mais organizada.
+
+
+
 
 
 ***
