@@ -64,7 +64,41 @@ Para solucionar este problema, pretendemos desenvolver uma aplicação que ajude
 
 
 
+## Guiões de teste
+### Guião de teste nº1:
+1. Fazer login 
+    1. Inserir username 
+    2. Inserir password 
+2. Utilizador é redirecionado para a página principal 
+    1. 3 últimos filmes vistos 
+    2. 3 últimos livros lidos 
+    3. 3 últimos jogos jogados 
+3. Carregar no botão para fazer scan do ISBN dos livros 
+4. Obter informações sobre o livro 
+5. Adicionar aos livros lidos 
+6. Numa barra no fundo do ecrã, o utilizador seleciona a lista dos jogos, filmes ou jogos 
 
+### Guião de texto nº2: 
+1. O utilizador abre a aplicação 
+2. O utilizador é redirecionado para a página principal 
+    1. 3 últimos filmes vistos 
+    2. 3 últimos livros lidos 
+    3. 3 últimos jogos jogados 
+3. Numa barra de texto, inserir o nome do jogo 
+4. Obter dados sobre o jogo 
+5. Adicionar aos jogos favoritos 
+6. Numa barra no fundo do ecrã, o utilizador seleciona a lista dos jogos, filmes ou jogos 
+
+### Guião de texto nº3: 
+1. O utilizador abre a aplicação 
+2. O utilizador é redirecionado para a página principal 
+   1. 3 últimos filmes vistos 
+   2. 3 últimos livros lidos 
+   3. 3 últimos jogos jogados 
+3. Numa barra de texto, inserir o nome do filme 
+4. Obter dados sobre o filme 
+5. Adicionar aos filmes vistos 
+6. Numa barra no fundo do ecrã, o utilizador seleciona a lista dos jogos, filmes ou jogos 
 
 
 O presente relatório visa propor um projeto de desenvolvimento móvel que contribuirá para a organização de livros, filmes e jogos para computador, telemóvel e outras consolas, cujo nome será Libraryverse e o público-alvo que tencionamos atingir são os bibliófilos, gamers e cinéfilos.
@@ -76,4 +110,5 @@ A aplicação poderá ainda mostrar informações sobre os livros/filmes/jogos, 
 A Libraryverse contará ainda com a utilização da localização tendo em conta o Regulamento Geral da Proteção de Dados e com este recurso poderemos mostrar os eventos por perto, relacionados com livros, filmes e jogos.
 
 As ferramentas que já existem não englobam todos estes temas juntos (livros/jogos/filmes). A Steam é uma aplicação que apenas faz uma listagem de jogos para computador, tem chat para falar com amigos e uma lista de desejos onde às vezes mostra promoções para os jogos aí listados. A aplicação Goodreads mostra informações sobre os livros, tem uma listagem de livros lidos, para ler e favoritos, também há a possibilidade de falar com pessoas, seguir listas de outras pessoas e também manda emails com sugestões de livros para ler. Na base de dados IMDB podemos obter dados sobre os filmes, séries e atores, podemos fazer listas, ver as próximas estreias e ainda ver as próximas estreias.
- 
+
+
