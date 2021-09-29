@@ -112,4 +112,5 @@ As ferramentas que já existem não englobam todos estes temas juntos (livros/jo
 
 ***
 
-##Conclusão:
+## Conclusão:
+Assim, esta aplicação pode ser usada de diferentes maneiras, para pessoas com diferentes gostos. Ao desenvolvermos a libraryverse oferecemos uma maneira mais simples e fácil de organizar e criar listas, tornando a experiencia de ler livros, jogar jogos ou ver filmes mais apelativa. 
