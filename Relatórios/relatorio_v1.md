@@ -29,7 +29,7 @@ O nosso projeto de desenvolvimento móvel contribuirá para a organização de l
 
 
 ## Palavras-Chave: 
-Livros, Organização, Biblioteca, ISBN, Acessibilidade, Empréstimos, Listas, Catálogo.
+Livros, Organização, Biblioteca, ISBN, Acessibilidade.
 
 
 
@@ -51,7 +51,7 @@ Hoje em dia, temos a casa desorganizada e cheia de livros, jogos e filmes. É ma
 
 
 ## Objetivos: 
-Para solucionar este problema, pretendemos desenvolver uma aplicação que ajude os bibliófilos, gamers ou cinéfilos na organização dos seus livros, jogos, filmes. Pretendemos criar um catálogo digital que permita saber aquilo que o utilizador tem de uma forma fácil, tornando a experiencia do utili<adpr mais apreciativa. Com esta aplicação também vem a facilidade de organização de livros, jogos e filmes sendo mais fácil inserir os dados para tornar a lista mais organizada.
+Para solucionar este problema, pretendemos desenvolver uma aplicação que ajude os bibliófilos, gamers ou cinéfilos na organização dos seus livros, jogos, filmes. Pretendemos criar um catálogo digital que permita saber aquilo que o utilizador tem de uma forma fácil, tornando a experiencia do utilizador mais apreciativa. Com esta aplicação também vem a facilidade de organização de livros, jogos e filmes sendo mais fácil inserir os dados para tornar a lista mais organizada.
 
 
 
@@ -63,9 +63,9 @@ Para solucionar este problema, pretendemos desenvolver uma aplicação que ajude
 ## Funcionalidades:
 Criar diversas listas de livros/filmes/jogos, assim como, uma lista de já vistos/lidos/jogados, lista para ler/ver/jogar e fazer uma listagem daquilo que tem ou não em casa, de maneira a conseguir ter noção de quantos livros/jogos/filmes tem e se existem repetições. Caso o utilizador empreste ou peça emprestado a alguém também poderá guardar essa informação na Libraryverse.  
 
-A aplicação poderá ainda mostrar informações sobre os livros/filmes/jogos, ou seja, haverá sempre a possibilidade de o utilizador procurar o título, autor, ator, editor, produtor, entre outros e de obter os dados que procura. Devido ao ISBN, os livros terão a particularidade de ao apontar a câmara do seu dispositivo móvel para o código ISBN, o utilizador obterá logo os detalhes do livro em questão. Para obter as informações sobre os filmes vamos utilizar a API [The Movie Database (TMDB)](https://www.themoviedb.org/) , para obter informações sobre os jogos vamos utilizar a API [Steam Web API Documentation](https://steamapi.xpaw.me/) . 
+A aplicação poderá ainda mostrar informações sobre os livros/filmes/jogos, ou seja, haverá sempre a possibilidade de o utilizador procurar o título, autor, ator, editor, produtor, entre outros e de obter os dados que procura. Devido ao ISBN, os livros terão a particularidade de ao apontar a câmara do seu dispositivo móvel para o código ISBN, o utilizador obterá logo os detalhes do livro em questão. Para obter as informações sobre os filmes vamos utilizar a API [The Movie Database (TMDB)](https://www.themoviedb.org/) , para obter informações sobre os jogos vamos utilizar a API [Steam Web API Documentation](https://steamapi.xpaw.me/) e para obter informações sobre os livros vamos utilizar a API [Google Books](https://developers.google.com/books/docs/overview).
 
-A Libraryverse contará ainda com a utilização da localização tendo em conta o Regulamento Geral da Proteção de Dados e com este recurso poderemos mostrar os eventos por perto, relacionados com livros, filmes e jogos.
+A Libraryverse contará ainda com a utilização da localização tendo em conta o Regulamento Geral da Proteção de Dados e com este recurso poderemos mostrar os eventos por perto, relacionados com livros, filmes e jogos com a ajuda da API [Eventbrite](https://www.eventbrite.com/platform/api)
 
 ***
 
