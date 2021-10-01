@@ -18,7 +18,7 @@ Projeto de Desenvolvimento Móvel, Programação Orientada a Objetos, Programaç
 
 
 ## Resumo: 
-O nosso projeto de desenvolvimento móvel contribuirá para a organização de livros, filmes e jogos, cujo o nome será libraryverse e o público-alvo que tencionamos atingir são os bibliófilos, gamers e cinéfilos.
+Ultimamente temos vindo a comprar mais livros, filmes e jogos e a certa altura começamos a perder a noção daquilo que já temos e não temos, por isso, o nosso projeto de desenvolvimento móvel contribuirá para a organização de livros, filmes e jogos, cujo o nome será Libraryverse. O público-alvo que tencionamos atingir são os bibliófilos, gamers e cinéfilos.
 
 
 
