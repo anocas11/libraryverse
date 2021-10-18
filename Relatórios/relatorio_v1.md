@@ -88,7 +88,7 @@ As ferramentas que já existem não englobam todos estes temas juntos (livros/jo
 5. Adicionar aos livros lidos 
 6. Numa barra no fundo do ecrã, o utilizador seleciona a lista dos jogos, filmes ou jogos 
 
-### Guião de texto nº2: 
+### Guião de teste nº2: 
 1. O utilizador abre a aplicação 
 2. O utilizador é redirecionado para a página principal 
     1. 3 últimos filmes vistos 
@@ -99,7 +99,7 @@ As ferramentas que já existem não englobam todos estes temas juntos (livros/jo
 5. Adicionar aos jogos favoritos 
 6. Numa barra no fundo do ecrã, o utilizador seleciona a lista dos jogos, filmes ou jogos 
 
-### Guião de texto nº3: 
+### Guião de teste nº3: 
 1. O utilizador abre a aplicação 
 2. O utilizador é redirecionado para a página principal 
    1. 3 últimos filmes vistos 
