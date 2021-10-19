@@ -56,28 +56,46 @@ As ferramentas que já existem não englobam todos estes temas juntos (livros/fi
 
 ## Guiões de teste
 ### Fazer login:
-1. Fazer login 
-    1. Inserir username 
-    2. Inserir password 
-2. O utilizador é redirecionado para a página principal onde visiona os:
-    1. 3 sugestões de filmes
-    2. 3 sugestões de livros 
-
+1. Fazer login: 
+    1. Caso o utilizador não tenha uma conta, basta clicar em criar conta e seguir os passos. 
+2. Criar uma conta:
+    3. Inserir um username.
+    4. Inserir o nome do utilizador.
+    5. Inserir o email do utilizador.
+    6. Inserir uma password e logo a seguir repetir a tal password.
+4. Após criar uma conta, o utilizador é redirecionado para a página inicial:
+    1. Na página inicial encontra:
+      1. Os Livros que o utilizador está a ler ou os últimos 3 livros que o utilizador leu.
+      2. As séries que o utilizador está a ver ou as últimas 3 séries que o utilizador viu.
+      3. Os últimos 3 filme que o utilizador viu.
+ 
 ### Procurar filme: 
-1. O utilizador faz login
-2. O utilizador é redirecionado para a página principal 
-    1. 3 últimos filmes vistos 
-    2. 3 últimos livros lidos 
+1. Ao entrar na página principal o utilizador tem acesso a várias funções, sendo uma delas a pesquisa.
+2. Ao clicar no icon da lupa, o utilizador é redirecionado para uma página diferente que tem uma barra de pesquisa.
+3. Nessa barra de pesquisa o utilizador insere o nome do:
+    1. filme/livro
+    2. produtor/autor 
+    3. ator/editora 
 
-### Guião de teste nº3: 
-1. O utilizador abre a aplicação 
-2. O utilizador é redirecionado para a página principal 
-   1. 3 últimos filmes vistos 
-   2. 3 últimos livros lidos 
-3. Numa barra de texto, inserir o nome do filme 
-4. Obter dados sobre o filme 
-5. Adicionar aos filmes vistos 
-6. Numa barra no fundo do ecrã, o utilizador seleciona filmes ou jogos 
+### Ler o código de barra dos livros: 
+1. Ao entrar na página principal o utilizador tem acesso a várias funções, sendo uma delas a a câmera.
+2. Ao carregar no icon da câmera, o utilizador é redirecionado para a câmera do smartphone.
+3. Com a câmera o utilizador pode ler o código de barras e o livro é inserido automáticamente na sua lista.
+4. Quando o livro é lido pela câmera, na aplicação aparece a foto da capa do livro com um pequeno resumo ao lado ou em baixo, aparece o autor e a editora do livro.
+
+### Menu:
+1. No canto superior esquerdo do ecrâ encontra-se um menu onde o utilizador tem acesso à sua lista de:
+  1. livros lidos, para ler e favoritos.
+  2. filmes vistos, para ver e favoritos.
+  3. séries vistas, para ver e favoritos.
+
+
+### Eventos:
+
+### Base de Dados:
+
+   
+
 
 ***
 
