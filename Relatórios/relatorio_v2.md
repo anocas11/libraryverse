@@ -70,7 +70,7 @@ As ferramentas que já existem não englobam todos estes temas juntos (livros/fi
       3. Os últimos 3 filme que o utilizador viu.
  
 ### Procurar filme: 
-1. Ao entrar na página principal o utilizador tem acesso a várias funções, sendo uma delas a pesquisa.
+1. Ao entrar, na página principal o utilizador tem acesso a várias funções, sendo uma delas a pesquisa.
 2. Ao clicar no icon da lupa, o utilizador é redirecionado para uma página diferente que tem uma barra de pesquisa.
 3. Nessa barra de pesquisa o utilizador insere o nome do:
     1. filme/livro
@@ -78,13 +78,13 @@ As ferramentas que já existem não englobam todos estes temas juntos (livros/fi
     3. ator/editora 
 
 ### Ler o código de barra dos livros: 
-1. Ao entrar na página principal o utilizador tem acesso a várias funções, sendo uma delas a a câmera.
+1. Ao entrar, na página principal o utilizador tem acesso a várias funções, sendo uma delas a a câmera.
 2. Ao carregar no icon da câmera, o utilizador é redirecionado para a câmera do smartphone.
 3. Com a câmera o utilizador pode ler o código de barras e o livro é inserido automáticamente na sua lista.
 4. Quando o livro é lido pela câmera, na aplicação aparece a foto da capa do livro com um pequeno resumo ao lado ou em baixo, aparece o autor e a editora do livro.
 
 ### Menu:
-1. No canto superior esquerdo do ecrâ encontra-se um menu onde o utilizador tem acesso à sua lista de:
+1.  Ao entrar, na página principal o utilizador tem acesso a várias funções, so menu que se encontra no canto superior esquerdo do ecrâ, onde o utilizador tem acesso à sua lista de:
   1. livros lidos, para ler e favoritos.
   2. filmes vistos, para ver e favoritos.
   3. séries vistas, para ver e favoritos.
