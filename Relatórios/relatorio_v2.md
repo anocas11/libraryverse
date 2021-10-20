@@ -94,8 +94,9 @@ As ferramentas que já existem não englobam todos estes temas juntos (livros/fi
 
 ### Eventos:
 1. Ao entrar, na página principal o utilizador tem acesso a várias funções, sendo uma delas a localização que se encontra no canto inferior esquerdo.
-2. Pedir acesso ao utilizador para usarmos a localização.
-3. 
+2. Ao carregar no icon do mapa, o utilizador recebe uma notificação a perguntar se aceita que a aplicação utilize a localização.
+3. Ao aceitar o uso da localização, o utilizador é redirecionado para uma página diferente onde 
+4. 
 
 
 
