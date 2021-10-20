@@ -76,23 +76,28 @@ As ferramentas que já existem não englobam todos estes temas juntos (livros/fi
     1. filme/livro
     2. produtor/autor 
     3. ator/editora 
+4. Aparece uma lista de sugestões relacionadas com a pesquisa(que são retiradas das API's MovieDB para filmes/séries e Google Books para livros). 
 
 ### Ler o código de barra dos livros: 
 1. Ao entrar, na página principal o utilizador tem acesso a várias funções, sendo uma delas a a câmera.
 2. Ao carregar no icon da câmera, o utilizador é redirecionado para a câmera do smartphone.
 3. Com a câmera o utilizador pode ler o código de barras e o livro é inserido automáticamente na sua lista.
 4. Quando o livro é lido pela câmera, na aplicação aparece a foto da capa do livro com um pequeno resumo ao lado ou em baixo, aparece o autor e a editora do livro.
+5. Aparece uma lista de sugestões relacionadas com a pesquisa(que são retiradas da API Google Books para livros).
 
 ### Menu:
-1.  Ao entrar, na página principal o utilizador tem acesso a várias funções, so menu que se encontra no canto superior esquerdo do ecrâ, onde o utilizador tem acesso à sua lista de:
+1.  Ao entrar, na página principal o utilizador tem acesso a várias funções, sendo uma delas o menu que se encontra no canto superior esquerdo do ecrâ, onde o utilizador tem acesso à sua lista de:
   1. livros lidos, para ler e favoritos.
   2. filmes vistos, para ver e favoritos.
   3. séries vistas, para ver e favoritos.
 
 
 ### Eventos:
+1. Ao entrar, na página principal o utilizador tem acesso a várias funções, sendo uma delas a localização que se encontra no canto inferior esquerdo.
+2. Pedir acesso ao utilizador para usarmos a localização.
+3. 
 
-### Base de Dados:
+
 
    
 
