@@ -41,7 +41,7 @@ Para solucionar este problema, pretendemos desenvolver uma aplicação que ajude
 
 
 ## Funcionalidades:
-Criar diversas listas de livros/filmes, assim como, uma lista de já vistos/lidos/jogados, lista para ler/ver/jogar e fazer uma listagem daquilo que tem ou não em casa, de maneira a conseguir ter noção de quantos livros/filmes tem e se existem repetições. Caso o utilizador empreste ou peça emprestado a alguém também poderá guardar essa informação na Libraryverse.  
+Criar diversas listas de livros/filmes, assim como, uma lista de já vistos/lidos, lista para ler/ver e fazer uma listagem daquilo que tem ou não em casa, de maneira a conseguir ter noção de quantos livros/filmes tem e se existem repetições. Caso o utilizador empreste ou peça emprestado a alguém também poderá guardar essa informação na Libraryverse. Nesta aplicação o utilizador também poderá encontrar informação sobre atores.
 
 A aplicação poderá ainda mostrar informações sobre os livros/filmes, ou seja, haverá sempre a possibilidade de o utilizador procurar o título, autor, ator, editor, produtor, entre outros e de obter os dados que procura. Devido ao ISBN, os livros terão a particularidade de, ao apontar a câmara do seu dispositivo móvel para o código ISBN, o utilizador obterá logo os detalhes do livro em questão. Para obter as informações sobre os filmes vamos utilizar a API [The Movie Database (TMDB)](https://www.themoviedb.org/) e para obter informações sobre os livros vamos utilizar a API [Google Books](https://developers.google.com/books/docs/overview).
 
@@ -59,11 +59,11 @@ As ferramentas que já existem não englobam todos estes temas juntos (livros/fi
 1. Fazer login: 
     1. Caso o utilizador não tenha uma conta, basta clicar em criar conta e seguir os passos. 
 2. Criar uma conta:
-    3. Inserir um username.
-    4. Inserir o nome do utilizador.
-    5. Inserir o email do utilizador.
-    6. Inserir uma password e logo a seguir repetir a tal password.
-4. Após criar uma conta, o utilizador é redirecionado para a página inicial:
+    1. Inserir um username.
+    2. Inserir o nome do utilizador.
+    3. Inserir o email do utilizador.
+    4. Inserir uma password e logo a seguir repetir a tal password.
+3. Após criar uma conta, o utilizador é redirecionado para a página inicial:
     1. Na página inicial encontra:
       1. Os Livros que o utilizador está a ler ou os últimos 3 livros que o utilizador leu.
       2. As séries que o utilizador está a ver ou as últimas 3 séries que o utilizador viu.
@@ -95,12 +95,9 @@ As ferramentas que já existem não englobam todos estes temas juntos (livros/fi
 ### Eventos:
 1. Ao entrar, na página principal o utilizador tem acesso a várias funções, sendo uma delas a localização que se encontra no canto inferior esquerdo.
 2. Ao carregar no icon do mapa, o utilizador recebe uma notificação a perguntar se aceita que a aplicação utilize a localização.
-3. Ao aceitar o uso da localização, o utilizador é redirecionado para uma página diferente onde 
-4. 
-
-
-
-   
+3. Ao aceitar o uso da localização, o utilizador é redirecionado para uma página diferente onde encontra um mapa.
+4. No topo do ecrã encontra uma barra de pesquisa onde o utilizador pode inserir a cidade/ morada, e após inserir no mapa aparecem as localizações dos eventos mais próximos da morada inserida.
+5. Após o utilizador carregar no evento que deseja ver, ele é redirecionado para uma nova pagina onde aparece o nome do evento, uma fotografia do evento e uma pequena descrição do evento.
 
 
 ***
