@@ -96,7 +96,7 @@ As ferramentas que já existem não englobam todos estes temas juntos (livros/fi
 1. Ao entrar, na página principal o utilizador tem acesso a várias funções, sendo uma delas a localização que se encontra no canto inferior esquerdo.
 2. Ao carregar no icon do mapa, o utilizador recebe uma notificação a perguntar se aceita que a aplicação utilize a localização.
 3. Ao aceitar o uso da localização, o utilizador é redirecionado para uma página diferente onde encontra um mapa.
-4. No topo do ecrã encontra uma barra de pesquisa onde o utilizador pode inserir a cidade/ morada, e após inserir no mapa aparecem as localizações dos eventos mais próximos da morada inserida.
+  1. No topo do ecrã encontra uma barra de pesquisa onde o utilizador pode inserir a cidade/ morada, e após inserir no mapa aparecem as localizações dos eventos mais próximos da morada inserida.
 5. Após o utilizador carregar no evento que deseja ver, ele é redirecionado para uma nova pagina onde aparece o nome do evento, uma fotografia do evento e uma pequena descrição do evento.
 
 
