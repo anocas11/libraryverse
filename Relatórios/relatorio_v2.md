@@ -27,7 +27,7 @@ Livros, Organização, Biblioteca, ISBN, Acessibilidade.
 
 
 ## Contexto: 
-Hoje em dia, temos a casa desorganizada e cheia de livros [1](https://rr.sapo.pt/noticia/vida/2021/09/06/venda-de-livros-em-portugal-recupera-e-sobe-141/252153/) e filmes. É mais fácil comprá-los do que organizá-los, por isso acabamos por os amontoar em prateleiras sem qualquer tipo de ordem. Com isto, torna-se fácil de perder a noção de onde estão os livros ou de quantos livros ou filmes se tem ou até os que emprestamos. Apesar de serem feitas listas para manter a organização, nem sempre é fácil pois com o aumento de livros ou filmes torna-se difícil de manter as listas organizadas.
+Hoje em dia, temos a casa desorganizada e cheia de livros [[1]](https://rr.sapo.pt/noticia/vida/2021/09/06/venda-de-livros-em-portugal-recupera-e-sobe-141/252153/) e filmes. É mais fácil comprá-los do que organizá-los, por isso acabamos por os amontoar em prateleiras sem qualquer tipo de ordem. Com isto, torna-se fácil de perder a noção de onde estão os livros ou de quantos livros ou filmes se tem ou até os que emprestamos. Apesar de serem feitas listas para manter a organização, nem sempre é fácil pois com o aumento de livros ou filmes torna-se difícil de manter as listas organizadas.
 
 
 ***
