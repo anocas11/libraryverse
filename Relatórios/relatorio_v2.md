@@ -13,7 +13,7 @@ Projeto de Desenvolvimento Móvel, Programação Orientada a Objetos, Programaç
 
 
 ## Resumo: 
-Ultimamente temos vindo a comprar mais livros, filmes e a certa altura começamos a perder a noção daquilo que já temos e não temos, por isso, o nosso projeto de desenvolvimento móvel contribuirá para a organização de livros, filmes, cujo o nome será Libraryverse. O público-alvo que tencionamos atingir são os bibliófilos e cinéfilos.
+Ultimamente temos vindo a comprar mais livros [[1]](https://rr.sapo.pt/noticia/vida/2021/09/06/venda-de-livros-em-portugal-recupera-e-sobe-141/252153/) e filmes e a certa altura começamos a perder a noção daquilo que já temos e não temos, por isso, o nosso projeto de desenvolvimento móvel contribuirá para a organização de livros e filmes, cujo o nome será Libraryverse. O público-alvo que tencionamos atingir são os bibliófilos e cinéfilos.
 
 
 ***
@@ -27,7 +27,7 @@ Livros, Organização, Biblioteca, ISBN, Acessibilidade.
 
 
 ## Contexto: 
-Hoje em dia, temos a casa desorganizada e cheia de livros [[1]](https://rr.sapo.pt/noticia/vida/2021/09/06/venda-de-livros-em-portugal-recupera-e-sobe-141/252153/) e filmes. É mais fácil comprá-los do que organizá-los, por isso acabamos por os amontoar em prateleiras sem qualquer tipo de ordem. Com isto, torna-se fácil de perder a noção de onde estão os livros ou de quantos livros ou filmes se tem ou até os que emprestamos. Apesar de serem feitas listas para manter a organização, nem sempre é fácil pois com o aumento de livros ou filmes torna-se difícil de manter as listas organizadas.
+Hoje em dia, temos a casa desorganizada e cheia de livros e filmes. É mais fácil comprá-los do que organizá-los, por isso acabamos por os amontoar em prateleiras sem qualquer tipo de ordem. Com isto, torna-se fácil de perder a noção de onde estão os livros ou de quantos livros ou filmes se tem ou até os que emprestamos. Apesar de serem feitas listas para manter a organização, nem sempre é fácil pois com o aumento de livros ou filmes torna-se difícil de manter as listas organizadas.
 
 
 ***
@@ -65,26 +65,28 @@ As ferramentas que já existem não englobam todos estes temas juntos (livros/fi
     4. Inserir uma password;
     5. Repetir a password;
 3. Após fazer login ou de criar uma conta, o utilizador é redirecionado para a página inicial onde irá ver:
-      1. Os livros que o utilizador está a ler ou os últimos 3 livros que o utilizador leu.
-      2. As séries que o utilizador está a ver ou as últimas 3 séries que o utilizador viu.
-      3. Os últimos 3 filme que o utilizador viu.
+      1. Os livros que o utilizador está a ler ou os últimos 3 livros que o utilizador leu;
+      2. As séries que o utilizador está a ver ou as últimas 3 séries que o utilizador viu;
+      3. Os últimos 3 filmes que o utilizador viu.
  
 ### Procurar filme:
 (Por procurar filme entende-se pesquisar filme, livro, autor ou ator)
-1. Ao entrar, na página principal o utilizador tem acesso a várias funções, sendo uma delas a pesquisa.
-2. Ao clicar no icon da lupa, o utilizador é redirecionado para uma página diferente que tem uma barra de pesquisa.
+1. Ao entrar, na página principal o utilizador tem acesso a várias funções, sendo uma delas a pesquisa;
+2. Ao clicar no icon da lupa, o utilizador é redirecionado para uma página diferente que tem uma barra de pesquisa.;
 3. Nessa barra de pesquisa o utilizador insere o nome do:
-    1. filme/livro
-    2. produtor/autor 
-    3. ator/editora 
-4. Aparece uma lista de sugestões relacionadas com a pesquisa(que são retiradas das API's The MovieDB para filmes/séries e Google Books para livros). 
+    1. filme/livro;
+    2. produtor/autor; 
+    3. ator/editora;
+4. Aparece uma lista de sugestões relacionadas com a pesquisa (informações fornecidas pelas API's The MovieDB para filmes/séries e Google Books para livros);
+5. O utilizador seleciona o item que quer;
+6. A aplicação mostra informações sobre o item selecionado (informações fornecidas pelas API's The MovieDB para filmes/séries e Google Books para livros).
 
-### Ler o código de barra dos livros: 
+### Ler o código de barras dos livros: 
 1. Ao entrar, na página principal o utilizador tem acesso a várias funções, sendo uma delas a da câmara;
 2. Ao carregar no icon da câmara, o utilizador é redirecionado para a câmara do smartphone;
 3. Fazer o scan do código de barras;
-4. O livro é inserido automáticamente na sua lista;
-5. São apresentados os dados do livro, assim como, a foto da capa do livro com um pequeno resumo ao lado ou em baixo, aparece o autor e a editora do livro.
+4. O livro é inserido automaticamente na sua lista;
+5. São apresentados os dados do livro, assim como, a foto da capa do livro com um pequeno resumo ao lado ou em baixo, aparece o autor e a editora do livro (informação fornecida pela API e Google Books para livros).
 
 ### Menu:
 1.  Ao entrar, na página principal o utilizador tem acesso a várias funções, sendo uma delas o menu que se encontra no canto superior esquerdo do ecrâ, onde o utilizador tem acesso à sua lista de:
