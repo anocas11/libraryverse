@@ -1,19 +1,20 @@
 ####Libraryverse  
 
 ###### Feito por: Ana Bernardino e Marta Sousa
-  
+ 
+***
 
 ##UCs:
 
 Projeto de Desenvolvimento Móvel, Programação Orientada a Objetos, Programação de Dispositivos Móveis, Bases de Dados, Competências Comunicacionais,  
 
- *** 
+*** 
 
 ##Resumo  
 
 O nosso projeto de desenvolvimento móvel contribuirá para o interesse de fãs acerca de filmes/séries que se baseiam em livros. Esta aplicação também servirá para os fãs se conhecerem entre eles como também descobrir novos interesses em diferentes universos de filmes. Esta aplicação tem como público-alvo os cinéfilos hardcore de universos de filmes/séries que existem.  
 
- ***
+***
 
 ##Palavras-chave:  
 
