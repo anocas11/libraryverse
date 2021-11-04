@@ -32,14 +32,14 @@ Hoje em dia, com o aumento dos universos de filmes como a Marvel, DC, senhor d
 
 Para solucionar este problema, pretendemos desenvolver uma aplicação que ajude estes fãs a discutirem os seus interesses e ao mesmo tempo criando um lugar seguro e aberto para falarem entre eles. Ao mesmo tempo também criámos esta aplicação para aumentar o interesse dos utilizadores que ainda não descobriram estes universos ou então não conhecem o suficiente para se interessarem por eles. Com isto, queremos criar também uma parte que mostre as localizações dos sítios onde foram filmados estes filmes para aqueles fãs hardcore que gostem de seguir tudo sobre os filmes. E, ainda, vai haver uma zona com factos interessantes e trivia para aumentar o conhecimento sobre estes filmes/universos.  
 
- *** 
+*** 
 
 ## Funcionalidades:  
 
 Criar um groupchat para fãs falarem entre eles. Criar uma página para os utilizadores escolherem que universo de filmes querem seguir. Acesso a uma página de trivia e a um trivia quiz. Para aqueles que gostam de visitar os sítios das gravações, vai haver um mapa com os sítios onde as cenas foram gravadas. Para obter as informações sobre os filmes vamos utilizar a API [The Movie Database (TMDB)](https://www.themoviedb.org/) e para obter informações sobre os livros vamos utilizar a API [Google Books](https://developers.google.com/books/docs/overview).
+
+
 ***  
-
-
 
 ## Guiões de Teste  
 
