@@ -38,7 +38,6 @@ Para solucionar este problema, pretendemos desenvolver uma aplicação que ajude
 
 Criar um groupchat para fãs falarem entre eles. Criar uma página para os utilizadores escolherem que universo de filmes querem seguir. Acesso a uma página de trivia e a um trivia quiz. Para aqueles que gostam de visitar os sítios das gravações, vai haver um mapa com os sítios onde as cenas foram gravadas. Para obter as informações sobre os filmes vamos utilizar a API [The Movie Database (TMDB)](https://www.themoviedb.org/) e para obter informações sobre os livros vamos utilizar a API [Google Books](https://developers.google.com/books/docs/overview).
 
-
 ***  
 
 ## Guiões de Teste  
