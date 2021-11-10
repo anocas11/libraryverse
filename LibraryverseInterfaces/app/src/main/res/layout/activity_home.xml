@@ -11,15 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-<<<<<<< Updated upstream
-        app:srcCompat="@drawable/backgroundCOLOR"
+        app:srcCompat="@drawable/backgroundcolor"
         tools:layout_editor_absoluteX="-59dp"
         tools:layout_editor_absoluteY="-16dp" />
-=======
         app:srcCompat="@drawable/backgroundcolor"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-80dp" />
->>>>>>> Stashed changes
 
     <ImageView
         android:id="@+id/imageViewHomeLogo"
@@ -33,7 +30,6 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/libraryverse_logo_semfundo_solido" />
 
-<<<<<<< Updated upstream
     <ImageButton
         android:id="@+id/imageButton3"
         android:layout_width="75dp"
@@ -61,7 +57,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/barssolidwhite" />
-=======
     <TextView
         android:id="@+id/textView2"
         android:layout_width="103dp"
@@ -86,6 +81,5 @@
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
->>>>>>> Stashed changes
 
 </androidx.constraintlayout.widget.ConstraintLayout>
