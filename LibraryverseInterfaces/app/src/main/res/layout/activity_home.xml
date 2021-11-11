@@ -57,11 +57,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/barssolidwhite" />
+
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="103dp"
-        android:layout_height="26dp"
-        android:text="Movies"
+        android:layout_width="273dp"
+        android:layout_height="46dp"
+        android:text="Cinematic Universes"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,17 +70,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.232" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="93dp"
-        android:layout_height="37dp"
-        android:text="Quizzes"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
