@@ -1,8 +1,0 @@
-com/example/libraryverse/BuildConfig.java
- com.example.libraryverse.BuildConfig
-com/example/libraryverse/LoginActivity.java
- com.example.libraryverse.LoginActivity
-com/example/libraryverse/HomeActivity.java
- com.example.libraryverse.HomeActivity
-com/example/libraryverse/CreateAccountActivity.java
- com.example.libraryverse.CreateAccountActivity
