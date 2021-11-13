@@ -1,0 +1,94 @@
+[
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_create_account.xml.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\layout\\activity_create_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_usercircleregular.png.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\drawable-v24\\usercircleregular.png"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_home.xml.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_barssolidwhite.png.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\drawable-v24\\barssolidwhite.png"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\menu_game_menu.xml.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\menu\\game_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_backgroundcolor.png.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\drawable-v24\\backgroundcolor.png"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_usercircleregularwhite.png.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\drawable-v24\\usercircleregularwhite.png"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\drawable_libraryverse_logo_semfundo_solido.png.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\drawable\\libraryverse_logo_semfundo_solido.png"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\marta\\Documents\\GitHub\\libraryverse\\Libraryverse\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    }
+]
