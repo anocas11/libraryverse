@@ -12,7 +12,18 @@ import javax.persistence.Table;
 @Table(name="movie")
 public class Movie 
 {
-    /*@Id
+    @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="")  */
+    @Column(name="movie_id") private int id;
+    @Column(name="movie_name") private int name;
+    @Column(name="movie_date") private int date;
+    @Column(name="movie_duration") private int duration;
+    @Column(name="movie_description") private int description;
+
+    public Movie()
+    {
+
+    }
+
+    
 }
