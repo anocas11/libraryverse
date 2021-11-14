@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,9 +12,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+import java.util.Optional;
+import java.util.ArrayList;
 
 import pt.iade.libraryverse.models.Book;
 import pt.iade.libraryverse.models.repositories.BookRepository;
+import pt.iade.libraryverse.models.exceptions.NotFoundException;
 
 @RestController
 @RequestMapping(path = "api/books")
@@ -30,7 +35,38 @@ public class BookController {
         return bookRepository.findAll();
     }
 
-    //find book by id
+    @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Book getBook(@PathVariable int id) 
+    {
+        logger.info("Sending book with id " + id);
+        Optional<Book> _book = bookRepository.findById(id);
+        if (_book.isEmpty())
+        {
+            throw new NotFoundException( "Book", "id", "" + id);
+        }
+        else 
+        {
+            return _book.get();
+        }
+    }
+
+    @GetMapping(path = "/search", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Book> getBookByName(@RequestParam String name) 
+    {
+        logger.info("Sending books with name " + name);
+        Iterable<Book> _book = bookRepository.findAll();
+        
+        //Adapted from 'https://www.baeldung.com/java-convert-iterator-to-list'
+        List<Book> booksList = new ArrayList<Book>();
+        _book.forEach(book -> {
+            if(book.getName().contains(name))
+            {
+                booksList.add(book);
+            }
+        });
+
+        return booksList;
+    }
 
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Book saveBook(@RequestBody Book book)
