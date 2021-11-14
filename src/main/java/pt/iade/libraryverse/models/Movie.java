@@ -12,6 +12,7 @@ import javax.persistence.Table;
 @Table(name="movie")
 public class Movie 
 {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)   
+    /*@Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="")  */
 }
