@@ -1,4 +1,4 @@
-package main.java.pt.iade.libraryverse.controllers;
+package pt.iade.libraryverse.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import main.java.pt.iade.libraryverse.models.Book;
-import main.java.pt.iade.libraryverse.models.repositories.BookRepository;
+import pt.iade.libraryverse.models.Book;
+import pt.iade.libraryverse.models.repositories.BookRepository;
 
 @RestController
 @RequestMapping(path = "api/books")

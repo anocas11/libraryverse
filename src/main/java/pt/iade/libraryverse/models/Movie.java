@@ -1,4 +1,4 @@
-package main.java.pt.iade.libraryverse.models;
+package pt.iade.libraryverse.models;
 
 import java.lang.annotation.Inherited;
 import javax.persistence.Column;
@@ -25,5 +25,46 @@ public class Movie
 
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getName() {
+        return name;
+    }
+
+    public void setName(int name) {
+        this.name = name;
+    }
+
+    public int getDate() {
+        return date;
+    }
+
+    public void setDate(int date) {
+        this.date = date;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public int getDescription() {
+        return description;
+    }
+
+    public void setDescription(int description) {
+        this.description = description;
+    }
+
+    
     
 }

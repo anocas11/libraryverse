@@ -1,4 +1,4 @@
-package main.java.pt.iade.libraryverse.models;
+package pt.iade.libraryverse.models;
 
 public enum GenreEnum
 {
