@@ -11,12 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/backgroundcolor"
-        tools:layout_editor_absoluteX="-59dp"
-        tools:layout_editor_absoluteY="-16dp" />
-        app:srcCompat="@drawable/backgroundcolor"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-80dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backgroundcolor" />
 
     <ImageView
         android:id="@+id/imageViewHomeLogo"
@@ -24,14 +23,14 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageViewHomeBg"
-        app:layout_constraintHorizontal_bias="0.364"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/libraryverse_logo_semfundo_solido" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/imageButtonProfile"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:backgroundTint="#00FFFFFF"
@@ -45,7 +44,7 @@
         app:srcCompat="@drawable/usercircleregularwhite" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/imageButtonMenu"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:backgroundTint="#00FFFFFF"
@@ -59,7 +58,7 @@
         app:srcCompat="@drawable/barssolidwhite" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewCinematicUniverses"
         android:layout_width="273dp"
         android:layout_height="46dp"
         android:text="Cinematic Universes"
