@@ -7,18 +7,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="book")
+@Entity //marca a classe para ser uma entidade de dados
+@Table(name="book") //porque o nome da classe não é igual ao nome da tabela
 public class Book 
 {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="book_id") private int id;
+    @Id //identica a chave da tabela
+    @GeneratedValue(strategy=GenerationType.IDENTITY) //util para quando se guardam novos livros, porque o id é gerado pela bd
+    @Column(name="book_id") private int id; //ligar o nome do atributo ao nome da coluna
     @Column(name="book_name") private String name;
     @Column(name="book_date") private String date;
     @Column(name="book_description") private String description;
 
-    public Book()
+    public Book() //construtor default sem argumentos
     {
 
     }

@@ -25,6 +25,7 @@ import pt.iade.libraryverse.models.exceptions.NotFoundException;
 public class BookController {
     private Logger logger = LoggerFactory.getLogger(BookController.class);
 
+    //usamos os métodos que já existem no CRUDRepository interface com a ajuda da anotação autowired
     @Autowired
     private BookRepository bookRepository;
 
@@ -42,6 +43,7 @@ public class BookController {
         Optional<Book> _book = bookRepository.findById(id);
         if (_book.isEmpty())
         {
+            //Confirmar que o livro existe
             throw new NotFoundException( "Book", "id", "" + id);
         }
         else 
@@ -58,6 +60,7 @@ public class BookController {
         
         //Adapted from 'https://www.baeldung.com/java-convert-iterator-to-list'
         List<Book> booksList = new ArrayList<Book>();
+        //para cada livro encontrado que contenha a string descrita na pesquisa vai ser guardado na booklist
         _book.forEach(book -> {
             if(book.getName().contains(name))
             {
@@ -68,12 +71,12 @@ public class BookController {
         return booksList;
     }
 
-    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Book saveBook(@RequestBody Book book)
-    {
-        Book savedBook = bookRepository.save(book);
-        logger.info("Saving book with id " +savedBook.getId());
-        return savedBook;
-    }
+    //@PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    //public Book saveBook(@RequestBody Book book)
+    //{
+        //Book savedBook = bookRepository.save(book);
+        //logger.info("Saving book with id " +savedBook.getId());
+        //return savedBook;
+    //}
 
 }
