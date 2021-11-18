@@ -104,7 +104,7 @@ Nota: Entende-se por item filme, livro, ator, autor, personagem, produtor.
 ### André (12 anos):
 O André tem 12 anos e anda no 7º ano da escola Vasco da Gama. Desde de pequeno que ele gosta de ver filmes com o seu pai, e desde de aí que ganhou um gosto por filmes da MARVEL. Então ele tornou-se num fã desses filmes, colecionando bandas desenhadas e merchandising. À medida que ele foi crescendo, a sua coleção foi aumentando, como também as plataformas de comunicação com os fãs. Por isso, ele começou a precisar de um sítio não só para organizar como também para comunicar com outros fãs. Ao aderir ao Libraryverse, o André conseguiu organizar os seus filmes e banda desenhada, como também comunicar com outros fãs sem ter que mudar de aplicação.
  
-### Catarina(16 anos):
+### Catarina (16 anos):
 A Catarina atualmente frequenta o 11º ano no Liceu Camões, em Lisboa. Aos 12 anos descobriu o seu gosto por fantasia e magia devido aos livros que os seus pais lhe ofereciam no natal. Estes livros eram a coleção do Harry Potter.  Sendo a Catarina uma leitora compulsiva, ela devorou os livros em poucos meses. Após acabar a coleção, ela queria saber mais então foi ver os filmes, tornando-se assim uma PotterHead. Quando passou para o décimo ano e passou a focar-se mais na escola, Catarina ficou sem tempo para Harry Potter e para os novos filmes/livros que iam saindo. Com isto, ela aderiu ao Libraryverse não só para organizar a sua coleção como também para se manter informada em relação aos novos filmes/livros que iam saindo e para ir falando com outros fãs para obter novas informações.
  
 ### Francisco (21 anos):
