@@ -93,6 +93,25 @@ Criar um groupchat para fãs falarem entre eles. Criar uma página para os utili
     
 ***
 
+## Personas:
+ 
+### André (12 anos):
+O André tem 12 anos e anda no 7º ano da escola Vasco da Gama. Desde de pequeno que ele gosta de ver filmes com o seu pai, e desde de aí que ganhou um gosto por filmes da MARVEL. Então ele tornou-se num fã desses filmes, colecionando bandas desenhadas e merchandising. À medida que ele foi crescendo, a sua coleção foi aumentando, como também as plataformas de comunicação com os fãs. Por isso, ele começou a precisar de um sítio não só para organizar como também para comunicar com outros fãs. Ao aderir ao Libraryverse, o André conseguiu organizar os seus filmes e banda desenhada, como também comunicar com outros fãs sem ter que mudar de aplicação.
+ 
+### Catarina(16 anos):
+A Catarina atualmente frequenta o 11º ano no Liceu Camões, em Lisboa. Aos 12 anos descobriu o seu gosto por fantasia e magia devido aos livros que os seus pais lhe ofereciam no natal. Estes livros eram a coleção do Harry Potter.  Sendo a Catarina uma leitora compulsiva, ela devorou os livros em poucos meses. Após acabar a coleção, ela queria saber mais então foi ver os filmes, tornando-se assim uma PotterHead. Quando passou para o décimo ano e passou a focar-se mais na escola, Catarina ficou sem tempo para Harry Potter e para os novos filmes/livros que iam saindo. Com isto, ela aderiu ao Libraryverse não só para organizar a sua coleção como também para se manter informada em relação aos novos filmes/livros que iam saindo e para ir falando com outros fãs para obter novas informações.
+ 
+### Francisco (21 anos):
+No seu último ano da faculdade, foi pedido ao Francisco para fazer um trabalho sobre livros que ele leu quando era mais novo. O único livro que lhe veio a cabeça foram as aventuras de TinTim. No entanto, ele tinha pouco tempo até ter que entregar o trabalho, daí não ter tido tempo para procurar os livros na garagem, que era onde a mãe dele tinha guardado a caixa com livros antigos. Então ele aí lembrou-se de uma aplicação que tinha ouvido falar chamada Libraryverse, que lhe facilitava a pesquisa e organização de livros, juntamente com outras informações. Assim, depois de aderir à aplicação, o Francisco pesquisou e organizou a sua coleção de livros do TinTim, a série e o filme, ajudando-o assim a completar o seu trabalho a tempo do prazo de entrega.
+ 
+### Joana (34 anos):
+Há já algum tempo que a Joana trabalha no jornal da cidade onde vive. E apesar de o jornal servir para partilhar informações importantes sobre o que está a acontecer na sociedade no momento, ela achava que podia servir também para outras coisas. Com o Covid, houve tempos em que as pessoas que tiveram que ficar em casa já estavam fartas de fazer nada e, sendo estes tempos difíceis, a Joana pensou numa maneira que pudesse animar as pessoas nestes tempos difíceis. Assim, ela lembrou-se do quanto adorava o Asterix e Obélix. Depois de falar com o chefe, a Joana juntou na sua aplicação Libraryverse as bandas desenhadas do Asterix e Obélix juntamente com os filmes. Criou também uma sala de chat para os fãs puderem dar sugestões para novos conteúdos. Após organizar as coisas, todas as semanas um pedaço das bandas desenhadas aparecia no jornal juntamente com o link da aplicação para as pessoas se puderem juntar a sala chat, mas também para pesquisarem outros livros e filmes, tornando assim estes tempos difíceis mais toleráveis.
+ 
+### Hugo (45 anos):
+Todos os anos o Hugo via os filmes do Senhor dos Anéis, mas nunca foi o mesmo que ler os livros. Com isto, ele foi à procura dos livros que se lembrava de ler em pequeno, mas após tanto tempo ele já não sabia onde estavam, nem como é que os livros eram. Então, ele aderiu a aplicação Libraryverse para pesquisar os filmes do Senhor dos Anéis e assim chegou a informação dos livros. Com esta informação ele conseguiu ir procurar os livros e encontrou-os. Ao mesmo tempo, quando ele pesquisou os filmes, a aplicação também lhe sugeriu o Hobbit que era um filme que ele nunca tinha visto mas tinha lido o livro, o que o levou a ver o filme mais tarde. Com a aplicação conseguiu organizar os seus livros e filmes e estar a par das novas informações relacionadas com este universo devido aos chats entre os fãs.
+
+***
+
 ## Conclusão:  
 
 Com esta aplicação, os cinéfilos hardcore vão poder saber tudo sobre os universos que seguem ou sobre outros. Será possível saber que filmes abrange esse universo, onde foram filmadas as cenas e outras curiosidades.  
