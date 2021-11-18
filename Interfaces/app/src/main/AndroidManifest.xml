@@ -10,10 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Libraryverse">
         <activity
-            android:name=".Favbooks"
+            android:name=".QuizActivity"
             android:exported="true" />
         <activity
-            android:name=".Favmovies"
+            android:name=".ItemActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LocationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".FavbooksActivity"
+            android:exported="true" />
+        <activity
+            android:name=".FavmoviesActivity"
             android:exported="true" />
         <activity
             android:name=".SearchActivity"
