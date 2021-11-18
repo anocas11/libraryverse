@@ -64,6 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Trivia"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,6 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Question"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,9 +88,10 @@
         app:layout_constraintVertical_bias="0.303" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#CC6666"
         android:text="Answer 1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,9 +100,10 @@
         app:layout_constraintVertical_bias="0.483" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#CC6666"
         android:text="Answer 2"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewHomeBg"
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,9 +112,10 @@
         app:layout_constraintVertical_bias="0.576" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#CC6666"
         android:text="Answer 3"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewHomeBg"
         app:layout_constraintEnd_toEndOf="parent"
@@ -119,9 +124,10 @@
         app:layout_constraintVertical_bias="0.663" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#CC6666"
         android:text="Answer 4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
