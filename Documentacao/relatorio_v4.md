@@ -44,53 +44,53 @@ Criar um groupchat para fãs falarem entre eles. Criar uma página para os utili
   
 Nota: Entende-se por item filme, livro, ator, autor, personagem, produtor.
 
-### Guião de teste nº1 - #### Fazer login/Criar conta:  
+### Guião de teste nº1 - Fazer login/Criar conta:  
  1. Inserir o nome de utilizador;  
  2. Inserir a palavra-passe;  
  3. Opção para criar conta caso o utilizador ainda não tenha conta:  
-      1. Inserir um username;  
-      2. Inserir o nome do utilizador;  
-      3. Inserir o e-mail do utilizador;  
-      4. Inserir uma password;  
-      5. Repetir a password;  
+     1. Inserir um username;  
+     2. Inserir o nome do utilizador;  
+     3. Inserir o e-mail do utilizador;  
+     4. Inserir uma password;  
+     5. Repetir a password;  
  4. Após fazer login ou de criar uma conta, o utilizador é redirecionado para a página inicial onde irá ver:  
  5. Os filmes que o utilizador adicionou e pelo qual se interessa;  
  6. As próximas estreias dos filmes que vão sair desse universo ou novos episódios;  
  7. O groupchat onde o utilizador falou em último lugar;  
 
   
-### Guião de teste nº2 - #### Procurar item:  
+### Guião de teste nº2 - Procurar item:  
  1. Ao entrar, na página principal o utilizador tem acesso a várias funções, sendo uma delas a pesquisa;  
  2. Ao clicar no ícone da lupa, o utilizador é redirecionado para uma página diferente que tem uma barra de pesquisa;  
  3. Nessa barra de pesquisa o utilizador insere o nome do:  
-    1. Filme
-    2. Produtor
-    3. Autor
-    4. Ator
-    5. Livro 
-    6. Produtor
+     1. Filme
+     2. Produtor
+     3. Autor
+     4. Ator
+     5. Livro 
+     6. Produtor
  4. Aparece uma lista de sugestões relacionadas com a pesquisa;
  5. O utilizador seleciona o item que quer;  
  6. A aplicação mostra informações sobre o item selecionado.
 
   
-### Guião de teste nº3 - #### Localização:  
+### Guião de teste nº3 - Localização:  
  1. Ao entrar, na página principal o utilizador tem acesso a várias funções, sendo uma delas a localização que se encontra no canto superior esquerdo do ecrã; 
  2. Ao selecionar, o utilizador tem acesso a um mapa onde pode ver diferentes localizações de onde os filmes foram filmados. 
 
-### Guião de teste nº4 - #### Adicionar item aos favoritos
+### Guião de teste nº4 - Adicionar item aos favoritos
  (... Procurar item ... )
  1. Selecionar o item;
  2. Selecionar o ícon estrela ao lado da imagem do item;
  3. O item foi adicionado à lista de favoritos.
 
-### Guião de teste nº5 - #### Adicionar item aos lidos/vistos
+### Guião de teste nº5 - Adicionar item aos lidos/vistos
  (... Procurar item ... )
  1. Selecionar o item;
  2. Selecionar o ícon livro ou filme;
  3. O item foi adicionado à lista de lidos/vistos.
 
-### Guião de teste nº6 - #### Adicionar item à lista de livros a ler
+### Guião de teste nº6 - Adicionar item à lista de livros a ler
  (... Procurar item ...)
  1. Selecionar o item;
  2. Selecionar o ícon livro aberto;
