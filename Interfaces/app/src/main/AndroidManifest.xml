@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Libraryverse">
         <activity
+            android:name=".Favbooks"
+            android:exported="true" />
+        <activity
+            android:name=".Favmovies"
+            android:exported="true" />
+        <activity
             android:name=".SearchActivity"
             android:exported="true">
             <intent-filter>

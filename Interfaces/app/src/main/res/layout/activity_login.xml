@@ -7,14 +7,15 @@
     tools:context=".LoginActivity">
 
     <ImageView
-        android:id="@+id/imageViewCreateAcBg"
+        android:id="@+id/imageViewHomeBg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@drawable/backgroundCOLOR"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="ImageContrastCheck"
-        tools:layout_editor_absoluteX="-26dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backgroundcolor" />
 
     <EditText
         android:id="@+id/editTextLoginUsername"
@@ -25,7 +26,7 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -53,7 +54,7 @@
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -78,6 +79,7 @@
         android:id="@+id/textViewLoginCreateAc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
         android:linksClickable="false"
         android:text="Don't have an account yet? Create an account!"
         android:textColor="@color/white"
