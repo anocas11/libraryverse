@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -14,7 +13,6 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText username;
     EditText password;
-    Button loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
 
         username = findViewById(R.id.editTextLoginUsername);
         password = findViewById(R.id.editTextLoginPassword);
-        loginButton = findViewById(R.id.buttonLogin);
+
     }
 
     public void ClickFunction(View view)
@@ -31,8 +29,17 @@ public class LoginActivity extends AppCompatActivity {
         String msg = "USERNAME ->" + username.getText().toString() + "PASSWORD ->" + password.getText().toString();
         Log.i("Welcome", msg);
         Toast.makeText(this, "Username" + username + "Password" + password, Toast.LENGTH_SHORT).show();
+    }
 
-        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-        startActivity(intent);
+
+
+    public void home_scene(View view)
+    {
+        Intent i = new Intent(getApplicationContext(), home.class);
+        startActivity(i);
+
+    }
+
+    private class home {
     }
 }
