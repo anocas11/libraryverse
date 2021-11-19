@@ -33,13 +33,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    public void home_scene(View view)
+    public void clickToHome(View view)
     {
-        Intent i = new Intent(getApplicationContext(), home.class);
+        Intent i = new Intent(getApplicationContext(), HomeActivity.class);
         startActivity(i);
 
-    }
-
-    private class home {
     }
 }
