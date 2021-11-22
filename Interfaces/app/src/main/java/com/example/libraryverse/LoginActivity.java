@@ -24,12 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void ClickFunction(View view)
-    {
-        String msg = "USERNAME ->" + username.getText().toString() + "PASSWORD ->" + password.getText().toString();
-        Log.i("Welcome", msg);
-        Toast.makeText(this, "Username" + username + "Password" + password, Toast.LENGTH_SHORT).show();
-    }
+
 
 
 
@@ -37,6 +32,8 @@ public class LoginActivity extends AppCompatActivity {
     {
         Intent i = new Intent(getApplicationContext(), HomeActivity.class);
         startActivity(i);
+
+        Toast.makeText(this, "Username" + username + "Password" + password, Toast.LENGTH_SHORT).show();
 
     }
 }
