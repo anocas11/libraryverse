@@ -1,6 +1,6 @@
 package pt.iade.libraryverse.models;
 
-public enum GenreEnum
+public enum Genre
 {
     Romance, Mystery, Fantasy, ScienceFiction, Thrillers, Horror, YoungAdult, ChildrensFiction, Inspirational, SelfHelp, Religious, Biography
 }

@@ -8,6 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import pt.iade.libraryverse.models.CinematicUniverse;
+import pt.iade.libraryverse.models.Genre;
+
 @Entity
 @Table(name="movie")
 public class Movie 
@@ -19,6 +22,8 @@ public class Movie
     @Column(name="movie_date") private String date;
     @Column(name="movie_duration") private int duration;
     @Column(name="movie_description") private String description;
+    @Column(name="movie_genre_id") private Genre genre;
+    @Column(name="movie_cu_id") private CinematicUniverse cu;
 
     public Movie()
     {
