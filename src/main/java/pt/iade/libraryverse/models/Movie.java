@@ -15,10 +15,10 @@ public class Movie
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="movie_id") private int id;
-    @Column(name="movie_name") private int name;
-    @Column(name="movie_date") private int date;
+    @Column(name="movie_name") private String name;
+    @Column(name="movie_date") private String date;
     @Column(name="movie_duration") private int duration;
-    @Column(name="movie_description") private int description;
+    @Column(name="movie_description") private String description;
 
     public Movie()
     {
@@ -33,19 +33,19 @@ public class Movie
         this.id = id;
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(int name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public int getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -57,11 +57,11 @@ public class Movie
         this.duration = duration;
     }
 
-    public int getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(int description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
