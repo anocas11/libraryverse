@@ -10,3 +10,14 @@ insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_descr
 insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_description) values ('3', 'As Serviçais', to_date('2011-10-8', 'YYYY-MM-DD'), '02:26:00', 'Nos anos 60, no Mississippi, Skeeter é uma garota da alta sociedade que retorna determinada a se tornar escritora. Ela começa a entrevistar as mulheres negras da cidade, que deixaram suas vidas para trabalhar na criação dos filhos da elite branca, da qual a própria Skeeter faz parte. ');    
 insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_description) values ('4', 'No coração do mar', to_date('2015-11-12', 'YYYY-MM-DD'), '02:02:00', 'A tripulação do barco baleeiro Essex precisa fazer o impossível para sobreviver em uma ilha deserta após sofrer brutal ataque de uma baleia gigantesca.');  
 insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_description) values ('5', 'Harry Potter e a Pedra Filosofal',  to_date('2001-11-16', 'YYYY-MM-DD'), '02:32:00', 'Após as sofríveis férias na casa dos tios, Harry Potter se prepara para voltar a Hogwarts e começar seu segundo ano na escola de bruxos. Na véspera do início das aulas, a estranha criatura Dobby aparece em seu quarto e o avisa de que voltar é um erro e que algo muito ruim pode acontecer.');
+
+insert into cinematicuniverse (cu_id, cu_name) values('1', 'Wizarding World');
+insert into cinematicuniverse (cu_id, cu_name) values('2', 'Les Aventures de Tintin');
+
+insert into genre (genre_id, genre_name) values('1', 'Drama');
+insert into genre (genre_id, genre_name) values('2', 'Adventure');
+insert into genre (genre_id, genre_name) values('3', 'Fantasy');
+insert into genre (genre_id, genre_name) values('4', 'Action');
+insert into genre (genre_id, genre_name) values('5', 'Biography');
+insert into genre (genre_id, genre_name) values('6', 'Animation');
+insert into genre (genre_id, genre_name) values('7', 'Comics');
