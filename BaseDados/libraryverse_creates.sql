@@ -18,8 +18,7 @@ create table book (
     book_id SERIAL not null, 
     book_name VARCHAR(120) not null, 
     book_date date not null, 
-    book_description VARCHAR(10000), 
-    book_genre_id integer not null,
+    book_description VARCHAR(10000),
     book_cu_id integer not null,
     primary key(book_id)
 );
@@ -36,7 +35,6 @@ create table movie (
     movie_date date not null, 
     movie_duration time not null, 
     movie_description VARCHAR(10000) not null, 
-    movie_genre_id integer not null,
     movie_cu_id integer not null,
     primary key (movie_id)
 );
@@ -100,7 +98,6 @@ create table userMovies (
     primary key (um_id)
 );
 
-
 create table character ( 
     character_id SERIAL not null, 
     character_name VARCHAR(60) not null, 
@@ -158,16 +155,6 @@ create table bookgenre(
 );
 
 -- Foreign Keys
-
-alter table movie 
-add constraint movie_fk_genre
-foreign key (movie_genre_id) references genre(genre_id) 
-ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-alter table book 
-add constraint book_fk_genre
-foreign key (book_genre_id) references genre(genre_id) 
-ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table movie 
 add constraint movie_fk_cinematicUniverse

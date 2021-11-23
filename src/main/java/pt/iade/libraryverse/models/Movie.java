@@ -2,11 +2,15 @@ package pt.iade.libraryverse.models;
 
 import java.lang.annotation.Inherited;
 import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.List;
 
 import pt.iade.libraryverse.models.CinematicUniverse;
 import pt.iade.libraryverse.models.Genre;
@@ -20,10 +24,10 @@ public class Movie
     @Column(name="movie_id") private int id;
     @Column(name="movie_name") private String name;
     @Column(name="movie_date") private String date;
-    @Column(name="movie_duration") private int duration;
+    @Column(name="movie_duration") private String duration;
     @Column(name="movie_description") private String description;
-    @Column(name="movie_genre_id") private Genre genre;
-    @Column(name="movie_cu_id") private CinematicUniverse cu;
+    //@OneToMany @JoinColumn(name="movie_genre_id") private List<Genre> genre;
+    //@OneToOne @JoinColumn(name="movie_cu_id") private CinematicUniverse cu;
 
     public Movie()
     {
@@ -54,11 +58,11 @@ public class Movie
         this.date = date;
     }
 
-    public int getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 
