@@ -16,7 +16,7 @@ public class CinematicUniverse
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)  
     @Column(name="cu_id") private int id;
-    @Column(name="cu_name") private int name;
+    @Column(name="cu_name") private String name;
     
     public CinematicUniverse()
     {
@@ -31,11 +31,11 @@ public class CinematicUniverse
         this.id = id;
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(int name) {
+    public void setName(String name) {
         this.name = name;
     }
 }

@@ -18,8 +18,7 @@ create table book (
     book_id SERIAL not null, 
     book_name VARCHAR(120) not null, 
     book_date date not null, 
-    book_description VARCHAR(10000), 
-    book_genre_id integer not null,
+    book_description VARCHAR(10000),
     book_cu_id integer not null,
     primary key(book_id)
 );
@@ -36,7 +35,6 @@ create table movie (
     movie_date date not null, 
     movie_duration time not null, 
     movie_description VARCHAR(10000) not null, 
-    movie_genre_id integer not null,
     movie_cu_id integer not null,
     primary key (movie_id)
 );
@@ -93,13 +91,12 @@ create table userBooks (
 create table userMovies (
     um_id SERIAL not null, 
     um_user_id integer not null, 
-    um_book_id integer not null, 
+    um_movie_id integer not null, 
     um_favorite boolean, 
     um_watched boolean, 
     um_has boolean, 
     primary key (um_id)
 );
-
 
 create table character ( 
     character_id SERIAL not null, 
@@ -143,18 +140,21 @@ create table movievenue (
     primary key (mv_id)
 );
 
+create table moviegenre(
+    mg_id SERIAL not null, 
+    mg_movie_id int not null, 
+    mg_genre_id int not null, 
+    primary key(mg_id)
+);
+
+create table bookgenre(
+    bg_id SERIAL not null, 
+    bg_book_id int not null, 
+    bg_genre_id int not null, 
+    primary key(bg_id)
+);
 
 -- Foreign Keys
-
-alter table movie 
-add constraint movie_fk_genre
-foreign key (movie_genre_id) references genre(genre_id) 
-ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-alter table book 
-add constraint book_fk_genre
-foreign key (book_genre_id) references genre(genre_id) 
-ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table movie 
 add constraint movie_fk_cinematicUniverse
@@ -193,7 +193,7 @@ ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table userMovies 
 add constraint userMovies_fk_movie
-foreign key (um_book_id) references movie(movie_id) 
+foreign key (um_movie_id) references movie(movie_id) 
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table bookcharacter
@@ -249,4 +249,24 @@ ON DELETE NO ACTION ON UPDATE NO ACTION;
 alter table answer 
 add constraint answer_fk_question
 foreign key (answer_question_id) references question(question_id) 
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table moviegenre
+add constraint moviegenre_fk_movie
+foreign key (mg_movie_id) references movie(movie_id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table moviegenre
+add constraint moviegenre_fk_genre
+foreign key (mg_genre_id) references genre(genre_id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table bookgenre
+add constraint bookgenre_fk_book
+foreign key (bg_book_id) references book(book_id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table bookgenre
+add constraint bookgenre_fk_genre
+foreign key (bg_genre_id) references genre(genre_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;

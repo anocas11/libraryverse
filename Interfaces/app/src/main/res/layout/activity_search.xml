@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <SearchView
+    <EditText
         android:id="@+id/searchViewSearchSearch"
         android:layout_width="313dp"
         android:layout_height="47dp"
