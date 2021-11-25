@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardview_dark_background"
-    android:backgroundTint="@color/cardview_light_background"
+    android:background="@color/teal_700"
+    android:backgroundTint="@color/teal_700"
     android:orientation="vertical">
 
 
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:text="Libraryverse"
         android:textAlignment="center"
-        android:textColor="#25A4C1"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -46,6 +46,7 @@
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:padding="12dp"
+            android:textColor="@color/white"
             android:text="Home" />
 
         <ImageView
@@ -71,6 +72,7 @@
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:padding="12dp"
+            android:textColor="@color/white"
             android:text="Favourite Movies" />
 
 
@@ -97,6 +99,7 @@
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:padding="12dp"
+            android:textColor="@color/white"
             android:text="Favourite Books" />
 
         <ImageView
@@ -122,6 +125,7 @@
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:padding="12dp"
+            android:textColor="@color/white"
             android:text="Profile" />
 
 
@@ -147,6 +151,7 @@
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:padding="12dp"
+            android:textColor="@color/white"
             android:text="Logout"/>
 
         <ImageView

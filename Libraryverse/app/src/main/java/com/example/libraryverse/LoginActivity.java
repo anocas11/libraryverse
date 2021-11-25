@@ -31,4 +31,10 @@ public class LoginActivity extends AppCompatActivity {
         Toast.makeText(this, "Username" + username + "Password" + password, Toast.LENGTH_SHORT).show();
 
     }
+
+    public void ClickToCreate(View view)
+    {
+        Intent i = new Intent(getApplicationContext(), CreateAccountActivity.class);
+        startActivity(i);
+    }
 }
