@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
-    tools:context=".HomeActivity">
+    tools:context=".MainActivity">
 
 
     <TextView
@@ -33,19 +33,16 @@
             android:backgroundTint="#00FFFFFF" />
 
 
-<<<<<<< HEAD
-=======
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Home"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
-
-
->>>>>>> 51de995253de94a9c68181d92ab80730fe471b66
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center|left"
+        android:text="Home"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <RelativeLayout
         android:layout_width="300dp"
