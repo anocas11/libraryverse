@@ -63,3 +63,6 @@ insert into bookauthor (ba_id, ba_book_id, ba_author_id) values('2', '2', '2');
 insert into bookauthor (ba_id, ba_book_id, ba_author_id) values('3', '3', '3');
 insert into bookauthor (ba_id, ba_book_id, ba_author_id) values('4', '4', '4');
 insert into bookauthor (ba_id, ba_book_id, ba_author_id) values('5', '5', '2');
+
+insert into users(users_id, users_name, users_username, users_email, users_password) values('1', 'André Gomes', 'andre.gomes', 'andre.gomes@iade.pt', 'gomandre123');
+insert into users(users_id, users_name, users_username, users_email, users_password) values('2', 'André Gomes', 'andre.gomes', 'andre.gomes@iade.pt', 'gomandre123');
