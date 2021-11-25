@@ -65,4 +65,12 @@ insert into bookauthor (ba_id, ba_book_id, ba_author_id) values('4', '4', '4');
 insert into bookauthor (ba_id, ba_book_id, ba_author_id) values('5', '5', '2');
 
 insert into users(users_id, users_name, users_username, users_email, users_password) values('1', 'André Gomes', 'andre.gomes', 'andre.gomes@iade.pt', 'gomandre123');
-insert into users(users_id, users_name, users_username, users_email, users_password) values('2', 'André Gomes', 'andre.gomes', 'andre.gomes@iade.pt', 'gomandre123');
+insert into users(users_id, users_name, users_username, users_email, users_password) values('2', 'Catarina Silva', 'cat.silva', 'cat.silva@iade.pt', 'catarina456');
+insert into users(users_id, users_name, users_username, users_email, users_password) values('3', 'Francisco Sousa', 'kiko.sousa', 'kiko.sousa@iade.pt', 'kikosousa789');
+insert into users(users_id, users_name, users_username, users_email, users_password) values('4', 'Joana Carneiro', 'jo.carneiro', 'joana.carneiro@iade.pt', 'joana123');
+insert into users(users_id, users_name, users_username, users_email, users_password) values('5', 'Hugo Andrade', 'hugo.andrade', 'hugo.andrade@iade.pt', 'hugo456');
+
+insert into character(character_id, character_name) values('1', 'Harry Potter');
+insert into character(character_id, character_name) values('2', 'Hermione Granger');
+insert into character(character_id, character_name) values('3', 'Ronald Weasley');
+insert into character(character_id, character_name) values('4', 'Tintim');
