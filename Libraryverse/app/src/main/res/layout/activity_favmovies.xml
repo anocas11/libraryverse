@@ -27,10 +27,11 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:foregroundGravity="fill_horizontal|left|center"
-        android:gravity="center|left"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="18dp"
         android:text="Favourite Movies"
         android:textSize="24sp"
+        android:textColor="@color/white"
         android:textStyle="bold" />
 
     <RelativeLayout
