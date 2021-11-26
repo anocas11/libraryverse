@@ -26,5 +26,13 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="ClickSearch"
+        android:src="@drawable/ic_search" />
+
 
 </LinearLayout>
