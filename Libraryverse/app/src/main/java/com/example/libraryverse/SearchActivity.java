@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -20,11 +22,12 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
+import java.util.logging.Logger;
 
 public class SearchActivity extends AppCompatActivity {
 
     EditText searchView;
-    ListView listView;
+    LinearLayout searchViewLL;
     ArrayList searchList;
     ArrayAdapter adapter;
     JSONArray arrayMovie = null;
@@ -35,7 +38,7 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
         searchView = findViewById(R.id.searchViewSearchSearch);
-        listView = findViewById(R.id.listViewSearchSearch);
+        searchViewLL = findViewById(R.id.searchLL);
 
         DownloadTask task = new DownloadTask();
 
@@ -68,17 +71,18 @@ public class SearchActivity extends AppCompatActivity {
                     DownloadTask task2 = new DownloadTask();
                     arrayMovie = task2.execute("https://libraryverse.herokuapp.com/api/movies/search?name=" + editable.toString()).get();
 
-                    //listView.removeAllViews();
+                    searchViewLL.removeAllViews();
 
-                    /*for (int i = 0; i < arrayMovie.length(); i++) {
+                    for (int i = 0; i < arrayMovie.length(); i++) {
                         try {
                             JSONObject jsonPart = arrayMovie.getJSONObject(i);
                             TextView text = new TextView(getBaseContext());
-                            text.setText(jsonPart.getString("movie_name"));
-                            listView.addView(text);
+                            text.setText(jsonPart.getString("name"));
+                            searchViewLL.addView(text);
                         } catch (Exception e) {
+                            Log.w("DEBUG", e.toString());
                         }
-                    }*/
+                    }
                 } catch (ExecutionException e) {
                     e.printStackTrace();
                     arrayMovie = null;
