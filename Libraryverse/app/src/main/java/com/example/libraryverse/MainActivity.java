@@ -25,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
     }
 
+    public void ClickSearch(View view){
+        Intent i = new Intent(getApplicationContext(), SearchActivity.class);
+        startActivity(i);
+    }
+
 
     public void ClickMenu(View view){
         //open drawer
