@@ -27,7 +27,7 @@ public class Movie
     @Column(name="movie_duration") private String duration;
     @Column(name="movie_description") private String description;
     //@OneToMany @JoinColumn(name="movie_genre_id") private List<Genre> genre;
-    //@OneToOne @JoinColumn(name="movie_cu_id") private CinematicUniverse cu;
+    //@OneToOne @JoinColumn(name="movie_cu_id") private CinematicUniverse cinematicUniverse;
 
     public Movie()
     {

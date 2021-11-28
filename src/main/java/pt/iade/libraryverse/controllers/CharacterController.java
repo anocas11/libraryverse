@@ -56,7 +56,15 @@ public class CharacterController {
         logger.info("Sending characters with name " + name);
         Iterable<Character> _character = characterRepository.findAll();
 
-        
+        List<Character> charactersList = new ArrayList<Character>();
+        _character.forEach(character -> {
+            if(character.getName().contains(name))
+            {
+                charactersList.add(character);
+            }
+        });
+
+        return charactersList;
     }
 
     
