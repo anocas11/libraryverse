@@ -65,6 +65,9 @@ public class MovieController {
             }
         });
 
-        return moviesList;
+        var resp = new Response<Movie>();
+        resp.results = moviesList;
+
+        return resp;
     }
 }

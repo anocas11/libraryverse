@@ -9,7 +9,30 @@
     android:background="@color/teal_700"
     android:backgroundTint="@color/teal_700">
 
+    <ListView
+        android:id="@+id/listViewSearchSearch"
+        android:layout_width="313dp"
+        android:layout_height="558dp"
+        android:layout_below="@+id/searchViewSearchSearch"
+        android:divider="#ad5"
+        android:dividerHeight="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <EditText
+        android:id="@+id/searchViewSearchSearch"
+        android:layout_width="313dp"
+        android:layout_height="47dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="95dp"
+        android:layout_marginBottom="556dp"
+        android:iconifiedByDefault="false"
+        android:layout_centerHorizontal="true"
+        android:queryHint="Search Here"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </RelativeLayout>

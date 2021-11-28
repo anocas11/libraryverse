@@ -19,7 +19,7 @@ public class DownloadTask extends AsyncTask<String, Void, JSONArray> {
         URL url;
         HttpURLConnection urlConnection = null;
 
-        try{
+        try {
 
             url = new URL(urls[0]);
             urlConnection = (HttpURLConnection) url.openConnection();
@@ -28,26 +28,21 @@ public class DownloadTask extends AsyncTask<String, Void, JSONArray> {
             InputStreamReader reader = new InputStreamReader(in);
 
             int data = reader.read();
-            while(data != -1)
-            {
-                char current = (char)data;
+            while (data != -1) {
+                char current = (char) data;
                 result += current;
                 data = reader.read();
             }
 
             JSONObject jsonObject = new JSONObject(result);
-            String bookInfo = jsonObject.getString("book");
+            String bookInfo = jsonObject.getString("movie");
             JSONArray arr = new JSONArray(bookInfo);
 
             return arr;
 
-        }
-
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
 }
-
