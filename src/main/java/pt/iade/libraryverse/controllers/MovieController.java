@@ -17,6 +17,7 @@ import java.util.Optional;
 import java.util.ArrayList;
 
 import pt.iade.libraryverse.models.Movie;
+import pt.iade.libraryverse.models.Response;
 import pt.iade.libraryverse.models.repositories.MovieRepository;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
 
@@ -51,7 +52,7 @@ public class MovieController {
     }
     
     @GetMapping(path = "/search", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Movie> getMovieByName(@RequestParam String name)
+    public Response<Movie> getMovieByName(@RequestParam String name)
     {
         logger.info("Sending movies with name " + name);
         Iterable<Movie> _movie = movieRepository.findAll();
