@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
@@ -54,20 +55,47 @@
             android:layout_width="wrap_content"
             android:layout_height="34dp"
             android:layout_marginLeft="18dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="160dp"
             android:src="@drawable/ic_movie" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="160dp"
             android:text="Filmes Recentes"
             android:textColor="@color/white"
             android:textSize="24sp" />
 
 
+
+
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginRight="270dp"
+        android:layout_marginBottom="400dp"
+        android:src="@drawable/movieload" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginRight="130dp"
+        android:layout_marginBottom="400dp"
+        android:src="@drawable/movieload" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="400dp"
+        android:src="@drawable/movieload" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -90,7 +118,38 @@
             android:textColor="@color/white"
             android:textSize="24sp" />
 
+
+
     </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginRight="270dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/bookload" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginRight="135dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/bookload" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/bookload" />
+
+
+
+
 
     <RelativeLayout
         android:layout_width="300dp"

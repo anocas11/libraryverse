@@ -1,7 +1,13 @@
 package com.example.libraryverse;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -31,11 +37,15 @@ public class SearchActivity extends AppCompatActivity {
     ArrayList searchList;
     ArrayAdapter adapter;
     JSONArray arrayMovie = null;
+    //Initialize variable
+    DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+        //Assign variable
+        drawerLayout = findViewById(R.id.drawer_layout);
 
         searchView = findViewById(R.id.searchViewSearchSearch);
         searchViewLL = findViewById(R.id.searchLL);
@@ -117,4 +127,63 @@ public class SearchActivity extends AppCompatActivity {
 
         }
     }
+
+
+        public void ClickMenu(View view){
+            //Open drawer
+            MainActivity.openDrawer(drawerLayout);
+        }
+
+
+
+
+        public void ClickLogo(View view){
+            //Closed drawer
+            MainActivity.closeDrawer(drawerLayout);
+        }
+
+        public void ClickHome(View view){
+            //Redirect activity to home
+            redirectActivity(this, MainActivity.class);
+        }
+
+        public void ClickFavouriteMovies(View view){
+            //Redirect activity to Favourite Movies
+            redirectActivity(this, FavmoviesActivity.class);
+        }
+
+
+        public void ClickFavouriteBooks(View view){
+            //Recreate activity
+            redirectActivity(this, FavbooksActivity.class);
+
+        }
+
+        public void ClickProfile(View view) {
+        //Redirect activity to Profile
+            redirectActivity(this, ProfileActivity.class);
+        }
+
+        public void ClickLogout(View view){
+            //Close app
+            MainActivity.Logout(this);
+
+        }
+
+        public static void redirectActivity(Activity activity, Class aclass) {
+        //initialize intent
+        Intent intent = new Intent(activity, aclass);
+        //Set Flg
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //Start activity
+        activity.startActivity(intent);
+    }
+
+
+        @Override
+        protected void onPause(){
+            super.onPause();
+            //Close drawer
+            MainActivity.closeDrawer(drawerLayout);
+        }
 }
