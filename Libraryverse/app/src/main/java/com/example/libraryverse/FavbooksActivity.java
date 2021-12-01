@@ -3,6 +3,10 @@ package com.example.libraryverse;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -19,6 +23,11 @@ public class FavbooksActivity extends AppCompatActivity {
         //Assign variable
         drawerLayout = findViewById(R.id.drawer_layout);
 
+    }
+
+    public void ClickSearch(View view){
+        Intent i = new Intent(getApplicationContext(), SearchActivity.class);
+        startActivity(i);
     }
 
     public void ClickMenu(View view){
@@ -38,16 +47,21 @@ public class FavbooksActivity extends AppCompatActivity {
 
     public void ClickFavouriteMovies(View view){
         //Recreate activity to favourite movies
-        MainActivity.redirectActivity(this, FavmoviesActivity.class);
+        redirectActivity(this, FavmoviesActivity.class);
 
 
     }
 
+
+
     public void ClickFavouriteBooks(View view){
         //Recreate activity
         recreate();
+    }
 
-
+    public void ClickProfile(View view){
+        //Redirect activity profile
+        redirectActivity(this, ProfileActivity.class);
     }
 
     public void ClickLogout(View view){
@@ -55,6 +69,17 @@ public class FavbooksActivity extends AppCompatActivity {
         MainActivity.Logout(this);
 
     }
+
+    public static void redirectActivity(Activity activity, Class aclass) {
+        //initialize intent
+        Intent intent = new Intent(activity, aclass);
+        //Set Flg
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //Start activity
+        activity.startActivity(intent);
+    }
+
+
 
     @Override
     protected void onPause(){

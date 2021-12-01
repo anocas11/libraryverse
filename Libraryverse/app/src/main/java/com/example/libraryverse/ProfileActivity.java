@@ -3,6 +3,8 @@ package com.example.libraryverse;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -20,6 +22,11 @@ public class ProfileActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
     }
 
+    public void ClickSearch(View view){
+        Intent i = new Intent(getApplicationContext(), SearchActivity.class);
+        startActivity(i);
+    }
+
     public void ClickMenu(View view){
         //Open drawer
         MainActivity.openDrawer(drawerLayout);
@@ -32,12 +39,12 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void ClickHome(View view){
         //Redirect activity to home
-        MainActivity.redirectActivity(this, MainActivity.class);
+        redirectActivity(this, MainActivity.class);
     }
 
     public void ClickFavouriteMovies(View view){
         //Redirect activity to movies
-        MainActivity.redirectActivity(this, MainActivity.class);
+        redirectActivity(this, FavmoviesActivity.class);
     }
 
     public void ClickProfile(View view){
@@ -48,7 +55,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void ClickFavouriteBooks(View view){
         //Recreate activity to favourite books
-        MainActivity.redirectActivity(this, FavbooksActivity.class);
+        redirectActivity(this, FavbooksActivity.class);
     }
 
     public void ClickLogout(View view){
@@ -56,6 +63,16 @@ public class ProfileActivity extends AppCompatActivity {
         MainActivity.Logout(this);
 
     }
+
+    public static void redirectActivity(Activity activity, Class aclass) {
+        //initialize intent
+        Intent intent = new Intent(activity, aclass);
+        //Set Flg
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //Start activity
+        activity.startActivity(intent);
+    }
+
 
     @Override
     protected void onPause(){
