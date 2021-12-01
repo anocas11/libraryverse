@@ -1,6 +1,6 @@
 package pt.iade.libraryverse.models.views;
 
-public interface MovienfoView {
+public interface MovieInfoView {
     int getId();
     String getMovieName();
     String getCinematicUniverse();
