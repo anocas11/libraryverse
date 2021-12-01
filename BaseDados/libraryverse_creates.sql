@@ -20,6 +20,7 @@ create table book (
     book_date date not null, 
     book_description VARCHAR(10000),
     book_cu_id integer not null,
+    book_poster varchar(200),
     primary key(book_id)
 );
 
@@ -36,6 +37,7 @@ create table movie (
     movie_duration time not null, 
     movie_description VARCHAR(10000) not null, 
     movie_cu_id integer not null,
+    movie_poster varchar(200),
     primary key (movie_id)
 );
 
@@ -43,7 +45,7 @@ create table actor (
     actor_id SERIAL not null, 
     actor_name VARCHAR(60), 
     actor_birthday date not null,
-    actor_deathday date not null, 
+    actor_deathday date, 
     actor_bio VARCHAR(10000), 
     primary key(actor_id)
 );

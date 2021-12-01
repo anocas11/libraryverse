@@ -17,6 +17,7 @@ public class Book
     @Column(name="book_name") private String name;
     @Column(name="book_date") private String date;
     @Column(name="book_description") private String description;
+    @Column(name="book_poster") private String poster;
 
     public Book() //construtor default sem argumentos
     {
@@ -53,6 +54,14 @@ public class Book
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 
 }

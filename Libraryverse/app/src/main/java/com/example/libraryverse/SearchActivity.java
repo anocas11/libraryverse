@@ -2,6 +2,7 @@ package com.example.libraryverse;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -78,6 +79,23 @@ public class SearchActivity extends AppCompatActivity {
                             JSONObject jsonPart = arrayMovie.getJSONObject(i);
                             TextView text = new TextView(getBaseContext());
                             text.setText(jsonPart.getString("name"));
+                            text.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent itemView = new Intent(SearchActivity.this, ItemActivity.class);
+
+                                    try
+                                    {
+                                        itemView.putExtra("id", jsonPart.getString("id"));
+                                        itemView.putExtra("type", "movie");
+                                        startActivity(itemView);
+                                    }
+                                    catch (Exception e)
+                                    {
+
+                                    }
+                                }
+                            });
                             searchViewLL.addView(text);
                         } catch (Exception e) {
                             Log.w("DEBUG", e.toString());

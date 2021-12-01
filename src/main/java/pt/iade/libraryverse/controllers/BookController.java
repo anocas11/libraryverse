@@ -70,13 +70,4 @@ public class BookController {
 
         return booksList;
     }
-
-    //@PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
-    //public Book saveBook(@RequestBody Book book)
-    //{
-        //Book savedBook = bookRepository.save(book);
-        //logger.info("Saving book with id " +savedBook.getId());
-        //return savedBook;
-    //}
-
 }
