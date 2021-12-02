@@ -35,6 +35,9 @@ public class SearchActivity extends AppCompatActivity {
     ArrayList searchList;
     ArrayAdapter adapter;
     JSONArray arrayMovie = null;
+    JSONArray arrayBook = null;
+    JSONArray arrayActor = null;
+    JSONArray arrayAuthor = null;
     //Initialize variable
     DrawerLayout drawerLayout;
 
@@ -52,12 +55,21 @@ public class SearchActivity extends AppCompatActivity {
 
         try {
             arrayMovie = task.execute("https://libraryverse.herokuapp.com/api/movies/").get();
+            //arrayBook = task.execute("https://libraryverse.herokuapp.com/api/books/").get();
+            //arrayActor = task.execute("https://libraryverse.herokuapp.com/api/authors/").get();
+            //arrayAuthor = task.execute("https://libraryverse.herokuapp.com/api/actors/").get();
         } catch (ExecutionException e) {
             e.printStackTrace();
             arrayMovie = null;
+            //arrayBook = null;
+            //arrayActor = null;
+            //arrayAuthor = null;
         } catch (InterruptedException e) {
             e.printStackTrace();
             arrayMovie = null;
+            //arrayBook = null;
+            //arrayActor = null;
+            //arrayAuthor = null;
         }
 
         //https://www.tabnine.com/code/java/methods/android.widget.EditText/addTextChangedListener
