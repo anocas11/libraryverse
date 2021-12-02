@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 import pt.iade.libraryverse.models.Genre;
 import pt.iade.libraryverse.models.repositories.GenreRepository;
+import pt.iade.libraryverse.models.views.GenreView;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
 
 @RestController
@@ -67,4 +68,12 @@ public class GenreController {
 
         return genresList;
     }
+
+    @GetMapping(path = "/movies/{mname}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<GenreView> getGenreByMovieName(@PathVariable String mname)
+    {
+        logger.info(mname + " -> Genres: ");
+        return genreRepository.findGenreByMovieName(mname);
+    }
+
 }
