@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="400dp"
+            android:layout_marginTop="405dp"
             android:text="Name:"
             android:textColor="@color/white"
             android:textSize="16sp" />
@@ -82,10 +82,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="450dp"
+            android:layout_marginTop="445dp"
             android:text="Email:"
             android:textColor="@color/white"
             android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="600dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="60dp"
+            android:onClick="ClickItem"
+            android:layout_weight="1"
+            android:text="Button" />
 
     </LinearLayout>
 
@@ -105,7 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="500dp"
+            android:layout_marginTop="510dp"
             android:text="Password:"
             android:textColor="@color/white"
             android:textSize="16sp"/>
@@ -127,7 +138,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="550dp"
+            android:layout_marginTop="555dp"
             android:text="Repeat Password:"
             android:textColor="@color/white"
             android:textSize="16sp"/>
@@ -137,11 +148,11 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         android:layout_marginBottom="400dp"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
-        android:src="@drawable/avataaars"/>
+        android:src="@drawable/usericon"/>
 
 
     <RelativeLayout
