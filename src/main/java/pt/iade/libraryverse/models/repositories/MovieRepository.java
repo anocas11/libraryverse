@@ -10,7 +10,7 @@ public interface MovieRepository extends CrudRepository<Movie,Integer>
     "from movie " + 
     "inner join cinematicuniverse on movie_cu_id = cu_id ";
 
-    @Query(value = QueryGetMovieGenre +
+    @Query(value = QueryGetMovieInfo +
     " where movie_id=:id", nativeQuery = true)
     Iterable<MovienfoView> getMovie(@Param("id") int id);
 }
