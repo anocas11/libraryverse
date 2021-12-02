@@ -20,6 +20,7 @@ import pt.iade.libraryverse.models.Movie;
 import pt.iade.libraryverse.models.Response;
 import pt.iade.libraryverse.models.repositories.MovieRepository;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
+import pt.iade.libraryverse.models.views.MovieInfoView;
 
 @RestController
 @RequestMapping(path = "api/movies")
@@ -70,5 +71,12 @@ public class MovieController {
         resp.results = moviesList;
 
         return resp;
+    }
+
+    @GetMapping(path = "/movie/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<MovieInfoView> getMovieInfo(@PathVariable int id)
+    {
+        logger.info("Sending data from movie with id" + id);
+        return movieRepository.getMovieInfo(id);
     }
 }
