@@ -12,7 +12,7 @@ import pt.iade.libraryverse.models.views.GenreView;
 public interface GenreRepository extends CrudRepository<Genre,Integer>
 {
     String QueryGetItemGenre = 
-    "select genre_name genreName, movie_name movieName from genre "+
+    "select genre_name genreName from genre "+
     "inner join moviegenre on genre_id = mg_genre_id "+
     "inner join movie on mg_movie_id = movie_id";
 
