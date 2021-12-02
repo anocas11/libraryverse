@@ -1,5 +1,7 @@
 package pt.iade.libraryverse.models.repositories;
 
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.data.repository.CrudRepository;
 import pt.iade.libraryverse.models.Movie;
 import pt.iade.libraryverse.models.views.MovienfoView;
