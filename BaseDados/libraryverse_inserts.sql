@@ -13,6 +13,14 @@ insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_descr
 
 insert into cinematicuniverse (cu_id, cu_name) values('1', 'Wizarding World');
 insert into cinematicuniverse (cu_id, cu_name) values('2', 'Les Aventures de Tintin');
+insert into cinematicuniverse (cu_id, cu_name) values('3', 'Marvel');
+insert into cinematicuniverse (cu_id, cu_name) values('4', 'Lord of the Rings');
+insert into cinematicuniverse (cu_id, cu_name) values('5', 'DC');
+insert into cinematicuniverse (cu_id, cu_name) values('6', 'DC Comics');
+insert into cinematicuniverse (cu_id, cu_name) values('7', 'Uma Aventura');
+insert into cinematicuniverse (cu_id, cu_name) values('8', 'Astérix & Obélix');
+insert into cinematicuniverse (cu_id, cu_name) values('9', 'The Chronicles of Narnia');
+insert into cinematicuniverse (cu_id, cu_name) values('10', 'Shadowhunters');
 
 insert into genre (genre_id, genre_name) values('1', 'Drama');
 insert into genre (genre_id, genre_name) values('2', 'Adventure');
