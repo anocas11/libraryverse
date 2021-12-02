@@ -11,13 +11,21 @@ import pt.iade.libraryverse.models.views.GenreView;
 
 public interface GenreRepository extends CrudRepository<Genre,Integer>
 {
-    String QueryGetItemGenre = 
+    String QueryGetMovieGenre = 
     "select genre_name genreName from genre "+
     "inner join moviegenre on genre_id = mg_genre_id "+
     "inner join movie on mg_movie_id = movie_id";
 
-    @Query(value = QueryGetItemGenre + 
-    " where movie_name=:mname", nativeQuery = true)
-    Iterable<GenreView> findGenreByMovieName(@Param("mname") String mname);
+    @Query(value = QueryGetMovieGenre + 
+    " where movie_id=:id", nativeQuery = true)
+    Iterable<GenreView> findGenreByMovie(@Param("id") int id);
 
+    String QueryGetBookGenre = 
+    "select genre_name genreName from genre "+
+    "inner join bookgenre on genre_id = bg_genre_id "+
+    "inner join book on bg_book_id = book_id";
+
+    @Query(value = QueryGetBookGenre + 
+    " where book_id=:id", nativeQuery = true)
+    Iterable<GenreView> findGenreByBook(@Param("id") int id);
 }   
