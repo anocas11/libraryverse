@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.repository.CrudRepository;
 import pt.iade.libraryverse.models.Movie;
-import pt.iade.libraryverse.models.views.MovienfoView;
+import pt.iade.libraryverse.models.views.MovieInfoView;
 
 public interface MovieRepository extends CrudRepository<Movie,Integer>
 {
@@ -14,5 +14,5 @@ public interface MovieRepository extends CrudRepository<Movie,Integer>
 
     @Query(value = QueryGetMovieInfo +
     " where movie_id=:id", nativeQuery = true)
-    Iterable<MovienfoView> getMovie(@Param("id") int id);
+    Iterable<MovieInfoView> getMovie(@Param("id") int id);
 }
