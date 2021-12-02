@@ -69,11 +69,18 @@ public class GenreController {
         return genresList;
     }
 
-    @GetMapping(path = "/movies/{mname}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<GenreView> getGenreByMovieName(@PathVariable String mname)
+    @GetMapping(path = "/movies/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<GenreView> getGenreByMovie(@PathVariable int id)
     {
-        logger.info(mname + " -> Genres: ");
-        return genreRepository.findGenreByMovieName(mname);
+        logger.info(id + " -> Genres: ");
+        return genreRepository.findGenreByMovie(id);
+    }
+
+    @GetMapping(path = "/books/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<GenreView> getGenreByBook(@PathVariable int id)
+    {
+        logger.info(id + " -> Genres: ");
+        return genreRepository.findGenreByBook(id);
     }
 
 }
