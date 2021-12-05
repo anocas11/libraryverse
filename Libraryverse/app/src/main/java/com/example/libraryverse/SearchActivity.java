@@ -6,6 +6,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -98,6 +99,9 @@ public class SearchActivity extends AppCompatActivity {
                             JSONObject jsonPart = arrayMovie.getJSONObject(i);
                             TextView text = new TextView(getBaseContext());
                             text.setText(jsonPart.getString("name"));
+                            text.setPadding(5, 20, 5, 20);
+                            text.setTextColor(Color.parseColor("#FFFFFF"));
+                            text.setTextSize(16);
                             text.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {

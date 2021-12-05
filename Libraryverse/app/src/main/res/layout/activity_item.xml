@@ -65,6 +65,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/textViewItemName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="100dp"
@@ -101,6 +102,7 @@
                 android:src="@drawable/ic_favourite" />
 
             <ImageView
+                android:id="@+id/imageViewItemImg"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginLeft="30dp"
@@ -110,6 +112,7 @@
                 android:src="@drawable/movieload" />
 
             <TextView
+                android:id="@+id/textViewItemDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"

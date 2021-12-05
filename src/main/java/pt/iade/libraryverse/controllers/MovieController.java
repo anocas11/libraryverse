@@ -16,8 +16,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.ArrayList;
 
+import pt.iade.libraryverse.models.CinematicUniverse;
 import pt.iade.libraryverse.models.Movie;
 import pt.iade.libraryverse.models.Response;
+import pt.iade.libraryverse.models.repositories.CinematicUniverseRepository;
 import pt.iade.libraryverse.models.repositories.MovieRepository;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
 import pt.iade.libraryverse.models.views.MovieInfoView;
@@ -29,6 +31,9 @@ public class MovieController {
     
     @Autowired
     private MovieRepository movieRepository;
+
+    @Autowired
+    private CinematicUniverseRepository cuRepository;
 
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<Movie> getMovies()
@@ -53,7 +58,7 @@ public class MovieController {
     }
     
     @GetMapping(path = "/search", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response<Movie> getMovieByName(@RequestParam String name)
+    public Response<List<Movie>> getMovieByName(@RequestParam String name)
     {
         logger.info("Sending movies with name " + name);
         Iterable<Movie> _movie = movieRepository.findAll();
@@ -67,16 +72,26 @@ public class MovieController {
             }
         });
 
-        var resp = new Response<Movie>();
+        var resp = new Response<List<Movie>>();
         resp.results = moviesList;
 
         return resp;
     }
 
     @GetMapping(path = "/movie/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<MovieInfoView> getMovieInfo(@PathVariable int id)
+    public Response<List<Movie>> getMovieInfo(@PathVariable int id)
     {
         logger.info("Sending data from movie with id" + id);
-        return movieRepository.getMovieInfo(id);
+
+        List<Movie> moviesList = new ArrayList<Movie>();
+
+        Optional<Movie> movieInfo = movieRepository.findById(id);
+        moviesList.add(movieInfo.get());
+        //cu = cuRepository.findById(movieInfo.);
+
+        var resp = new Response<List<Movie>>();
+        resp.results = moviesList;
+
+        return resp;
     }
 }
