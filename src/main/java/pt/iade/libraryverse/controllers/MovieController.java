@@ -23,7 +23,7 @@ import pt.iade.libraryverse.models.repositories.CinematicUniverseRepository;
 import pt.iade.libraryverse.models.repositories.MovieRepository;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
 import pt.iade.libraryverse.models.views.MovieInfoView;
-import pt.iade.libraryverse.models.views.MovienfoView;
+
 
 @RestController
 @RequestMapping(path = "api/movies")
