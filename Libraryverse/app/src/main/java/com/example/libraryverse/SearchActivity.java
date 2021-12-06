@@ -42,33 +42,80 @@ public class SearchActivity extends AppCompatActivity {
     //Initialize variable
     DrawerLayout drawerLayout;
 
+    public void getSearchArray(String linkVariable, String type, Editable editable)
+    {
+        JSONArray array;
+
+        try {
+            DownloadTask task2 = new DownloadTask();
+            array = task2.execute("https://libraryverse.herokuapp.com/api/" + linkVariable + "/search?name=" + editable.toString()).get();
+
+            for (int i = 0; i < array.length(); i++) {
+                try {
+                    JSONObject jsonPart = array.getJSONObject(i);
+                    TextView text = new TextView(getBaseContext());
+                    text.setText(jsonPart.getString("name"));
+                    text.setPadding(5, 20, 5, 20);
+                    text.setTextColor(Color.parseColor("#FFFFFF"));
+                    text.setTextSize(16);
+                    text.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent itemView = new Intent(SearchActivity.this, ItemActivity.class);
+
+                            try
+                            {
+                                itemView.putExtra("id", jsonPart.getString("id"));
+                                itemView.putExtra("type", type);
+                                startActivity(itemView);
+                            }
+                            catch (Exception e)
+                            {
+
+                            }
+                        }
+                    });
+                    searchViewLL.addView(text);
+                } catch (Exception e) {
+                    Log.w("DEBUG", e.toString());
+                }
+            }
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+            array = null;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            array = null;
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         //Assign variable
         drawerLayout = findViewById(R.id.drawer_layout);
-
         searchView = findViewById(R.id.searchViewSearchSearch);
         searchViewLL = findViewById(R.id.searchLL);
 
-        DownloadTask task = new DownloadTask();
+        DownloadTask taskMovie = new DownloadTask();
+        DownloadTask taskBook = new DownloadTask();
 
         try {
-            arrayMovie = task.execute("https://libraryverse.herokuapp.com/api/movies/").get();
-            //arrayBook = task.execute("https://libraryverse.herokuapp.com/api/books/").get();
+            arrayMovie = taskMovie.execute("https://libraryverse.herokuapp.com/api/movies/").get();
+            arrayBook = taskBook.execute("https://libraryverse.herokuapp.com/api/books/").get();
             //arrayActor = task.execute("https://libraryverse.herokuapp.com/api/authors/").get();
             //arrayAuthor = task.execute("https://libraryverse.herokuapp.com/api/actors/").get();
         } catch (ExecutionException e) {
             e.printStackTrace();
             arrayMovie = null;
-            //arrayBook = null;
+            arrayBook = null;
             //arrayActor = null;
             //arrayAuthor = null;
         } catch (InterruptedException e) {
             e.printStackTrace();
             arrayMovie = null;
-            //arrayBook = null;
+            arrayBook = null;
             //arrayActor = null;
             //arrayAuthor = null;
         }
@@ -88,49 +135,9 @@ public class SearchActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                try {
-                    DownloadTask task2 = new DownloadTask();
-                    arrayMovie = task2.execute("https://libraryverse.herokuapp.com/api/movies/search?name=" + editable.toString()).get();
+                searchViewLL.removeAllViews();
+                getSearchArray("movies", "movie", editable);
 
-                    searchViewLL.removeAllViews();
-
-                    for (int i = 0; i < arrayMovie.length(); i++) {
-                        try {
-                            JSONObject jsonPart = arrayMovie.getJSONObject(i);
-                            TextView text = new TextView(getBaseContext());
-                            text.setText(jsonPart.getString("name"));
-                            text.setPadding(5, 20, 5, 20);
-                            text.setTextColor(Color.parseColor("#FFFFFF"));
-                            text.setTextSize(16);
-                            text.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
-                                    Intent itemView = new Intent(SearchActivity.this, ItemActivity.class);
-
-                                    try
-                                    {
-                                        itemView.putExtra("id", jsonPart.getString("id"));
-                                        itemView.putExtra("type", "movie");
-                                        startActivity(itemView);
-                                    }
-                                    catch (Exception e)
-                                    {
-
-                                    }
-                                }
-                            });
-                            searchViewLL.addView(text);
-                        } catch (Exception e) {
-                            Log.w("DEBUG", e.toString());
-                        }
-                    }
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                    arrayMovie = null;
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                    arrayMovie = null;
-                }
             }
         });
     }
@@ -164,9 +171,6 @@ public class SearchActivity extends AppCompatActivity {
             //Open drawer
             MainActivity.openDrawer(drawerLayout);
         }
-
-
-
 
         public void ClickLogo(View view){
             //Closed drawer
