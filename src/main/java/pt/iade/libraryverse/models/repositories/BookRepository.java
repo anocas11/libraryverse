@@ -12,9 +12,9 @@ public interface BookRepository extends CrudRepository<Book,Integer>
     //Criamos a interface que extende CrudRepository que contem todas as funções crud do springboot
     //Os parâmetros significam que o repositório vai gerir os livros e o id dos livros é um int 
 
-    String QueryGetBookInfo = "select book_name as bookName, book_date as date, book_description as description, book_poster as poster, cu_name as cinematicUniverse " + 
+    String QueryGetBookInfo = "select book_name as bookName, book_date as date, book_description as description, book_poster as poster, cu_name as cinematicUniverse, genre_name as genre " + 
     "from book " +
-    "inner join cinematicuniverse on book_cu_id = cu_id " +
+    "left join cinematicuniverse on book_cu_id = cu_id " +
     "inner join bookGenre on bg_book_id = book_id " +
     "inner join genre on bg_genre_id = genre_id ";
 

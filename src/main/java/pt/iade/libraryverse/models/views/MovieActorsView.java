@@ -1,5 +1,5 @@
 package pt.iade.libraryverse.models.views;
 
-public interface ActorView {
+public interface MovieActorsView {
     String getActorName();
 }
