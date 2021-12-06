@@ -6,4 +6,5 @@ public interface MovieInfoView {
     String getDescription();
     String getDate();
     String getDuration();
+    String getGenre();
 }
