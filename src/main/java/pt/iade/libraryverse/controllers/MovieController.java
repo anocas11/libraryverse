@@ -23,6 +23,7 @@ import pt.iade.libraryverse.models.repositories.CinematicUniverseRepository;
 import pt.iade.libraryverse.models.repositories.MovieRepository;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
 import pt.iade.libraryverse.models.views.MovieInfoView;
+import pt.iade.libraryverse.models.views.MovienfoView;
 
 @RestController
 @RequestMapping(path = "api/movies")
@@ -78,7 +79,7 @@ public class MovieController {
         return resp;
     }
 
-    @GetMapping(path = "/movie/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    /*@GetMapping(path = "/movie/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response<List<Movie>> getMovieInfo(@PathVariable int id)
     {
         logger.info("Sending data from movie with id" + id);
@@ -87,11 +88,19 @@ public class MovieController {
 
         Optional<Movie> movieInfo = movieRepository.findById(id);
         moviesList.add(movieInfo.get());
-        //cu = cuRepository.findById(movieInfo.);
+        cu = cuRepository.findById(movieInfo.);
 
         var resp = new Response<List<Movie>>();
         resp.results = moviesList;
 
         return resp;
+    }*/
+
+    
+    @GetMapping(path = "/movie/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<MovieInfoView> getMovieInfo(@PathVariable int id)
+    {
+        return movieRepository.getMovieInfo(id);
     }
+
 }
