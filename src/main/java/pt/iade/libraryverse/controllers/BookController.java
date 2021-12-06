@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 import pt.iade.libraryverse.models.Book;
 import pt.iade.libraryverse.models.repositories.BookRepository;
+import pt.iade.libraryverse.models.views.BookInfoView;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
 
 @RestController
@@ -69,5 +70,11 @@ public class BookController {
         });
 
         return booksList;
+    }
+
+    @GetMapping(path = "/book/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<BookInfoView> getBookInfo(@PathVariable int id)
+    {
+        return bookRepository.getBookInfo(id);
     }
 }
