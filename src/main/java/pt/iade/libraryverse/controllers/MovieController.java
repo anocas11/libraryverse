@@ -100,9 +100,11 @@ public class MovieController {
 
     
     @GetMapping(path = "/movie/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<MovieInfoView> getMovieInfo(@PathVariable int id)
+    public Response<Iterable<MovieInfoView>> getMovieInfo(@PathVariable int id)
     {
-        return movieRepository.getMovieInfo(id);
+        var resp = new Response<Iterable<MovieInfoView>>();
+        resp.results = movieRepository.getMovieInfo(id);
+        return resp;
     }
 
 }
