@@ -7,4 +7,5 @@ public interface MovieInfoView {
     String getDate();
     String getDuration();
     String getGenre();
+    String getPoster();
 }
