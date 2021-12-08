@@ -17,6 +17,7 @@ import java.util.Optional;
 import java.util.ArrayList;
 
 import pt.iade.libraryverse.models.Book;
+import pt.iade.libraryverse.models.Response;
 import pt.iade.libraryverse.models.repositories.BookRepository;
 import pt.iade.libraryverse.models.views.BookInfoView;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
