@@ -51,7 +51,7 @@ public class AuthorController {
     }
 
     @GetMapping(path = "/search", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Author> getAuthorByName(@RequestParam String name)
+    public Response<List<Author>> getAuthorByName(@RequestParam String name)
     {
         logger.info("Sending authors with name " + name);
         Iterable<Author> _author = authorRepository.findAll();
@@ -64,7 +64,10 @@ public class AuthorController {
             }
         });
         
-        return authorsList;
+        var resp = new Response<List<Author>>();
+        resp.results = authorsList;
+
+        return resp;
     }
 
 

@@ -73,22 +73,15 @@ insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_descr
 insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_description, movie_cu_id) values ('65', 'The Chronicles of Narnia: The Voyage of the Dawn Treader', to_date('2010-12-10', 'YYYY-MM-DD'), '01:53:00', 'This time around Edmund and Lucy Pevensie, along with their pesky cousin Eustace Scrubb find themselves swallowed into a painting and on to a fantastic Narnian ship headed for the very edges of the world.', '9');
 insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_description, movie_cu_id) values ('66', 'The Mortal Instruments: City of Bones ', to_date('2013-08-21', 'YYYY-MM-DD'), '02:10:00', 'In New York City, Clary Fray, a seemingly ordinary teenager, learns that she is descended from a line of Shadowhunters — half-angel warriors who protect humanity from evil forces. After her mother disappears, Clary joins forces with a group of Shadowhunters and enters Downworld, an alternate realm filled with demons, vampires, and a host of other creatures. Clary and her companions must find and protect an ancient cup that holds the key to her mothers future.', '10');
 
-
-
-
-
-
-
-
-insert into cinematicuniverse (cu_id, cu_name) values('1', 'Wizarding World'); feito
-insert into cinematicuniverse (cu_id, cu_name) values('2', 'Les Aventures de Tintin'); feito
-insert into cinematicuniverse (cu_id, cu_name) values('3', 'Marvel'); feito
-insert into cinematicuniverse (cu_id, cu_name) values('4', 'Lord of the Rings'); feito
-insert into cinematicuniverse (cu_id, cu_name) values('5', 'DC Comics'); feito
-insert into cinematicuniverse (cu_id, cu_name) values('7', 'Uma Aventura'); feito
-insert into cinematicuniverse (cu_id, cu_name) values('8', 'Astérix & Obélix') feito
-insert into cinematicuniverse (cu_id, cu_name) values('9', 'The Chronicles of Narnia'); feito
-insert into cinematicuniverse (cu_id, cu_name) values('10', 'Shadowhunters');feito
+insert into cinematicuniverse (cu_id, cu_name) values('1', 'Wizarding World');
+insert into cinematicuniverse (cu_id, cu_name) values('2', 'Les Aventures de Tintin');
+insert into cinematicuniverse (cu_id, cu_name) values('3', 'Marvel'); 
+insert into cinematicuniverse (cu_id, cu_name) values('4', 'Lord of the Rings');
+insert into cinematicuniverse (cu_id, cu_name) values('5', 'DC Comics');
+insert into cinematicuniverse (cu_id, cu_name) values('7', 'Uma Aventura'); 
+insert into cinematicuniverse (cu_id, cu_name) values('8', 'Astérix & Obélix');
+insert into cinematicuniverse (cu_id, cu_name) values('9', 'The Chronicles of Narnia'); 
+insert into cinematicuniverse (cu_id, cu_name) values('10', 'Shadowhunters');
 
 insert into genre (genre_id, genre_name) values('1', 'Drama');
 insert into genre (genre_id, genre_name) values('2', 'Adventure');

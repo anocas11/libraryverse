@@ -34,9 +34,9 @@ public class DownloadTask extends AsyncTask<String, Void, JSONArray> {
                 data = reader.read();
             }
 
-            //JSONObject jsonObject = new JSONObject(result);
-            //String bookInfo = jsonObject.getString("results");
-            JSONArray arr = new JSONArray(result);
+            JSONObject jsonObject = new JSONObject(result);
+            String objectInfo = jsonObject.getString("results");
+            JSONArray arr = new JSONArray(objectInfo);
 
             return arr;
 
