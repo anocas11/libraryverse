@@ -44,7 +44,7 @@ public class MovieController {
     }
 
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Movie getMovie(@PathVariable int id)
+    public Response<Movie> getMovie(@PathVariable int id)
     {
         logger.info("Sending movie with id " + id);
         Optional<Movie> _movie = movieRepository.findById(id);
@@ -54,7 +54,9 @@ public class MovieController {
         } 
         else
         {
-            return _movie.get();
+            var resp = new Response<Movie>();
+            resp.results = _movie.get();
+            return resp;
         }
     }
     
