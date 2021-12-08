@@ -82,21 +82,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="445dp"
+            android:layout_marginTop="455dp"
             android:text="Email:"
             android:textColor="@color/white"
             android:textSize="16sp"/>
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="600dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="60dp"
-            android:onClick="ClickItem"
-            android:layout_weight="1"
-            android:text="Button" />
 
     </LinearLayout>
 

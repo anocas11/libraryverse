@@ -21,10 +21,6 @@ public class ProfileActivity extends AppCompatActivity {
         //Assign variable
         drawerLayout = findViewById(R.id.drawer_layout);
     }
-    public void ClickItem(View view){
-        Intent i = new Intent(getApplicationContext(), ItemActivity.class);
-        startActivity(i);
-    }
 
 
     public void ClickSearch(View view){
