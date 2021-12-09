@@ -74,7 +74,7 @@ public class ItemActivity extends AppCompatActivity {
                     }
                     else if(itemType.equals("author"))
                     {
-                        
+
                     }
                 }
                 catch (JSONException e)

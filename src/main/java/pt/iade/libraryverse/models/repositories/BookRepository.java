@@ -29,7 +29,7 @@ public interface BookRepository extends CrudRepository<Book,Integer>
     @Query(value = QueryGetBookAuthors + " where ba_book_id=:id", nativeQuery = true)
     Iterable<BookAuthorsView> getBookAuthors(@Param("id") int id);
 
-    String QueryGetBookCharacters = "select character_name as characterName" +
+    String QueryGetBookCharacters = "select character_name as characterName " +
     "from character " +
     "inner join bookcharacter on character_id = bc_character_id ";
 
