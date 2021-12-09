@@ -16,4 +16,11 @@ public interface MovieRepository extends CrudRepository<Movie,Integer>
 
     @Query(value = QueryGetMovieInfo + " where movie_id=:id", nativeQuery = true)
     Iterable<MovieInfoView> getMovieInfo(@Param("id") int id);
+
+    String QueryGetMovieCharacters = "select character_name as character " + 
+    "from character " +
+    "inner join moviecharacter on character_id = mc_character_id ";
+
+    @Query(value = QueryGetMovieCharacters + " where mc_movie_id=:id", nativeQuery = true)
+    Iterable<MovieInfoView> getMovieCharacters(@Param("id") int id);
 }

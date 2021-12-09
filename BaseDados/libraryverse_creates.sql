@@ -19,7 +19,7 @@ create table book (
     book_name VARCHAR(120) not null, 
     book_date date not null, 
     book_description VARCHAR(10000),
-    book_cu_id integer not null,
+    book_cu_id integer,
     book_poster varchar(200),
     primary key(book_id)
 );
@@ -36,7 +36,7 @@ create table movie (
     movie_date date not null, 
     movie_duration time not null, 
     movie_description VARCHAR(10000) not null, 
-    movie_cu_id integer not null,
+    movie_cu_id integer,
     movie_poster varchar(200),
     primary key (movie_id)
 );
@@ -68,7 +68,7 @@ create table answer (
 
 create table cinematicUniverse (
     cu_id SERIAL not null, 
-    cu_name VARCHAR(20) not null, 
+    cu_name VARCHAR(30) not null, 
     primary key (cu_id)
 );
 
@@ -117,7 +117,7 @@ create table moviecharacter (
     mc_id SERIAL not null, 
     mc_character_id int not null, 
     mc_movie_id int not null, 
-    primary key mc_id)
+    primary key (mc_id)
 );
 
 create table movieActor (

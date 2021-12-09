@@ -1,3 +1,25 @@
+insert into cinematicuniverse (cu_id, cu_name) values('1', 'Wizarding World');
+insert into cinematicuniverse (cu_id, cu_name) values('2', 'Les Aventures de Tintin');
+insert into cinematicuniverse (cu_id, cu_name) values('3', 'Marvel'); 
+insert into cinematicuniverse (cu_id, cu_name) values('4', 'Lord of the Rings');
+insert into cinematicuniverse (cu_id, cu_name) values('5', 'DC Comics');
+insert into cinematicuniverse (cu_id, cu_name) values('7', 'Uma Aventura'); 
+insert into cinematicuniverse (cu_id, cu_name) values('8', 'Astérix & Obélix');
+insert into cinematicuniverse (cu_id, cu_name) values('9', 'The Chronicles of Narnia'); 
+insert into cinematicuniverse (cu_id, cu_name) values('10', 'Shadowhunters');
+
+insert into genre (genre_id, genre_name) values('1', 'Drama');
+insert into genre (genre_id, genre_name) values('2', 'Adventure');
+insert into genre (genre_id, genre_name) values('3', 'Fantasy');
+insert into genre (genre_id, genre_name) values('4', 'Action');
+insert into genre (genre_id, genre_name) values('5', 'Biography');
+insert into genre (genre_id, genre_name) values('6', 'Animation');
+insert into genre (genre_id, genre_name) values('7', 'Comics');
+insert into genre (genre_id, genre_name) values('8', 'Fiction');
+insert into genre (genre_id, genre_name) values('9', 'Historical Fiction');
+insert into genre (genre_id, genre_name) values('10', 'History');
+insert into genre (genre_id, genre_name) values('11', 'Nonfiction');
+insert into genre (genre_id, genre_name) values('12', 'Young Adult');
 
 insert into book (book_id, book_name, book_date, book_description, book_cu_id) values('1','Tintim na América' , to_date('1931', 'YYYY'), 'Depois de enfrentar um bando de gângsters no Congo, Tintim é enviado para Chicago, EUA, para livrar a cidade dos criminosos. ... Assim que escapa dos comparsas de Al Capone, Tintim cai numa armadilha de Bobby Smiles, líder do Sindicato dos Gângsters de Chicago', '2');
 insert into book (book_id, book_name, book_date, book_description, book_cu_id) values('2', 'Harry Potter e a camera dos segredos', to_date('1998', 'YYYY'), 'Após as sofríveis férias na casa dos tios, Harry Potter se prepara para voltar a Hogwarts e começar seu segundo ano na escola de bruxos. Na véspera do início das aulas, a estranha criatura Dobby aparece em seu quarto e o avisa de que voltar é um erro e que algo muito ruim pode acontecer se Harry insistir em continuar os estudos de bruxaria. O garoto, no entanto, está disposto a correr o risco e se livrar do lar problemático.', '1');
@@ -72,29 +94,6 @@ insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_descr
 insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_description, movie_cu_id) values ('64', 'The Chronicles of Narnia: Prince Caspian', to_date('2008-05-16', 'YYYY-MM-DD'), '02:30:00', 'One year after their incredible adventures in the Lion, the Witch and the Wardrobe, Peter, Edmund, Lucy and Susan Pevensie return to Narnia to aid a young prince whose life has been threatened by the evil King Miraz. Now, with the help of a colorful cast of new characters, including Trufflehunter the badger and Nikabrik the dwarf, the Pevensie clan embarks on an incredible quest to ensure that Narnia is returned to its rightful heir.', '9');
 insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_description, movie_cu_id) values ('65', 'The Chronicles of Narnia: The Voyage of the Dawn Treader', to_date('2010-12-10', 'YYYY-MM-DD'), '01:53:00', 'This time around Edmund and Lucy Pevensie, along with their pesky cousin Eustace Scrubb find themselves swallowed into a painting and on to a fantastic Narnian ship headed for the very edges of the world.', '9');
 insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_description, movie_cu_id) values ('66', 'The Mortal Instruments: City of Bones ', to_date('2013-08-21', 'YYYY-MM-DD'), '02:10:00', 'In New York City, Clary Fray, a seemingly ordinary teenager, learns that she is descended from a line of Shadowhunters — half-angel warriors who protect humanity from evil forces. After her mother disappears, Clary joins forces with a group of Shadowhunters and enters Downworld, an alternate realm filled with demons, vampires, and a host of other creatures. Clary and her companions must find and protect an ancient cup that holds the key to her mothers future.', '10');
-
-insert into cinematicuniverse (cu_id, cu_name) values('1', 'Wizarding World');
-insert into cinematicuniverse (cu_id, cu_name) values('2', 'Les Aventures de Tintin');
-insert into cinematicuniverse (cu_id, cu_name) values('3', 'Marvel'); 
-insert into cinematicuniverse (cu_id, cu_name) values('4', 'Lord of the Rings');
-insert into cinematicuniverse (cu_id, cu_name) values('5', 'DC Comics');
-insert into cinematicuniverse (cu_id, cu_name) values('7', 'Uma Aventura'); 
-insert into cinematicuniverse (cu_id, cu_name) values('8', 'Astérix & Obélix');
-insert into cinematicuniverse (cu_id, cu_name) values('9', 'The Chronicles of Narnia'); 
-insert into cinematicuniverse (cu_id, cu_name) values('10', 'Shadowhunters');
-
-insert into genre (genre_id, genre_name) values('1', 'Drama');
-insert into genre (genre_id, genre_name) values('2', 'Adventure');
-insert into genre (genre_id, genre_name) values('3', 'Fantasy');
-insert into genre (genre_id, genre_name) values('4', 'Action');
-insert into genre (genre_id, genre_name) values('5', 'Biography');
-insert into genre (genre_id, genre_name) values('6', 'Animation');
-insert into genre (genre_id, genre_name) values('7', 'Comics');
-insert into genre (genre_id, genre_name) values('8', 'Fiction');
-insert into genre (genre_id, genre_name) values('9', 'Historical Fiction');
-insert into genre (genre_id, genre_name) values('10', 'History');
-insert into genre (genre_id, genre_name) values('11', 'Nonfiction');
-insert into genre (genre_id, genre_name) values('12', 'Young Adult');
 
 insert into moviegenre (mg_id, mg_movie_id, mg_genre_id) values('1', '1', '6');
 insert into moviegenre (mg_id, mg_movie_id, mg_genre_id) values('2', '1', '4');
@@ -200,3 +199,7 @@ insert into actor(actor_id, actor_name, actor_birthday, actor_bio) values('7', '
 insert into actor(actor_id, actor_name, actor_birthday, actor_bio) values('8', 'Chris Hemsworth', to_date('1983-08-11', 'YYYY-MM-DD'), 'Chris Hemsworth (born 11 August 1983) is an Australian actor. He is best known for his roles as Kim Hyde in the Australian TV series Home and Away (2004) and as Thor in the Marvel Cinematic Universe films Thor (2011), The Avengers (2012), Thor: The Dark World (2013), Avengers: Age of Ultron (2015), Thor: Ragnarok (2017), Avengers: Infinity War (2018), Avengers: Endgame (2019), and the upcoming Thor: Love and Thunder (2022). He has also appeared in the science fiction action film Star Trek(2009), the thriller adventure A Perfect Getaway (2009), the horror comedy The Cabin in the Woods (2012), the dark fantasy action film Snow White and the Huntsman (2012), the war film Red Dawn (2012) and the biographical sports drama film Rush (2013).');
 insert into actor(actor_id, actor_name, actor_birthday, actor_bio) values('9', 'Benjamin Walker', to_date('1982-06-21', 'YYYY-MM-DD'), 'Benjamin Walker (born 1982) is an American actor, best known for his film appearances in Kinsey (as Alfred Kinsey at age 19), Harlon Block in Clint Eastwoods Flags of Our Fathers, and his critically acclaimed portrayal of Andrew Jackson in the Off- and On Broadway incarnations of Bloody Bloody Andrew Jackson.');
 insert into actor(actor_id, actor_name, actor_birthday, actor_bio) values('10', 'Cilian Murphy', to_date('1976-05-25', 'YYYY-MM-DD'), 'Cillian Murphy is an Irish film and theatre actor. He is often noted by critics for his chameleonic performances in diverse roles and distinctive blue eyes. A native of Cork, Murphy began his performing career as a rock musician. After turning down a record deal, he made his professional acting debut in the play Disco Pigs in 1996. He went on to star in Irish and UK film and stage productions throughout the late 1990s and early 2000s, first coming to international attention in 2003 as the hero in the post-apocalyptic film 28 Days Later. Murphy is best known for his work with director Christopher Nolan, where he appeared as the villain Jonathan Crane/Scarecrow in all three films in the Dark Knight trilogy. Murphy has also worked with Nolan on Inception and Dunkirk. In 2013, Murphy started working on a TV show for BBC titled “Peaky Blinders” as the show’s lead role, Thomas Shelby. The show is still airing as of 2020 with five highly critically acclaimed seasons under its belt. A resident of London since 2001, Murphy often works in or near the city and has expressed no desire to move to Hollywood. Uncomfortable on the celebrity circuit, he customarily gives interviews about his work, but does not appear on television talk shows or discuss details of his private life with the press.');
+
+insert into movieactor(ma_id, ma_mc_id, ma_actor_id) values(1, 1, 1);
+insert into movieactor(ma_id, ma_mc_id, ma_actor_id) values(2, 2, 3);
+insert into movieactor(ma_id, ma_mc_id, ma_actor_id) values(3, 3, 2);
