@@ -48,7 +48,12 @@ public class SearchActivity extends AppCompatActivity {
 
         try {
             DownloadTask task2 = new DownloadTask();
-            array = task2.execute("https://libraryverse.herokuapp.com/api/" + linkVariable + "/search?name=" + editable.toString()).get();
+            String url = "https://libraryverse.herokuapp.com/api/" + linkVariable + "/search?name=" + editable.toString();
+            array = task2.execute(url).get();
+
+            if(array == null){
+                return;
+            }
 
             for (int i = 0; i < array.length(); i++) {
                 try {
@@ -98,27 +103,6 @@ public class SearchActivity extends AppCompatActivity {
         searchView = findViewById(R.id.searchViewSearchSearch);
         searchViewLL = findViewById(R.id.searchLL);
 
-        DownloadTask taskMovie = new DownloadTask();
-        DownloadTask taskBook = new DownloadTask();
-
-        try {
-            arrayMovie = taskMovie.execute("https://libraryverse.herokuapp.com/api/movies/").get();
-            arrayBook = taskBook.execute("https://libraryverse.herokuapp.com/api/books/").get();
-            //arrayActor = task.execute("https://libraryverse.herokuapp.com/api/authors/").get();
-            //arrayAuthor = task.execute("https://libraryverse.herokuapp.com/api/actors/").get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-            arrayMovie = null;
-            arrayBook = null;
-            //arrayActor = null;
-            //arrayAuthor = null;
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-            arrayMovie = null;
-            arrayBook = null;
-            //arrayActor = null;
-            //arrayAuthor = null;
-        }
 
         //https://www.tabnine.com/code/java/methods/android.widget.EditText/addTextChangedListener
         searchView.addTextChangedListener(new TextWatcher() {
@@ -137,6 +121,9 @@ public class SearchActivity extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
                 searchViewLL.removeAllViews();
                 getSearchArray("movies", "movie", editable);
+                getSearchArray("books", "book", editable);
+                getSearchArray("authors", "author", editable);
+                //getSearchArray("actors", "actor", editable);
 
             }
         });

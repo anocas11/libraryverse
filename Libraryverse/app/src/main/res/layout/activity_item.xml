@@ -8,20 +8,6 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Home"
-        android:textSize="50sp"
-        android:textStyle="bold" />
-
     <View
         android:id="@+id/view4"
         android:layout_width="match_parent"
@@ -46,7 +32,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,27 +41,16 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="60dp"
-                android:text="Item"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
                 android:id="@+id/textViewItemName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="100dp"
-                android:layout_marginTop="30dp"
+                android:textAlignment="center"
                 android:text="Actor/Movie/Book"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
 
             <ImageView
+                android:id="@+id/ImageViewItemLike"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_marginLeft="50dp"
@@ -84,6 +60,7 @@
                 android:src="@drawable/ic_like" />
 
             <ImageView
+                android:id="@+id/ImageViewItemAdd"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_marginLeft="50dp"
@@ -93,6 +70,7 @@
                 android:src="@drawable/ic_add" />
 
             <ImageView
+                android:id="@+id/ImageViewItemFavorite"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_marginLeft="50dp"
@@ -122,8 +100,15 @@
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/textViewItemCharactersLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Characters"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
 
+        </LinearLayout>
 
 
     </ScrollView>

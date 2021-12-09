@@ -8,7 +8,7 @@ import pt.iade.libraryverse.models.views.MovieInfoView;
 
 public interface MovieRepository extends CrudRepository<Movie,Integer>
 {
-    String QueryGetMovieInfo = "select movie_name as movieName, movie_duration as duration, movie_date as date, movie_description as description, cu_name as cinematicUniverse, genre_name as genre " +
+    String QueryGetMovieInfo = "select movie_name as name, movie_duration as duration, movie_date as date, movie_description as description, cu_name as cinematicUniverse, genre_name as genre, movie_poster as poster " +
     "from movie " +
     "left join cinematicuniverse on movie_cu_id = cu_id " +
     "inner join movieGenre on mg_movie_id = movie_id " +
@@ -16,4 +16,11 @@ public interface MovieRepository extends CrudRepository<Movie,Integer>
 
     @Query(value = QueryGetMovieInfo + " where movie_id=:id", nativeQuery = true)
     Iterable<MovieInfoView> getMovieInfo(@Param("id") int id);
+
+    String QueryGetMovieCharacters = "select character_name as character " + 
+    "from character " +
+    "inner join moviecharacter on character_id = mc_character_id ";
+
+    @Query(value = QueryGetMovieCharacters + " where mc_movie_id=:id", nativeQuery = true)
+    Iterable<MovieInfoView> getMovieCharacters(@Param("id") int id);
 }

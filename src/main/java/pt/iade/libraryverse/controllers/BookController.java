@@ -17,6 +17,7 @@ import java.util.Optional;
 import java.util.ArrayList;
 
 import pt.iade.libraryverse.models.Book;
+import pt.iade.libraryverse.models.Response;
 import pt.iade.libraryverse.models.repositories.BookRepository;
 import pt.iade.libraryverse.models.views.BookInfoView;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
@@ -54,7 +55,7 @@ public class BookController {
     }
 
     @GetMapping(path = "/search", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Book> getBookByName(@RequestParam String name) 
+    public Response<List<Book>> getBookByName(@RequestParam String name) 
     {
         logger.info("Sending books with name " + name);
         Iterable<Book> _book = bookRepository.findAll();
@@ -69,7 +70,10 @@ public class BookController {
             }
         });
 
-        return booksList;
+        var resp = new Response<List<Book>>();
+        resp.results = booksList;
+
+        return resp;
     }
 
     @GetMapping(path = "/book/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
