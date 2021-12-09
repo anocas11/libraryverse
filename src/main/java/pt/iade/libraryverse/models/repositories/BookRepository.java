@@ -4,6 +4,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.repository.CrudRepository;
 import pt.iade.libraryverse.models.Book;
+import pt.iade.libraryverse.models.views.BookAuthorsView;
+import pt.iade.libraryverse.models.views.BookCharactersView;
 import pt.iade.libraryverse.models.views.BookInfoView;
 import pt.iade.libraryverse.models.views.MovieInfoView;
 
@@ -20,4 +22,17 @@ public interface BookRepository extends CrudRepository<Book,Integer>
 
     @Query(value = QueryGetBookInfo + " where book_id=:id", nativeQuery = true)
     Iterable<BookInfoView> getBookInfo(@Param("id") int id);
+
+    String QueryGetBookAuthors = "select author_name as authorName from author " +
+    "inner join bookauthor on author_id = ba_author_id ";
+
+    @Query(value = QueryGetBookAuthors + " where ba_book_id=:id", nativeQuery = true)
+    Iterable<BookAuthorsView> getBookAuthors(@Param("id") int id);
+
+    String QueryGetBookCharacters = "select character_name as characterName" +
+    "from character " +
+    "inner join bookcharacter on character_id = bc_character_id ";
+
+    @Query(value = QueryGetBookCharacters + " where bc_book_id=:id", nativeQuery = true)
+    Iterable<BookCharactersView> getBookCharacters(@Param("id") int id);
 }

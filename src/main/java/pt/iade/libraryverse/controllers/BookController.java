@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import pt.iade.libraryverse.models.Book;
 import pt.iade.libraryverse.models.Response;
 import pt.iade.libraryverse.models.repositories.BookRepository;
+import pt.iade.libraryverse.models.repositories.MovieRepository;
+import pt.iade.libraryverse.models.views.BookAuthorsView;
+import pt.iade.libraryverse.models.views.BookCharactersView;
 import pt.iade.libraryverse.models.views.BookInfoView;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
 
@@ -77,8 +80,26 @@ public class BookController {
     }
 
     @GetMapping(path = "/book/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<BookInfoView> getBookInfo(@PathVariable int id)
+    public Response<Iterable<BookInfoView>> getBookInfo(@PathVariable int id)
     {
-        return bookRepository.getBookInfo(id);
+        var resp = new Response<Iterable<BookInfoView>>();
+        resp.results = bookRepository.getBookInfo(id);
+        return resp;
+    }
+
+    @GetMapping(path = "/book/{id}/authors", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response<Iterable<BookAuthorsView>> getBookAuthors(@PathVariable int id)
+    {
+        var resp = new Response<Iterable<BookAuthorsView>>();
+        resp.results = bookRepository.getBookAuthors(id);
+        return resp;
+    }
+
+    @GetMapping(path = "/book/{id}/characters", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response<Iterable<BookCharactersView>> getBookCharacters(@PathVariable int id)
+    {
+        var resp = new Response<Iterable<BookCharactersView>>();
+        resp.results = bookRepository.getBookCharacters(id);
+        return resp;
     }
 }
