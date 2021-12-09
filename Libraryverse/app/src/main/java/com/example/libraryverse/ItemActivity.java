@@ -63,6 +63,19 @@ public class ItemActivity extends AppCompatActivity {
                     itemName.setText(jsonPart.getString("name"));
                     itemDescription.setText(jsonPart.getString("description"));
                     Picasso.get().load(jsonPart.getString("poster")).into(itemPoster);
+
+                    if(itemType.equals("movie"))
+                    {
+
+                    }
+                    else if(itemType.equals("book"))
+                    {
+
+                    }
+                    else if(itemType.equals("author"))
+                    {
+                        
+                    }
                 }
                 catch (JSONException e)
                 {
