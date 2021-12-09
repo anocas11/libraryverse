@@ -22,6 +22,7 @@ import pt.iade.libraryverse.models.Response;
 import pt.iade.libraryverse.models.repositories.CinematicUniverseRepository;
 import pt.iade.libraryverse.models.repositories.MovieRepository;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
+import pt.iade.libraryverse.models.views.MovieActorsView;
 import pt.iade.libraryverse.models.views.MovieCharactersView;
 import pt.iade.libraryverse.models.views.MovieInfoView;
 
@@ -108,9 +109,19 @@ public class MovieController {
         return resp;
     }
 
-    @GetMapping(path = "/"), produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/movie/{id}/characters", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response<Iterable<MovieCharactersView>> getMovieCharacters(@PathVariable int id)
     {
-        
+        var resp = new Response<Iterable<MovieCharactersView>>();
+        resp.results = movieRepository.getMovieCharacters(id);
+        return resp;
+    }
+
+    @GetMapping(path = "/movie/{id}/actors", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response<Iterable<MovieActorsView>> getMovieActors(@PathVariable int id)
+    {
+        var resp = new Response<Iterable<MovieActorsView>>();
+        resp.results = movieRepository.getMovieActors(id);
+        return resp;
     }
 }
