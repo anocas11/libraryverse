@@ -68,4 +68,14 @@ public class Book
         this.poster = poster;
     }
 
+    public CinematicUniverse getCinematicUniverse() {
+        return cinematicUniverse;
+    }
+
+    public void setCinematicUniverse(CinematicUniverse cinematicUniverse) {
+        this.cinematicUniverse = cinematicUniverse;
+    }
+
+    
+
 }
