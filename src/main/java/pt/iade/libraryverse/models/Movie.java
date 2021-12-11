@@ -94,31 +94,5 @@ public class Movie
     public void setCinematicUniverse(CinematicUniverse cinematicUniverse) {
         this.cinematicUniverse = cinematicUniverse;
     }
-
-    public Genre getGenre() {
-        return genre;
-    }
-
-    public void setGenre(Genre genre) {
-        this.genre = genre;
-    }
-
-    public Character getCharacter() {
-        return character;
-    }
-
-    public void setCharacter(Character character) {
-        this.character = character;
-    }
-
-    public Actor getActor() {
-        return actor;
-    }
-
-    public void setActor(Actor actor) {
-        this.actor = actor;
-    }
-
-    
     
 }

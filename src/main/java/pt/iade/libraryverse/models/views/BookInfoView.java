@@ -6,4 +6,5 @@ public interface BookInfoView {
     String getDescription();
     String getDate();
     String getGenre();
+    String getPoster();
 }
