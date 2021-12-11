@@ -26,6 +26,7 @@ public class Movie
     @Column(name="movie_date") private String date;
     @Column(name="movie_duration") private String duration;
     @Column(name="movie_description") private String description;
+    @Column(name="movie_poster") private String poster;
     @OneToOne @JoinColumn(name="movie_cu_id") private CinematicUniverse cinematicUniverse;
 
     public Movie()
@@ -73,6 +74,20 @@ public class Movie
         this.description = description;
     }
 
-    
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
+
+    public CinematicUniverse getCinematicUniverse() {
+        return cinematicUniverse;
+    }
+
+    public void setCinematicUniverse(CinematicUniverse cinematicUniverse) {
+        this.cinematicUniverse = cinematicUniverse;
+    }
     
 }
