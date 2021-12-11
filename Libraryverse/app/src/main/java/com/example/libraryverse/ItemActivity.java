@@ -2,6 +2,7 @@ package com.example.libraryverse;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -54,6 +55,10 @@ public class ItemActivity extends AppCompatActivity {
             {
                 itemArray = task.execute("https://libraryverse.herokuapp.com/api/authors/author/" + itemId).get();
             }
+            else if(itemType.equals("actor"))
+            {
+                itemArray = task.execute("https://libraryverse.herokuapp.com/api/actors/actor/" + itemId).get();
+            }
 
             if(itemArray != null)
             {
@@ -66,13 +71,47 @@ public class ItemActivity extends AppCompatActivity {
 
                     if(itemType.equals("movie"))
                     {
+                        TextView charactersLabel = new TextView(getBaseContext());
+                        charactersLabel.setText("Characters");
+                        charactersLabel.setTextColor(Color.parseColor("#FFFFFF"));
+                        charactersLabel.setTextSize(16);
 
+                        JSONArray charactersArray = task.execute("https://libraryverse.herokuapp.com/api/movies/movie/" + itemId + "/characters").get();
+
+                        for (int i = 0; i < charactersArray.length(); i++)
+                        {
+                            JSONObject jsonPartCharacters = charactersArray.getJSONObject(i);
+                            TextView characterName = new TextView(getBaseContext());
+                            characterName.setText(jsonPartCharacters.getString("characterName"));
+                            characterName.setTextColor(Color.parseColor("#FFFFFF"));
+                            characterName.setTextSize(16);
+                        }
+
+                        TextView actorsLabel = new TextView(getBaseContext());
+                        actorsLabel.setText("Actors");
+                        actorsLabel.setTextColor(Color.parseColor("#FFFFFF"));
+                        actorsLabel.setTextSize(16);
+
+                        JSONArray actorsArray = task.execute("https://libraryverse.herokuapp.com/api/movies/movie/" + itemId + "/actors").get();
+
+                        for (int i = 0; i < actorsArray.length(); i++)
+                        {
+                            JSONObject jsonPartActors = actorsArray.getJSONObject(i);
+                            TextView actorName = new TextView(getBaseContext());
+                            actorName.setText(jsonPartActors.getString("actorName"));
+                            actorName.setTextColor(Color.parseColor("#FFFFFF"));
+                            actorName.setTextSize(16);
+                        }
                     }
                     else if(itemType.equals("book"))
                     {
 
                     }
                     else if(itemType.equals("author"))
+                    {
+
+                    }
+                    else if(itemType.equals("actor"))
                     {
 
                     }

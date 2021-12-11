@@ -59,7 +59,7 @@ public class SearchActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonPart = array.getJSONObject(i);
                     TextView text = new TextView(getBaseContext());
-                    text.setText(jsonPart.getString("name"));
+                    text.setText(type + ": " + jsonPart.getString("name"));
                     text.setPadding(5, 20, 5, 20);
                     text.setTextColor(Color.parseColor("#FFFFFF"));
                     text.setTextSize(16);
@@ -123,34 +123,10 @@ public class SearchActivity extends AppCompatActivity {
                 getSearchArray("movies", "movie", editable);
                 getSearchArray("books", "book", editable);
                 getSearchArray("authors", "author", editable);
-                //getSearchArray("actors", "actor", editable);
+                getSearchArray("actors", "actor", editable);
 
             }
         });
-    }
-
-    public void getMovies(View view)
-    {
-        if(arrayMovie != null)
-        {
-            for(int i=0; i<arrayMovie.length(); i++)
-            {
-                try
-                {
-                    searchList = new ArrayList<>();
-
-                    JSONObject jsonPart = arrayMovie.getJSONObject(i);
-                    searchList.add(jsonPart);
-
-                }
-                catch (Exception e)
-                {
-                    e.printStackTrace();
-                }
-
-            }
-
-        }
     }
 
 

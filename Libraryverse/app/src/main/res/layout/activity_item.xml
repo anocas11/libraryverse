@@ -12,7 +12,7 @@
         android:id="@+id/view4"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_marginLeft="1dp"
+        android:layout_marginStart="1dp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="685dp"
         android:background="@color/pink" />
@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="Actor/Movie/Book"
+                android:text="@string/actor_movie_book"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
 
@@ -57,7 +57,18 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="280dp"
                 android:layout_marginBottom="100dp"
+                android:contentDescription="TODO"
                 android:src="@drawable/ic_like" />
+
+            <ImageView
+                android:id="@+id/imageViewItemImg"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="-160dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/movieload" />
 
             <ImageView
                 android:id="@+id/ImageViewItemAdd"
@@ -79,19 +90,9 @@
                 android:layout_marginBottom="10dp"
                 android:src="@drawable/ic_favourite" />
 
-            <ImageView
-                android:id="@+id/imageViewItemImg"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="-160dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/movieload" />
-
             <TextView
                 android:id="@+id/textViewItemDescription"
-                android:layout_width="wrap_content"
+                android:layout_width="335dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="50dp"
@@ -102,7 +103,7 @@
 
             <TextView
                 android:id="@+id/textViewItemCharactersLabel"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Characters"
                 android:textColor="#FFFFFF"

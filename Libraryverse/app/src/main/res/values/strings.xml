@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Libraryverse</string>
+    <string name="actor_movie_book">Actor/Movie/Book</string>
 </resources>
