@@ -3,9 +3,11 @@ package com.example.libraryverse;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +25,7 @@ public class ItemActivity extends AppCompatActivity {
     TextView itemName;
     TextView itemDescription;
     ImageView itemPoster;
+    LinearLayout ll;
     JSONArray itemArray = null;
 
     @Override
@@ -33,6 +36,7 @@ public class ItemActivity extends AppCompatActivity {
         itemName = findViewById(R.id.textViewItemName);
         itemDescription = findViewById(R.id.textViewItemDescription);
         itemPoster = findViewById(R.id.imageViewItemImg);
+        ll = findViewById(R.id.linearLayoutIteminfo);
 
         String itemId = getIntent().getStringExtra("id");
         String itemType = getIntent().getStringExtra("type");
@@ -71,12 +75,19 @@ public class ItemActivity extends AppCompatActivity {
 
                     if(itemType.equals("movie"))
                     {
+                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                        params.setMargins(20, 20, 0, 0);
+
                         TextView charactersLabel = new TextView(getBaseContext());
                         charactersLabel.setText("Characters");
                         charactersLabel.setTextColor(Color.parseColor("#FFFFFF"));
-                        charactersLabel.setTextSize(16);
+                        charactersLabel.setTextSize(20);
+                        //charactersLabel.setTextAppearance(null, Typeface.BOLD);
+                        charactersLabel.setLayoutParams(params);
+                        ll.addView(charactersLabel);
 
-                        JSONArray charactersArray = task.execute("https://libraryverse.herokuapp.com/api/movies/movie/" + itemId + "/characters").get();
+                        DownloadTask task2 = new DownloadTask();
+                        JSONArray charactersArray = task2.execute("https://libraryverse.herokuapp.com/api/movies/movie/" + itemId + "/characters").get();
 
                         for (int i = 0; i < charactersArray.length(); i++)
                         {
@@ -85,14 +96,20 @@ public class ItemActivity extends AppCompatActivity {
                             characterName.setText(jsonPartCharacters.getString("characterName"));
                             characterName.setTextColor(Color.parseColor("#FFFFFF"));
                             characterName.setTextSize(16);
+                            characterName.setLayoutParams(params);
+                            ll.addView(characterName);
                         }
 
                         TextView actorsLabel = new TextView(getBaseContext());
                         actorsLabel.setText("Actors");
                         actorsLabel.setTextColor(Color.parseColor("#FFFFFF"));
-                        actorsLabel.setTextSize(16);
+                        actorsLabel.setTextSize(20);
+                        //actorsLabel.setTextAppearance(null, Typeface.BOLD);
+                        actorsLabel.setLayoutParams(params);
+                        ll.addView(actorsLabel);
 
-                        JSONArray actorsArray = task.execute("https://libraryverse.herokuapp.com/api/movies/movie/" + itemId + "/actors").get();
+                        DownloadTask task3 = new DownloadTask();
+                        JSONArray actorsArray = task3.execute("https://libraryverse.herokuapp.com/api/movies/movie/" + itemId + "/actors").get();
 
                         for (int i = 0; i < actorsArray.length(); i++)
                         {
@@ -101,11 +118,58 @@ public class ItemActivity extends AppCompatActivity {
                             actorName.setText(jsonPartActors.getString("actorName"));
                             actorName.setTextColor(Color.parseColor("#FFFFFF"));
                             actorName.setTextSize(16);
+                            actorName.setLayoutParams(params);
+                            ll.addView(actorName);
                         }
                     }
                     else if(itemType.equals("book"))
                     {
+                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                        params.setMargins(20, 20, 0, 0);
 
+                        TextView authorsLabel = new TextView(getBaseContext());
+                        authorsLabel.setText("Author(s)");
+                        authorsLabel.setTextColor(Color.parseColor("#FFFFFF"));
+                        authorsLabel.setTextSize(20);
+                        //actorsLabel.setTextAppearance(null, Typeface.BOLD);
+                        authorsLabel.setLayoutParams(params);
+                        ll.addView(authorsLabel);
+
+                        DownloadTask task5 = new DownloadTask();
+                        JSONArray authorsArray = task5.execute("https://libraryverse.herokuapp.com/api/books/book/" + itemId + "/authors").get();
+
+                        for (int i = 0; i < authorsArray.length(); i++)
+                        {
+                            JSONObject jsonPartActors = authorsArray.getJSONObject(i);
+                            TextView authorName = new TextView(getBaseContext());
+                            authorName.setText(jsonPartActors.getString("authorName"));
+                            authorName.setTextColor(Color.parseColor("#FFFFFF"));
+                            authorName.setTextSize(16);
+                            authorName.setLayoutParams(params);
+                            ll.addView(authorName);
+                        }
+
+                        TextView charactersLabel = new TextView(getBaseContext());
+                        charactersLabel.setText("Characters");
+                        charactersLabel.setTextColor(Color.parseColor("#FFFFFF"));
+                        charactersLabel.setTextSize(20);
+                        //charactersLabel.setTextAppearance(null, Typeface.BOLD);
+                        charactersLabel.setLayoutParams(params);
+                        ll.addView(charactersLabel);
+
+                        DownloadTask task4 = new DownloadTask();
+                        JSONArray charactersArray = task4.execute("https://libraryverse.herokuapp.com/api/books/book/" + itemId + "/characters").get();
+
+                        for (int i = 0; i < charactersArray.length(); i++)
+                        {
+                            JSONObject jsonPartCharacters = charactersArray.getJSONObject(i);
+                            TextView characterName = new TextView(getBaseContext());
+                            characterName.setText(jsonPartCharacters.getString("characterName"));
+                            characterName.setTextColor(Color.parseColor("#FFFFFF"));
+                            characterName.setTextSize(16);
+                            characterName.setLayoutParams(params);
+                            ll.addView(characterName);
+                        }
                     }
                     else if(itemType.equals("author"))
                     {

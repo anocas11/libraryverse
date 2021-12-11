@@ -14,6 +14,8 @@ import java.util.List;
 
 import pt.iade.libraryverse.models.CinematicUniverse;
 import pt.iade.libraryverse.models.Genre;
+import pt.iade.libraryverse.models.Actor;
+import pt.iade.libraryverse.models.Character;
 
 @Entity
 @Table(name="movie")
@@ -28,6 +30,9 @@ public class Movie
     @Column(name="movie_description") private String description;
     @Column(name="movie_poster") private String poster;
     @OneToOne @JoinColumn(name="movie_cu_id") private CinematicUniverse cinematicUniverse;
+    //@OneToMany @JoinColumn(name="mg_genre_id") private Genre genre;
+    //@OneToMany @JoinColumn(name="mc_character_id") private Character character;
+    //@OneToMany @JoinColumn(name="ma_actor_id") private Actor actor;
 
     public Movie()
     {
@@ -89,5 +94,31 @@ public class Movie
     public void setCinematicUniverse(CinematicUniverse cinematicUniverse) {
         this.cinematicUniverse = cinematicUniverse;
     }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+
+    public Actor getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor actor) {
+        this.actor = actor;
+    }
+
+    
     
 }

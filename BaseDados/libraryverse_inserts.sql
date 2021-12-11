@@ -1,4 +1,3 @@
-
 insert into book (book_id, book_name, book_date, book_description, book_cu_id) values('1','Tintim na América' , to_date('1931', 'YYYY'), 'Depois de enfrentar um bando de gângsters no Congo, Tintim é enviado para Chicago, EUA, para livrar a cidade dos criminosos. ... Assim que escapa dos comparsas de Al Capone, Tintim cai numa armadilha de Bobby Smiles, líder do Sindicato dos Gângsters de Chicago', '2');
 insert into book (book_id, book_name, book_date, book_description, book_cu_id) values('2', 'Harry Potter e a camera dos segredos', to_date('1998', 'YYYY'), 'Após as sofríveis férias na casa dos tios, Harry Potter se prepara para voltar a Hogwarts e começar seu segundo ano na escola de bruxos. Na véspera do início das aulas, a estranha criatura Dobby aparece em seu quarto e o avisa de que voltar é um erro e que algo muito ruim pode acontecer se Harry insistir em continuar os estudos de bruxaria. O garoto, no entanto, está disposto a correr o risco e se livrar do lar problemático.', '1');
 insert into book (book_id, book_name, book_date, book_description, book_poster) values('3', 'As serviçais', to_date('2009', 'YYYY'), 'Nos anos 60, no Mississippi, Skeeter é uma garota da alta sociedade que retorna determinada a se tornar escritora. Ela começa a entrevistar as mulheres negras da cidade, que deixaram suas vidas para trabalhar na criação dos filhos da elite branca, da qual a própria Skeeter faz parte. Aibileen Clark, a emprega da melhor amiga de Skeeter, é a primeira a conceder uma entrevista. Apesar das críticas, Skeeter e Aibileen continuam trabalhando juntas e, aos poucos, conseguem novas adesões.', 'https://www.goodreads.com/book/show/4667024-the-help');
@@ -42,10 +41,6 @@ insert into book (book_id, book_name, book_date, book_description, book_cu_id) v
 insert into book (book_id, book_name, book_date, book_description, book_cu_id) values('41','City of Fallen Angels' , to_date('2011', 'YYYY'), '“City of Fallen Angels” is the fourth installment in the Mortal Instruments series by Cassandra Clare, and follows Simon Lewis who attempts to adjust to being a vampire, and Clary as she attempts to keep her relationship with Jace steady while the demon Lilith attempts to gain power in New York.', '10');
 insert into book (book_id, book_name, book_date, book_description, book_cu_id) values('42','The Mortal Instruments 5: City of Lost Souls' , to_date('2012', 'YYYY'), '“City of Lost Souls” is the fifth installment in the Mortal Instruments series by Cassandra Clare, and follows the efforts of Clary and Simon as they attempt to sever the bond that connects Jace and Sebastian, and stop Sebastian from starting a war between Good and Evil on Earth.','10');
 insert into book (book_id, book_name, book_date, book_description, book_cu_id) values('43','City of Heavenly Fire' , to_date('2014', 'YYYY'), 'City of Heavenly Fire is a Shadowhunters novel. Darkness has descended on the Shadowhunter world. Chaos and destruction overwhelm the Nephilim as Clary, Jace, Simon, and their friends band together to fight the greatest evil they have ever faced: Clarys own brother.', '10');
-
-
-
-
 
 insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_description, movie_cu_id) values ('1', 'As Aventuras de TinTim - O Segredo do Licorne', to_date('2011-10-24', 'YYYY-MM-DD'), '01:47:00', 'A aventura começa assim que Tintim compra a miniatura de um barco. Sem saber o segredo do objeto, ele e seu cachorro são sequestrados. Presos em um barco, conseguem escapar junto com o capitão e, aos poucos, vão decifrando todos os mistérios.', '2');
 insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_description, movie_cu_id) values ('2', 'Harry Potter e a Câmara dos Segredos',  to_date('2002-11-13', 'YYYY-MM-DD'), '02:41:00', 'Após as sofríveis férias na casa dos tios, Harry Potter se prepara para voltar a Hogwarts e começar seu segundo ano na escola de bruxos. Na véspera do início das aulas, a estranha criatura Dobby aparece em seu quarto e o avisa de que voltar é um erro e que algo muito ruim pode acontecer.', '1');
@@ -114,8 +109,6 @@ insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_descr
 insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_description, movie_cu_id) values ('65', 'The Chronicles of Narnia: The Voyage of the Dawn Treader', to_date('2010-12-10', 'YYYY-MM-DD'), '01:53:00', 'This time around Edmund and Lucy Pevensie, along with their pesky cousin Eustace Scrubb find themselves swallowed into a painting and on to a fantastic Narnian ship headed for the very edges of the world.', '9');
 insert into movie (movie_id, movie_name, movie_date, movie_duration, movie_description, movie_cu_id) values ('66', 'The Mortal Instruments: City of Bones ', to_date('2013-08-21', 'YYYY-MM-DD'), '02:10:00', 'In New York City, Clary Fray, a seemingly ordinary teenager, learns that she is descended from a line of Shadowhunters — half-angel warriors who protect humanity from evil forces. After her mother disappears, Clary joins forces with a group of Shadowhunters and enters Downworld, an alternate realm filled with demons, vampires, and a host of other creatures. Clary and her companions must find and protect an ancient cup that holds the key to her mothers future.', '10');
 
-
-
 insert into cinematicuniverse (cu_id, cu_name) values('1', 'Wizarding World'); 
 insert into cinematicuniverse (cu_id, cu_name) values('2', 'Les Aventures de Tintin'); 
 insert into cinematicuniverse (cu_id, cu_name) values('3', 'Marvel'); 
@@ -176,7 +169,6 @@ insert into author (author_id, author_name, author_bio) values('8','Alan Moore',
 insert into author (author_id, author_name, author_bio) values('9','Stan Lee', 'Stan Lee (born Stanley Martin Lieber; December 28, 1922 to November 12, 2018) was an American comic book writer, editor, publisher, and producer. He rose through the ranks of a family-run business called Timely Publications which would later become Marvel Comics primary creative leader for two decades, leading its expansion from a small division of a publishing house to a multimedia corporation that dominated the comics and film industries.');
 insert into author (author_id, author_name, author_bio) values('10','Ana Maria Magalhães e Isabel Alçada', 'Ana Maria Magalhães, o nome literário de Ana Maria Bastos de Oliveira Martinho (Lisboa, 14 de abril de 1946), é uma escritora portuguesa, principalmente direcionada para a literatura infantojuvenil. É principalmente conhecida por ter escrito a coleção Uma Aventura; Alçada was born in Lisbon in 1950. She attended Lycée français Charles Lepierre and took her first degree in Philosophy in Lisbon where she married and had a daughter. She later obtained a Masters degree in Boston. Alçada has been an advisor on the education of history and a visiting professor at the school of education in Lisbon.[2]');
 insert into author (author_id, author_name, author_bio) values('11','J.R.R.Tolkein', 'John Ronald Reuel Tolkien CBE FRSL  3 January 1892 2 September 1973) was an English writer, poet, philologist, and academic, best known as the author of the high fantasy works The Hobbit and The Lord of the Rings.');
-
 
 insert into bookauthor (ba_id, ba_book_id, ba_author_id) values('1', '1', '1');
 insert into bookauthor (ba_id, ba_book_id, ba_author_id) values('2', '2', '2');
@@ -369,7 +361,6 @@ insert into character(character_id, character_name) values('176', 'Edmund Preven
 insert into character(character_id, character_name) values('177', 'Clary Fray');
 insert into character(character_id, character_name) values('178', 'Alec Lightwood');
 insert into character(character_id, character_name) values('179', 'Isabelle Lightwood');
-
 
 insert into bookcharacter(bc_id, bc_character_id, bc_book_id) values('1','1','2');
 insert into bookcharacter(bc_id, bc_character_id, bc_book_id) values('2','2','2');
