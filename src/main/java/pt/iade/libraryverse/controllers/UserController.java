@@ -28,7 +28,8 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    //FALHA DE SEGURANÇA!!
+    /*@GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<User> getUsers()
     {
         logger.info("Sending all users");
@@ -48,5 +49,12 @@ public class UserController {
         {
             return _user.get();
         }
-    }
+    }*/
+
+    /*@PostMapping(path="", produces = MediaType.APPLICATION_JSON_VALUE)
+    public User saveUser(@RequestBody String username, String password)
+    {
+
+    }*/
+     
 }

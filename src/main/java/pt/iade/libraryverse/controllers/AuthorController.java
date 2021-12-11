@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 import pt.iade.libraryverse.models.Author;
 import pt.iade.libraryverse.models.Response;
+import pt.iade.libraryverse.models.views.BookAuthorsView;
 import pt.iade.libraryverse.models.repositories.AuthorRepository;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
 
@@ -71,5 +72,12 @@ public class AuthorController {
         return resp;
     }
 
+    @GetMapping(path = "/author/{id}/books", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response<Iterable<BookAuthorsView>> getAuthorBooks(@PathVariable int id)
+    {
+        var resp = new Response<Iterable<BookAuthorsView>>();
+        resp.results = authorRepository.getAuthorBooks(id);
+        return resp;
+    }
 
 }

@@ -78,6 +78,28 @@ public class ItemActivity extends AppCompatActivity {
                         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                         params.setMargins(20, 20, 0, 0);
 
+                        TextView genresLabel = new TextView(getBaseContext());
+                        genresLabel.setText("Genres");
+                        genresLabel.setTextColor(Color.parseColor("#FFFFFF"));
+                        genresLabel.setTextSize(20);
+                        //genresLabel.setTextAppearance(null, Typeface.BOLD);
+                        genresLabel.setLayoutParams(params);
+                        ll.addView(genresLabel);
+
+                        DownloadTask task2 = new DownloadTask();
+                        JSONArray GenresArray = task2.execute("https://libraryverse.herokuapp.com/api/movies/movie/" + itemId).get();
+
+                        for (int i = 0; i < GenresArray.length(); i++)
+                        {
+                            JSONObject jsonPartCharacters = GenresArray.getJSONObject(i);
+                            TextView genreName = new TextView(getBaseContext());
+                            genreName.setText(jsonPartCharacters.getString("genre"));
+                            genreName.setTextColor(Color.parseColor("#FFFFFF"));
+                            genreName.setTextSize(16);
+                            genreName.setLayoutParams(params);
+                            ll.addView(genreName);
+                        }
+
                         TextView charactersLabel = new TextView(getBaseContext());
                         charactersLabel.setText("Characters");
                         charactersLabel.setTextColor(Color.parseColor("#FFFFFF"));
@@ -86,8 +108,8 @@ public class ItemActivity extends AppCompatActivity {
                         charactersLabel.setLayoutParams(params);
                         ll.addView(charactersLabel);
 
-                        DownloadTask task2 = new DownloadTask();
-                        JSONArray charactersArray = task2.execute("https://libraryverse.herokuapp.com/api/movies/movie/" + itemId + "/characters").get();
+                        DownloadTask task3 = new DownloadTask();
+                        JSONArray charactersArray = task3.execute("https://libraryverse.herokuapp.com/api/movies/movie/" + itemId + "/characters").get();
 
                         for (int i = 0; i < charactersArray.length(); i++)
                         {
@@ -108,8 +130,8 @@ public class ItemActivity extends AppCompatActivity {
                         actorsLabel.setLayoutParams(params);
                         ll.addView(actorsLabel);
 
-                        DownloadTask task3 = new DownloadTask();
-                        JSONArray actorsArray = task3.execute("https://libraryverse.herokuapp.com/api/movies/movie/" + itemId + "/actors").get();
+                        DownloadTask task4 = new DownloadTask();
+                        JSONArray actorsArray = task4.execute("https://libraryverse.herokuapp.com/api/movies/movie/" + itemId + "/actors").get();
 
                         for (int i = 0; i < actorsArray.length(); i++)
                         {
@@ -127,6 +149,28 @@ public class ItemActivity extends AppCompatActivity {
                         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                         params.setMargins(20, 20, 0, 0);
 
+                        TextView genresLabel = new TextView(getBaseContext());
+                        genresLabel.setText("Genres");
+                        genresLabel.setTextColor(Color.parseColor("#FFFFFF"));
+                        genresLabel.setTextSize(20);
+                        //genresLabel.setTextAppearance(null, Typeface.BOLD);
+                        genresLabel.setLayoutParams(params);
+                        ll.addView(genresLabel);
+
+                        DownloadTask task2 = new DownloadTask();
+                        JSONArray GenresArray = task2.execute("https://libraryverse.herokuapp.com/api/books/book/" + itemId).get();
+
+                        for (int i = 0; i < GenresArray.length(); i++)
+                        {
+                            JSONObject jsonPartCharacters = GenresArray.getJSONObject(i);
+                            TextView genreName = new TextView(getBaseContext());
+                            genreName.setText(jsonPartCharacters.getString("genre"));
+                            genreName.setTextColor(Color.parseColor("#FFFFFF"));
+                            genreName.setTextSize(16);
+                            genreName.setLayoutParams(params);
+                            ll.addView(genreName);
+                        }
+
                         TextView authorsLabel = new TextView(getBaseContext());
                         authorsLabel.setText("Author(s)");
                         authorsLabel.setTextColor(Color.parseColor("#FFFFFF"));
@@ -135,8 +179,8 @@ public class ItemActivity extends AppCompatActivity {
                         authorsLabel.setLayoutParams(params);
                         ll.addView(authorsLabel);
 
-                        DownloadTask task5 = new DownloadTask();
-                        JSONArray authorsArray = task5.execute("https://libraryverse.herokuapp.com/api/books/book/" + itemId + "/authors").get();
+                        DownloadTask task3 = new DownloadTask();
+                        JSONArray authorsArray = task3.execute("https://libraryverse.herokuapp.com/api/books/book/" + itemId + "/authors").get();
 
                         for (int i = 0; i < authorsArray.length(); i++)
                         {
