@@ -82,24 +82,6 @@ public class MovieController {
 
         return resp;
     }
-
-    /*@GetMapping(path = "/movie/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response<List<Movie>> getMovieInfo(@PathVariable int id)
-    {
-        logger.info("Sending data from movie with id" + id);
-
-        List<Movie> moviesList = new ArrayList<Movie>();
-
-        Optional<Movie> movieInfo = movieRepository.findById(id);
-        moviesList.add(movieInfo.get());
-        cu = cuRepository.findById(movieInfo.);
-
-        var resp = new Response<List<Movie>>();
-        resp.results = moviesList;
-
-        return resp;
-    }*/
-
     
     @GetMapping(path = "/movie/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response<Iterable<MovieInfoView>> getMovieInfo(@PathVariable int id)
