@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Actor 
 {
     @Id
-    @GeneratedValue(strategy=GenertionType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="actor_id") private int id;
     @Column(name="actor_name") private String name;    
     @Column(name="actor_birthday") private String birthday;
