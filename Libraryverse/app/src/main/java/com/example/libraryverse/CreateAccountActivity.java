@@ -21,5 +21,5 @@ public class CreateAccountActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void createAccount();
+    //public void createAccount();
 }
