@@ -19,6 +19,7 @@ public class Actor
     @Column(name="actor_name") private String name;    
     @Column(name="actor_birthday") private String birthday;
     @Column(name="actor_bio") private String description;
+    @Column(name="actor_poster") private String poster;
 
     public Actor()
     {
@@ -57,5 +58,14 @@ public class Actor
         this.description = description;
     }
 
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
+
+    
     
 }

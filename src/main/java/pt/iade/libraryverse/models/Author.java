@@ -18,6 +18,7 @@ public class Author
     @Column(name="author_id") private int id;
     @Column(name="author_name") private String name;
     @Column(name="author_bio") private String bio;
+    @Column(name="author_poster") private String poster;
 
     public Author()
     {
@@ -46,6 +47,14 @@ public class Author
 
     public void setBio(String bio) {
         this.bio = bio;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 
     

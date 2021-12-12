@@ -11,6 +11,7 @@ create table author (
     author_id SERIAL not null, 
     author_name VARCHAR(60) not null, 
     author_bio VARCHAR(10000) not null, 
+    author_poster VARCHAR(200),
     primary key (author_id)
 );
 
@@ -47,6 +48,7 @@ create table actor (
     actor_birthday date not null,
     actor_deathday date, 
     actor_bio VARCHAR(10000), 
+    actor_poster varchar(200),
     primary key(actor_id)
 );
 
