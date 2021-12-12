@@ -61,7 +61,7 @@ public class ItemActivity extends AppCompatActivity {
             }
             else if(itemType.equals("actor"))
             {
-                itemArray = task.execute("https://libraryverse.herokuapp.com/api/actors/actor/" + itemId).get();
+                itemArray = task.execute("https://libraryverse.herokuapp.com/api/actors/" + itemId).get();
             }
 
             if(itemArray != null)
@@ -77,6 +77,13 @@ public class ItemActivity extends AppCompatActivity {
                     {
                         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                         params.setMargins(20, 20, 0, 0);
+
+                        TextView durationText = new TextView((getBaseContext()));
+                        durationText.setText("Duration: " + jsonPart.getString("duration"));
+                        durationText.setTextColor(Color.parseColor("#FFFFFF"));
+                        durationText.setTextSize(16);
+                        durationText.setLayoutParams(params);
+                        ll.addView(durationText);
 
                         TextView genresLabel = new TextView(getBaseContext());
                         genresLabel.setText("Genres");
@@ -221,7 +228,30 @@ public class ItemActivity extends AppCompatActivity {
                     }
                     else if(itemType.equals("actor"))
                     {
+                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                        params.setMargins(20, 20, 0, 0);
 
+                        TextView moviesLabel = new TextView(getBaseContext());
+                        moviesLabel.setText("Movies");
+                        moviesLabel.setTextColor(Color.parseColor("#FFFFFF"));
+                        moviesLabel.setTextSize(20);
+                        //moviesLabel.setTextAppearance(null, Typeface.BOLD);
+                        moviesLabel.setLayoutParams(params);
+                        ll.addView(moviesLabel);
+
+                        DownloadTask task1 = new DownloadTask();
+                        JSONArray moviesArray = task1.execute("https://libraryverse.herokuapp.com/api/actors/actor/" + itemId + "/movies").get();
+
+                        for (int i = 0; i < moviesArray.length(); i++)
+                        {
+                            JSONObject jsonPartMovies = moviesArray.getJSONObject(i);
+                            TextView movieName = new TextView(getBaseContext());
+                            movieName.setText(jsonPartMovies.getString("movieName"));
+                            movieName.setTextColor(Color.parseColor("#FFFFFF"));
+                            movieName.setTextSize(16);
+                            movieName.setLayoutParams(params);
+                            ll.addView(movieName);
+                        }
                     }
                 }
                 catch (JSONException e)
