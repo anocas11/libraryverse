@@ -4,7 +4,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.repository.CrudRepository;
 
-import pt.iade.libraryverse.models.views.AuthorBooksView;
 import pt.iade.libraryverse.models.views.BookAuthorsView;
 import pt.iade.libraryverse.models.repositories.AuthorRepository;
 import pt.iade.libraryverse.models.Author;
