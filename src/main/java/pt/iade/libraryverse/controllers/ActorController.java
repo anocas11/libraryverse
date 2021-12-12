@@ -17,7 +17,9 @@ import java.util.Optional;
 import java.util.ArrayList;
 
 import pt.iade.libraryverse.models.Actor;
+import pt.iade.libraryverse.models.Response;
 import pt.iade.libraryverse.models.repositories.ActorRepository;
+import pt.iade.libraryverse.models.views.ActorMoviesView;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
 
 @RestController
@@ -51,7 +53,7 @@ public class ActorController {
     }
 
     @GetMapping(path = "/search", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Actor> getActorByName(@RequestParam String name)
+    public Response<List<Actor>> getActorByName(@RequestParam String name)
     {
         logger.info("Sending actors with name " + name);
         Iterable<Actor> _actor = actorRepository.findAll();
@@ -64,6 +66,17 @@ public class ActorController {
             }
         });
 
-        return actorsList;
+        var resp = new Response<List<Actor>>();
+        resp.results = actorsList;
+
+        return resp;
+    }
+
+    @GetMapping(path = "/actor/{id}/movies", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response<Iterable<ActorMoviesView>> getActorMovies(@PathVariable int id)
+    {
+        var resp = new Response<Iterable<ActorMoviesView>>();
+        resp.results = actorRepository.getActorMovies(id);
+        return resp;
     }
 }
