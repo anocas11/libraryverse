@@ -3,6 +3,7 @@ package com.example.libraryverse;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -16,7 +17,13 @@ import com.example.libraryverse.APIRequests.DownloadTask;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.example.libraryverse.APIRequests.UserService;
 import com.example.libraryverse.User;
+import com.example.libraryverse.models.CreateAccountModel;
+import com.example.libraryverse.models.CreateAccountRequest;
+
+import java.util.concurrent.ExecutionException;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
@@ -74,27 +81,50 @@ public class CreateAccountActivity extends AppCompatActivity {
             return;
         }
 
-        try
-        {
-            DownloadTask task = new DownloadTask();
-            String url = "https://libraryverse.herokuapp.com/api/users";
-            array = task.execute(url).get();
+        CreateAccountRequest request = new CreateAccountRequest();
+        request.username = username;
+        request.email = email;
+        request.name = name;
+        request.password = pass;
 
-            if(array == null)
+        try {
+            CreateAccountModel res = new CreateAccountTask().execute(request).get();
+
+            if(res != null){
+
+                Intent homeView = new Intent(CreateAccountActivity.this, MainActivity.class);
+
+                startActivity(homeView);
+            } else {
+                Toast.makeText(getBaseContext(), "Ocorreu um erro a registar o utilizador!", Toast.LENGTH_LONG).show();
+            }
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    private class CreateAccountTask extends AsyncTask<CreateAccountRequest, Void, CreateAccountModel>{
+
+        @Override
+        protected CreateAccountModel doInBackground(CreateAccountRequest... createAccountRequests) {
+            UserService userService = new UserService();
+            CreateAccountModel response = userService.createAccount(createAccountRequests[0]);
+
+            if(response == null)
+
             {
-                return;
+                return null;
             }
 
-            JSONObject jsonPart = array.getJSONObject(0);
+            User.id =response.id;
+            User.username =response.username;
+            User.email =response.email;
 
-            User.id = jsonPart.getString("id");
-            User.username = jsonPart.getString("username");
-
-            Intent itemView = new Intent(CreateAccountActivity.this, MainActivity.class);
-        }
-        catch (InterruptedException | JSONException e) {
-            e.printStackTrace();
-            array = null;
+            return response;
         }
     }
 
