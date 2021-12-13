@@ -4,6 +4,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
 
+import com.example.libraryverse.APIRequests.DownloadTask;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -11,6 +12,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.libraryverse.databinding.ActivityEventsBinding;
+
+import org.json.JSONArray;
 
 public class EventsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -42,6 +45,17 @@ public class EventsActivity extends FragmentActivity implements OnMapReadyCallba
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
+        JSONArray array;
+
+        try {
+            DownloadTask task = new DownloadTask();
+            String url = "";
+        }
+        catch ()
+        {
+
+        }
 
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);

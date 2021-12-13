@@ -46,12 +46,12 @@ public class CreateAccountActivity extends AppCompatActivity {
         passBox = findViewById(R.id.editTextPassword);
         pass2Box = findViewById(R.id.editTextRepeatPassword);
 
-        createAccountButton.setOnClickListener(new View.OnClickListener(){
+        /*createAccountButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 createAccount();
             }
-        });
+        });*/
     }
 
     public void clickToHome(View view)
@@ -60,14 +60,13 @@ public class CreateAccountActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void createAccount()
+    public void createAccount(View view)
     {
         String username = usernameBox.getText().toString();
         String email = emailBox.getText().toString();
         String name = nameBox.getText().toString();
         String pass = passBox.getText().toString();
         String pass2 = pass2Box.getText().toString();
-        JSONArray array;
 
         if(username.isEmpty() || email.isEmpty() || name.isEmpty() || pass.isEmpty() || pass2.isEmpty())
         {
@@ -87,8 +86,12 @@ public class CreateAccountActivity extends AppCompatActivity {
         request.name = name;
         request.password = pass;
 
+        //fazer log do request
+
         try {
             CreateAccountModel res = new CreateAccountTask().execute(request).get();
+
+            //log do res
 
             if(res != null){
 

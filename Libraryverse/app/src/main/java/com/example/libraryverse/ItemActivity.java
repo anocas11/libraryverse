@@ -224,7 +224,30 @@ public class ItemActivity extends AppCompatActivity {
                     }
                     else if(itemType.equals("author"))
                     {
+                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                        params.setMargins(20, 20, 0, 0);
 
+                        TextView booksLabel = new TextView(getBaseContext());
+                        booksLabel.setText("Books");
+                        booksLabel.setTextColor(Color.parseColor("#FFFFFF"));
+                        booksLabel.setTextSize(20);
+                        //moviesLabel.setTextAppearance(null, Typeface.BOLD);
+                        booksLabel.setLayoutParams(params);
+                        ll.addView(booksLabel);
+
+                        DownloadTask task1 = new DownloadTask();
+                        JSONArray booksArray = task1.execute("https://libraryverse.herokuapp.com/api/authors/author/" + itemId + "/books").get();
+
+                        for (int i = 0; i < booksArray.length(); i++)
+                        {
+                            JSONObject jsonPartBooks = booksArray.getJSONObject(i);
+                            TextView bookName = new TextView(getBaseContext());
+                            bookName.setText(jsonPartBooks.getString("bookName"));
+                            bookName.setTextColor(Color.parseColor("#FFFFFF"));
+                            bookName.setTextSize(16);
+                            bookName.setLayoutParams(params);
+                            ll.addView(bookName);
+                        }
                     }
                     else if(itemType.equals("actor"))
                     {

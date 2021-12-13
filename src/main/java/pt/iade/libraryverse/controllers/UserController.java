@@ -53,7 +53,7 @@ public class UserController {
         }
     }*/
 
-    @PostMapping(path="", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path="/signup", produces = MediaType.APPLICATION_JSON_VALUE)
     public User saveUser(@RequestBody User user)
     {
         Iterable<User> _user = userRepository.findAll();
@@ -71,10 +71,30 @@ public class UserController {
             }
         });
 
+        logger.info(user.getName());
+
         User savedUser = userRepository.save(user);
         logger.info("Saving user with id " + savedUser.getId());
         savedUser.setPassword(null);
         return savedUser;
+    }
+
+    @PostMapping(path="/signin", produces = MediaType.APPLICATION_JSON_VALUE)
+    public User getUser(@RequestBody User user)
+    {
+        Optional<User> _user = userRepository.findByUsername(user.getUsername());
+
+        if(_user.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.FOUND, "could not login");
+        }
+
+        User userToVerify = _user.get();
+        if(userToVerify.getPassword().equals(user.getPassword())){
+            userToVerify.setPassword(null);
+            return userToVerify;
+        }
+
+        throw new ResponseStatusException(HttpStatus.FOUND, "could not login");
     }
      
 }
