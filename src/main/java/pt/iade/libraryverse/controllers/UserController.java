@@ -86,6 +86,10 @@ public class UserController {
         Optional<User> _user = userRepository.findByUsername(user.getUsername());
 
         logger.info(user.getUsername());
+        logger.info(user.getPassword());
+
+        User userCheck = _user.get();
+        logger.info(userCheck.getPassword());
 
         if(_user.isEmpty()){
             throw new ResponseStatusException(HttpStatus.FOUND, "could not login");
