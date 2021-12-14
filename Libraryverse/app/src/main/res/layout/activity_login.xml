@@ -39,7 +39,7 @@
         app:srcCompat="@drawable/libraryverse_logo_semfundo_solido" />
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/editTextLoginPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"

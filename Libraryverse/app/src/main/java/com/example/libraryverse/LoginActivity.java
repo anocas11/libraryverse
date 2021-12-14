@@ -29,27 +29,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         editTextLoginUsername = findViewById(R.id.editTextLoginUsername);
-        editTextLoginPassword = findViewById(R.id.editTextLoginUsername);
+        editTextLoginPassword = findViewById(R.id.editTextLoginPassword);
         loginButton = findViewById(R.id.buttonLogin);
-    }
-
-
-    public void clickToHome(View view)
-    {
-        //#3 - Retirar Texto inserido
-        String name = editTextLoginUsername.getText().toString();
-        String password = editTextLoginPassword.getText().toString();
-
-
-        //#4 - Escrever para os logs
-        Log.i("Value", "Username " + name + " Password " + password);
-
-        //#4- Escrever para um popup
-        Toast.makeText(this,"Olá " + name, Toast.LENGTH_SHORT).show();
-
-        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(i);
-
     }
 
     public void ClickToCreate(View view)
@@ -80,6 +61,8 @@ public class LoginActivity extends AppCompatActivity {
 
             if(res != null)
             {
+                Toast.makeText(this,"Welcome " + username, Toast.LENGTH_LONG).show();
+
                 Intent homeView = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(homeView);
             }

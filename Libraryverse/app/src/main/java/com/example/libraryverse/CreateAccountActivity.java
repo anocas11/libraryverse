@@ -5,22 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.libraryverse.APIRequests.DownloadTask;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import com.example.libraryverse.APIRequests.UserService;
-import com.example.libraryverse.User;
 import com.example.libraryverse.models.CreateAccountModel;
 import com.example.libraryverse.models.CreateAccountRequest;
 
@@ -44,21 +35,8 @@ public class CreateAccountActivity extends AppCompatActivity {
         usernameBox = findViewById(R.id.editTextUsername);
         emailBox = findViewById(R.id.editTextEmail);
         nameBox = findViewById(R.id.editTextName);
-        passBox = findViewById(R.id.editTextPassword);
+        passBox = findViewById(R.id.editTextLoginPassword);
         pass2Box = findViewById(R.id.editTextRepeatPassword);
-
-        /*createAccountButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                createAccount();
-            }
-        });*/
-    }
-
-    public void clickToHome(View view)
-    {
-        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(i);
     }
 
     public void createAccount(View view)
@@ -87,23 +65,18 @@ public class CreateAccountActivity extends AppCompatActivity {
         request.name = name;
         request.password = pass;
 
-        Log.i("request username", request.username);
-        Log.i("request email", request.email);
-        Log.i("request name", request.name);
-        Log.i("request password", request.password);
-
         try {
             CreateAccountModel res = new CreateAccountTask().execute(request).get();
 
-            Log.i("result", String.valueOf(res));
-
-
-            if(res != null){
+            if(res != null)
+            {
+                Toast.makeText(this,"Welcome " + username, Toast.LENGTH_LONG).show();
 
                 Intent homeView = new Intent(CreateAccountActivity.this, MainActivity.class);
-
                 startActivity(homeView);
-            } else {
+            }
+            else
+            {
                 Toast.makeText(getBaseContext(), "Ocorreu um erro a registar o utilizador!", Toast.LENGTH_LONG).show();
             }
         } catch (ExecutionException e) {
@@ -123,7 +96,6 @@ public class CreateAccountActivity extends AppCompatActivity {
             CreateAccountModel response = userService.createAccount(createAccountRequests[0]);
 
             if(response == null)
-
             {
                 return null;
             }

@@ -72,8 +72,6 @@ public class UserController {
             }
         });
 
-        
-
         User savedUser = userRepository.save(user);
         logger.info("Saving user with id " + savedUser.getId());
         savedUser.setPassword(null);
@@ -85,12 +83,6 @@ public class UserController {
     {
         Optional<User> _user = userRepository.findByUsername(user.getUsername());
 
-        logger.info(user.getUsername());
-        logger.info(user.getPassword());
-
-        User userCheck = _user.get();
-        logger.info(userCheck.getPassword());
-
         if(_user.isEmpty()){
             throw new ResponseStatusException(HttpStatus.FOUND, "could not login");
         }
@@ -101,7 +93,7 @@ public class UserController {
             return userToVerify;
         }
 
-        throw new ResponseStatusException(HttpStatus.FOUND, "could not login");
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "could not login");
     }
      
 }
