@@ -48,14 +48,14 @@ public class EventsActivity extends FragmentActivity implements OnMapReadyCallba
 
         JSONArray array;
 
-        try {
+        /*try {
             DownloadTask task = new DownloadTask();
             String url = "";
         }
         catch ()
         {
 
-        }
+        }*/
 
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);

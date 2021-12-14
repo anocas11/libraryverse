@@ -58,8 +58,16 @@ public class UserController {
     {
         Iterable<User> _user = userRepository.findAll();
 
+        logger.info(user.getUsername());
+        logger.info(user.getEmail());
+        logger.info(user.getName());
+
         _user.forEach(userToCompare ->
         {
+            logger.info(user.getUsername());
+            logger.info(user.getEmail());
+            logger.info(user.getName());
+        
             if(userToCompare.getUsername().compareTo(user.getUsername()) == 0)
             {
                 throw new ResponseStatusException(HttpStatus.FOUND, "username already exists");
@@ -71,7 +79,7 @@ public class UserController {
             }
         });
 
-        logger.info(user.getName());
+        
 
         User savedUser = userRepository.save(user);
         logger.info("Saving user with id " + savedUser.getId());

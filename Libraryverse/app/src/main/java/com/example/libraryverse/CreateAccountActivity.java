@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -86,12 +87,16 @@ public class CreateAccountActivity extends AppCompatActivity {
         request.name = name;
         request.password = pass;
 
-        //fazer log do request
+        Log.i("request username", request.username);
+        Log.i("request email", request.email);
+        Log.i("request name", request.name);
+        Log.i("request password", request.password);
 
         try {
             CreateAccountModel res = new CreateAccountTask().execute(request).get();
 
-            //log do res
+            Log.i("result", String.valueOf(res));
+
 
             if(res != null){
 

@@ -13,7 +13,7 @@ public class UserService {
     private UserServiceInterface userServiceInterface;
 
     public UserService(){
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("https://libraryverse.herokuapp.com/api/users/").addConverterFactory(GsonConverterFactory.create()).build();
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("https://libraryverse.herokuapp.com/api/users/signup/").addConverterFactory(GsonConverterFactory.create()).build();
 
         userServiceInterface = retrofit.create(UserServiceInterface.class);
     }
