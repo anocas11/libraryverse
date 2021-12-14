@@ -2,6 +2,8 @@ package com.example.libraryverse.APIRequests;
 
 import com.example.libraryverse.models.CreateAccountModel;
 import com.example.libraryverse.models.CreateAccountRequest;
+import com.example.libraryverse.models.LoginModel;
+import com.example.libraryverse.models.LoginRequest;
 
 import java.io.IOException;
 
@@ -24,6 +26,20 @@ public class UserService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
+    }
+
+    public LoginModel login(LoginRequest body)
+    {
+        try
+        {
+            return userServiceInterface.login(body).execute().body();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
         return null;
     }
 }
