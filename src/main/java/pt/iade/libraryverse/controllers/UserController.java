@@ -97,7 +97,7 @@ public class UserController {
             return userToVerify;
         }
 
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "could not login");
+        throw new ResponseStatusException(HttpStatus.FOUND, "could not login");
     }
      
 }
