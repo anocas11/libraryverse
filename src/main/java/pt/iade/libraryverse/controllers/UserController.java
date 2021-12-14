@@ -58,15 +58,8 @@ public class UserController {
     {
         Iterable<User> _user = userRepository.findAll();
 
-        logger.info(user.getUsername());
-        logger.info(user.getEmail());
-        logger.info(user.getName());
-
         _user.forEach(userToCompare ->
         {
-            logger.info(user.getUsername());
-            logger.info(user.getEmail());
-            logger.info(user.getName());
         
             if(userToCompare.getUsername().compareTo(user.getUsername()) == 0)
             {

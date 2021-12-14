@@ -12,6 +12,7 @@ import retrofit2.http.POST;
 
 public interface UserServiceInterface
 {
-    @POST("/")
+    @POST("api/users/signup/")
     Call<CreateAccountModel> createAccount(@Body CreateAccountRequest json);
 }
+
