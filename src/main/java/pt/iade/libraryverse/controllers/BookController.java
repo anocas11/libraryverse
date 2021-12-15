@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import pt.iade.libraryverse.models.Book;
 import pt.iade.libraryverse.models.Response;
 import pt.iade.libraryverse.models.repositories.BookRepository;
-import pt.iade.libraryverse.models.repositories.MovieRepository;
+import pt.iade.libraryverse.models.repositories.CinematicUniverseRepository;
 import pt.iade.libraryverse.models.views.BookAuthorsView;
 import pt.iade.libraryverse.models.views.BookCharactersView;
 import pt.iade.libraryverse.models.views.BookInfoView;

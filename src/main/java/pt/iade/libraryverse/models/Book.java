@@ -2,6 +2,9 @@ package pt.iade.libraryverse.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,6 +21,7 @@ public class Book
     @Column(name="book_date") private String date;
     @Column(name="book_description") private String description;
     @Column(name="book_poster") private String poster;
+    @OneToOne @JoinColumn(name="book_cu_id") private CinematicUniverse cinematicUniverse;
 
     public Book() //construtor default sem argumentos
     {
@@ -63,5 +67,15 @@ public class Book
     public void setPoster(String poster) {
         this.poster = poster;
     }
+
+    public CinematicUniverse getCinematicUniverse() {
+        return cinematicUniverse;
+    }
+
+    public void setCinematicUniverse(CinematicUniverse cinematicUniverse) {
+        this.cinematicUniverse = cinematicUniverse;
+    }
+
+    
 
 }

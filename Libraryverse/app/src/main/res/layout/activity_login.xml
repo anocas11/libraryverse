@@ -28,7 +28,6 @@
         app:layout_constraintVertical_bias="0.42" />
 
     <ImageView
-        android:id="@+id/imageViewHomeLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,7 +61,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/pink"
         android:cursorVisible="false"
-        android:onClick="clickToHome"
+        android:onClick="login"
         android:text="login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +71,6 @@
         app:layout_constraintVertical_bias="0.657" />
 
     <TextView
-        android:id="@+id/textViewLoginCreateAc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
@@ -86,7 +84,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome"

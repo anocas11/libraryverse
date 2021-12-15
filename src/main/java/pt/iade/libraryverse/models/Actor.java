@@ -18,7 +18,8 @@ public class Actor
     @Column(name="actor_id") private int id;
     @Column(name="actor_name") private String name;    
     @Column(name="actor_birthday") private String birthday;
-    @Column(name="actor_bio") private String bio;
+    @Column(name="actor_bio") private String description;
+    @Column(name="actor_poster") private String poster;
 
     public Actor()
     {
@@ -49,13 +50,22 @@ public class Actor
         this.birthday = birthday;
     }
 
-    public String getBio() {
-        return bio;
+    public String getDescription() {
+        return description;
     }
 
-    public void setBio(String bio) {
-        this.bio = bio;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
+
+    
     
 }
