@@ -88,7 +88,8 @@ create table userBooks (
     ub_favorite boolean, 
     ub_read boolean, 
     ub_reading boolean, 
-    ub_has boolean, 
+    ub_has boolean,
+    ub_timestamp timestamp, 
     primary key (ub_id)
 );
 
@@ -99,6 +100,7 @@ create table userMovies (
     um_favorite boolean, 
     um_watched boolean, 
     um_has boolean, 
+    um_timestamp timestamp, 
     primary key (um_id)
 );
 

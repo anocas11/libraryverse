@@ -56,3 +56,7 @@ inner join movieactor on actor_id = ma_actor_id
 inner join moviecharacter on ma_mc_id = mc_id
 inner join character on character_id = mc_character_id
 where mc_movie_id = id;*/
+
+/*select book_name from book
+inner join userbooks on book_id = ub_book_id
+where ub_user_id = 3 and ub_favorite = true*/
