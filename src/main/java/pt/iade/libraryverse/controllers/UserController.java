@@ -18,9 +18,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.ArrayList;
 
+import pt.iade.libraryverse.models.Response;
 import pt.iade.libraryverse.models.User;
 import pt.iade.libraryverse.models.repositories.UserRepository;
+import pt.iade.libraryverse.models.views.UserBooksView;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
+import pt.iade.libraryverse.models.views.UserMoviesView;
 
 @RestController
 @RequestMapping(path = "api/users")
@@ -95,5 +98,52 @@ public class UserController {
 
         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "could not login");
     }
+
+    @GetMapping(path = "/user/{id}/books", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response<Iterable<UserBooksView>> getUserBooks(@PathVariable int id)
+    {
+        var resp = new Response<Iterable<UserBooksView>>();
+        resp.results = userRepository.getUserBooks(id);
+        return resp;
+    }
      
+    @GetMapping(path = "/user/{id}/movies", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response<Iterable<UserMoviesView>> getUserMovies(@PathVariable int id)
+    {
+        var resp = new Response<Iterable<UserMoviesView>>();
+        resp.results = userRepository.getUserMovies(id);
+        return resp;
+    }
+
+    @GetMapping(path = "/user/{id}/favoritebooks", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response<Iterable<UserBooksView>> getUserFavoriteBooks(@PathVariable int id)
+    {
+        var resp = new Response<Iterable<UserBooksView>>();
+        resp.results = userRepository.getUserFavoriteBooks(id);
+        return resp;
+    }
+
+    @GetMapping(path = "/user/{id}/lastbooks", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response<Iterable<UserBooksView>> getUserLastBooks(@PathVariable int id)
+    {
+        var resp = new Response<Iterable<UserBooksView>>();
+        resp.results = userRepository.getUserLastBooks(id);
+        return resp;
+    }
+
+    @GetMapping(path = "/user/{id}/favoritemovies", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response<Iterable<UserMoviesView>> getUserFavoriteMovies(@PathVariable int id)
+    {
+        var resp = new Response<Iterable<UserMoviesView>>();
+        resp.results = userRepository.getUserFavoriteMovies(id);
+        return resp;
+    }
+
+    @GetMapping(path = "/user/{id}/lastmovies", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response<Iterable<UserMoviesView>> getUserLastMovies(@PathVariable int id)
+    {
+        var resp = new Response<Iterable<UserMoviesView>>();
+        resp.results = userRepository.getUserLastMovies(id);
+        return resp;
+    }
 }
