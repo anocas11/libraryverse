@@ -32,17 +32,16 @@ public interface UserRepository extends CrudRepository<User,Integer>{
 
     String QueryGetUserLastBooks = "select book_name as bookName, book_poster as bookPoster from book " +
     "inner join userbooks on book_id = ub_book_id " +
-    "order by ub_timestamp " +
     "limit 3 ";
 
-    @Query(value = QueryGetUserLastBooks + " where ub_user_id =:id", nativeQuery = true)
+    @Query(value = QueryGetUserLastBooks + " where ub_user_id =:id" + " order by ub_timestamp", nativeQuery = true)
     Iterable<UserBooksView> getUserLastBooks(@Param("id") int id);
 
     String QueryGetUserFavoriteMovies = "select movie_name as movieName, movie_poster as moviePoster from movie " +
     "inner join usermovies on movie_id = um_movie_id " +
     "where um_favorite = true and ";
 
-    @Query(value = QueryGetUserMovies + " where um_user_id =:id", nativeQuery = true)
+    @Query(value = QueryGetUserMovies + "um_user_id =:id", nativeQuery = true)
     Iterable<UserMoviesView> getUserFavoriteMovies(@Param("id") int id);
 
     String QueryGetUserLastMovies = "select movie_name as movieName, movie_poster as moviePoster from movie " +

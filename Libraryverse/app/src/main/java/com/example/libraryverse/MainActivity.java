@@ -6,13 +6,19 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.PictureInPictureParams;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.libraryverse.APIRequests.DownloadTask;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
     ImageView img1;
     ImageView img2;
     ImageView img3;
+    TextView text1;
+    TextView text2;
+    TextView text3;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +45,41 @@ public class MainActivity extends AppCompatActivity {
 
         JSONArray lastBooksAddedArray;
 
+        try
+        {
+            DownloadTask task1 = new DownloadTask();
+            String url1 = "https://libraryverse.herokuapp.com/api/users/user/" + user.id +"/lastbooks";
+            lastBooksAddedArray = task1.execute(url1).get();
+
+            if(lastBooksAddedArray == null)
+            {
+                return;
+            }
+
+            try
+            {
+                JSONObject jsonPart1 = lastBooksAddedArray.getJSONObject(0);
+                Picasso.get().load(jsonPart1.getString("bookPoster")).into(img1);
+                text1.setText(jsonPart1.getString("bookName"));
+
+                JSONObject jsonPart2 = lastBooksAddedArray.getJSONObject(1);
+                Picasso.get().load(jsonPart2.getString("bookPoster")).into(img2);
+                text2.setText(jsonPart2.getString("bookName"));
+
+                JSONObject jsonPart3 = lastBooksAddedArray.getJSONObject(2);
+                Picasso.get().load(jsonPart3.getString("bookPoster")).into(img3);
+                text2.setText(jsonPart3.getString("bookName"));
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
 
     }
 
@@ -48,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
         //open drawer
         openDrawer(drawerLayout);
     }
-    // Olá mundo
 
     public static void openDrawer(DrawerLayout drawerLayout) {
         //Open drawer layout

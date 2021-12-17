@@ -80,6 +80,12 @@
         android:layout_marginBottom="400dp"
         android:src="@drawable/movieload" />
 
+    <TextView
+        android:id="@+id/textViewHome1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
     <ImageView
         android:id="@+id/imageViewHome2"
         android:layout_width="match_parent"
@@ -90,6 +96,12 @@
         android:layout_marginBottom="400dp"
         android:src="@drawable/movieload" />
 
+    <TextView
+        android:id="@+id/textViewHome2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
     <ImageView
         android:id="@+id/imageViewHome3"
         android:layout_width="match_parent"
@@ -99,6 +111,12 @@
         android:layout_marginRight="5dp"
         android:layout_marginBottom="400dp"
         android:src="@drawable/movieload" />
+
+    <TextView
+        android:id="@+id/textViewHome3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
     <LinearLayout
         android:layout_width="wrap_content"
