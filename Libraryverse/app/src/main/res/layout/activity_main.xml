@@ -71,6 +71,7 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/imageViewHome1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="5dp"
@@ -78,7 +79,9 @@
         android:layout_marginRight="270dp"
         android:layout_marginBottom="400dp"
         android:src="@drawable/movieload" />
+
     <ImageView
+        android:id="@+id/imageViewHome2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="130dp"
@@ -86,7 +89,9 @@
         android:layout_marginRight="130dp"
         android:layout_marginBottom="400dp"
         android:src="@drawable/movieload" />
+
     <ImageView
+        android:id="@+id/imageViewHome3"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="270dp"

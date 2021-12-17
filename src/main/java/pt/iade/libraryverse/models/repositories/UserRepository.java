@@ -25,7 +25,7 @@ public interface UserRepository extends CrudRepository<User,Integer>{
 
     String QueryGetUserFavoriteBooks = "select book_name as bookName, book_poster as bookPoster from book " +
     "inner join userbooks on book_id = ub_book_id " +
-    "where ub_favorite = true and ";
+    "where ub_favorite = 1 and ";
 
     @Query(value = QueryGetUserFavoriteBooks + " where ub_user_id =:id", nativeQuery = true)
     Iterable<UserBooksView> getUserFavoriteBooks(@Param("id") int id);

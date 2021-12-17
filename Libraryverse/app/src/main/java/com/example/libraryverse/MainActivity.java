@@ -10,11 +10,17 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+
+import org.json.JSONArray;
 
 public class MainActivity extends AppCompatActivity {
 
     //Initialize variable
     DrawerLayout drawerLayout;
+    ImageView img1;
+    ImageView img2;
+    ImageView img3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +29,13 @@ public class MainActivity extends AppCompatActivity {
 
         //Assign variables
         drawerLayout = findViewById(R.id.drawer_layout);
+        img1 = findViewById(R.id.imageViewHome1);
+        img2 = findViewById(R.id.imageViewHome2);
+        img3 = findViewById(R.id.imageViewHome3);
+
+        JSONArray lastBooksAddedArray;
+
+
     }
 
     public void ClickSearch(View view){
