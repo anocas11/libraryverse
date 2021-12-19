@@ -8,19 +8,6 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Home"
-        android:textSize="50sp"
-        android:textStyle="bold" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,143 +21,207 @@
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="50dp"
-        android:text="Home"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="160dp"
-            android:src="@drawable/ic_movie" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="160dp"
-            android:text="Filmes Recentes"
-            android:textColor="@color/white"
-            android:textSize="24sp" />
-
-
-
-
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imageViewHome1"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="220dp"
-        android:layout_marginRight="270dp"
-        android:layout_marginBottom="400dp"
-        android:src="@drawable/movieload" />
-
-    <TextView
-        android:id="@+id/textViewHome1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
-    <ImageView
-        android:id="@+id/imageViewHome2"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="220dp"
-        android:layout_marginRight="130dp"
-        android:layout_marginBottom="400dp"
-        android:src="@drawable/movieload" />
-
-    <TextView
-        android:id="@+id/textViewHome2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
-    <ImageView
-        android:id="@+id/imageViewHome3"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="270dp"
-        android:layout_marginTop="220dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="400dp"
-        android:src="@drawable/movieload" />
-
-    <TextView
-        android:id="@+id/textViewHome3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="400dp"
-            android:src="@drawable/ic_book" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
-            android:layout_marginTop="400dp"
-            android:text="Livros Recentes"
-            android:textColor="@color/white"
-            android:textSize="24sp" />
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
 
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/ic_book" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Books"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/imageViewHomeBooks1"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        tools:srcCompat="@drawable/_skzm3tppt72foo46nsjipnxkng" />
+
+                    <TextView
+                        android:id="@+id/textViewHomeBooks1"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FFFFFF"
+                        tools:text="Don't Look Up" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/imageViewHomeBooks2"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        tools:srcCompat="@drawable/_skzm3tppt72foo46nsjipnxkng" />
+
+                    <TextView
+                        android:id="@+id/textViewHomeBooks2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/imageViewHomeBooks3"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        tools:srcCompat="@drawable/_skzm3tppt72foo46nsjipnxkng" />
+
+                    <TextView
+                        android:id="@+id/textViewHomeBooks3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/ic_movie" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Movies"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewHomeMovies1"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    tools:srcCompat="@drawable/_skzm3tppt72foo46nsjipnxkng"/>
+
+                <TextView
+                    android:id="@+id/textViewHomeMovies1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="TextView"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewHomeMovies2"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    tools:srcCompat="@drawable/_skzm3tppt72foo46nsjipnxkng"/>
+
+                <TextView
+                    android:id="@+id/textViewHomeMovies2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="TextView"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewHomeMovies3"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    tools:srcCompat="@drawable/_skzm3tppt72foo46nsjipnxkng"/>
+
+                <TextView
+                    android:id="@+id/textViewHomeMovies3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="TextView"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="400dp"
-        android:layout_marginRight="270dp"
-        android:layout_marginBottom="40dp"
-        android:src="@drawable/bookload" />
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="135dp"
-        android:layout_marginTop="400dp"
-        android:layout_marginRight="135dp"
-        android:layout_marginBottom="40dp"
-        android:src="@drawable/bookload" />
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="270dp"
-        android:layout_marginTop="400dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="40dp"
-        android:src="@drawable/bookload" />
-
-
-
-
 
     <RelativeLayout
         android:layout_width="300dp"

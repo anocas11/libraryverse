@@ -24,12 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     //Initialize variable
     DrawerLayout drawerLayout;
-    ImageView img1;
-    ImageView img2;
-    ImageView img3;
-    TextView text1;
-    TextView text2;
-    TextView text3;
+    ImageView imgBooks1, imgBooks2, imgBooks3, imgMovies1, imgMovies2, imgMovies3;
+    TextView textBooks1, textBooks2, textBooks3, textMovies1, textMovies2, textMovies3;
     User user;
 
     @Override
@@ -39,11 +35,21 @@ public class MainActivity extends AppCompatActivity {
 
         //Assign variables
         drawerLayout = findViewById(R.id.drawer_layout);
-        img1 = findViewById(R.id.imageViewHome1);
-        img2 = findViewById(R.id.imageViewHome2);
-        img3 = findViewById(R.id.imageViewHome3);
+        imgBooks1 = findViewById(R.id.imageViewHomeBooks1);
+        imgBooks2 = findViewById(R.id.imageViewHomeBooks2);
+        imgBooks3 = findViewById(R.id.imageViewHomeBooks3);
+        imgMovies1 = findViewById(R.id.imageViewHomeMovies1);
+        imgMovies2 = findViewById(R.id.imageViewHomeMovies2);
+        imgMovies3 = findViewById(R.id.imageViewHomeMovies3);
+        textBooks1 = findViewById(R.id.textViewHomeBooks1);
+        textBooks2 = findViewById(R.id.textViewHomeBooks2);
+        textBooks3 = findViewById(R.id.textViewHomeBooks3);
+        textMovies1 = findViewById(R.id.textViewHomeMovies1);
+        textMovies2 = findViewById(R.id.textViewHomeMovies2);
+        textMovies3 = findViewById(R.id.textViewHomeMovies3);
 
         JSONArray lastBooksAddedArray;
+        JSONArray lastMoviesAddedArray;
 
         try
         {
@@ -59,16 +65,54 @@ public class MainActivity extends AppCompatActivity {
             try
             {
                 JSONObject jsonPart1 = lastBooksAddedArray.getJSONObject(0);
-                Picasso.get().load(jsonPart1.getString("bookPoster")).into(img1);
-                text1.setText(jsonPart1.getString("bookName"));
-
                 JSONObject jsonPart2 = lastBooksAddedArray.getJSONObject(1);
-                Picasso.get().load(jsonPart2.getString("bookPoster")).into(img2);
-                text2.setText(jsonPart2.getString("bookName"));
-
                 JSONObject jsonPart3 = lastBooksAddedArray.getJSONObject(2);
-                Picasso.get().load(jsonPart3.getString("bookPoster")).into(img3);
-                text2.setText(jsonPart3.getString("bookName"));
+
+                Picasso.get().load(jsonPart1.getString("bookPoster")).into(imgBooks1);
+                textBooks1.setText(jsonPart1.getString("bookName"));
+
+                Picasso.get().load(jsonPart2.getString("bookPoster")).into(imgBooks2);
+                textBooks2.setText(jsonPart2.getString("bookName"));
+
+                Picasso.get().load(jsonPart3.getString("bookPoster")).into(imgBooks3);
+                textBooks3.setText(jsonPart3.getString("bookName"));
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        try
+        {
+            DownloadTask task1 = new DownloadTask();
+            String url1 = "https://libraryverse.herokuapp.com/api/users/user/" + user.id +"/lastmovies";
+            lastMoviesAddedArray = task1.execute(url1).get();
+
+            if(lastMoviesAddedArray == null)
+            {
+                return;
+            }
+
+            try
+            {
+                JSONObject jsonPart1 = lastMoviesAddedArray.getJSONObject(0);
+                JSONObject jsonPart2 = lastMoviesAddedArray.getJSONObject(1);
+                JSONObject jsonPart3 = lastMoviesAddedArray.getJSONObject(2);
+
+                Picasso.get().load(jsonPart1.getString("moviePoster")).into(imgMovies1);
+                textMovies1.setText(jsonPart1.getString("movieName"));
+
+                Picasso.get().load(jsonPart2.getString("moviePoster")).into(imgMovies2);
+                textMovies2.setText(jsonPart2.getString("movieName"));
+
+                Picasso.get().load(jsonPart3.getString("moviePoster")).into(imgMovies3);
+                textMovies3.setText(jsonPart3.getString("movieName"));
             }
             catch (Exception e)
             {

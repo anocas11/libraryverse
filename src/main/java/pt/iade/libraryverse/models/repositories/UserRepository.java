@@ -46,6 +46,6 @@ public interface UserRepository extends CrudRepository<User,Integer>{
     String QueryGetUserLastMovies = "select movie_name as movieName, movie_poster as moviePoster from movie " +
     "inner join usermovies on movie_id = um_movie_id ";
 
-    @Query(value = QueryGetUserLastMovies + " where ub_user_id =:id" + " order by um_timestamp limit 3 ", nativeQuery = true)
+    @Query(value = QueryGetUserLastMovies + " where um_user_id =:id" + " order by um_timestamp limit 3 ", nativeQuery = true)
     Iterable<UserMoviesView> getUserLastMovies(@Param("id") int id);
 }
