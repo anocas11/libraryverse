@@ -112,7 +112,7 @@ public class BookController {
     }
 
     @PostMapping(path = "/book/{bookid}/{userid}/favorite", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response<UserBooks> saveToFavorites(@PathVariable int bookid, @PathVariable int userid)
+    public UserBooks saveToFavorites(@PathVariable int bookid, @PathVariable int userid)
     {
         Iterable<UserBooksFavoriteView> books = ubRepository.getUserBooks(bookid, userid);
 
@@ -134,9 +134,7 @@ public class BookController {
 
             ubRepository.save(ubToInsert);
 
-            var resp = new Response<UserBooks>();
-            resp.results = ubToInsert;
-            return resp;
+            return ubToInsert;
         }
         else 
         {
@@ -151,9 +149,7 @@ public class BookController {
 
             ubRepository.save(ubToUpdate);
 
-            var resp = new Response<UserBooks>();
-            resp.results = ubToUpdate;
-            return resp;
+            return ubToUpdate;
         }
     } 
 }

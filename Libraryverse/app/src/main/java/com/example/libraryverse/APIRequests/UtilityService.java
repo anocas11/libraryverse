@@ -21,7 +21,8 @@ public class UtilityService {
     public BookModel setBookFavorite(String userId, String bookId)
     {
         try{
-            return utilityServiceInterface.setBookFavorite(bookId, userId).execute().body();
+            BookModel test =  utilityServiceInterface.setBookFavorite(bookId, userId).execute().body();
+            return test;
         } catch (IOException e) {
             e.printStackTrace();
         }

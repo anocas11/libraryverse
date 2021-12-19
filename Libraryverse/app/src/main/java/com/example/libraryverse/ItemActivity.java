@@ -32,7 +32,7 @@ public class ItemActivity extends AppCompatActivity {
     ImageView itemPoster, itemFavorite;
     LinearLayout ll;
     JSONArray itemArray = null;
-    String itemId;
+    String itemId, itemType;
     User user;
 
     @Override
@@ -47,13 +47,9 @@ public class ItemActivity extends AppCompatActivity {
         itemFavorite = findViewById(R.id.imageViewFavoriteItem);
 
         itemId = getIntent().getStringExtra("id");
-        String itemType = getIntent().getStringExtra("type");
+        itemType = getIntent().getStringExtra("type");
 
         DownloadTask task = new DownloadTask();
-
-
-
-
 
         try
         {
@@ -77,7 +73,7 @@ public class ItemActivity extends AppCompatActivity {
             itemFavorite.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    AddFavoriteClick(itemType);
+                    AddFavoriteClick();
                 }
             });
 
@@ -307,11 +303,17 @@ public class ItemActivity extends AppCompatActivity {
         }
     }
 
-    public void AddFavoriteClick(String type)
+    public void AddFavoriteClick()
     {
-        if(type.equals("book"))
+        if(itemType.equals("book"))
         {
-
+            try {
+                BookModel bt = new BookTask().execute().get();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
