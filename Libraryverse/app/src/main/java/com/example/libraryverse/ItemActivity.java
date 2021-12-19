@@ -60,6 +60,14 @@ public class ItemActivity extends AppCompatActivity {
             else if(itemType.equals("book"))
             {
                 itemArray = task.execute("https://libraryverse.herokuapp.com/api/books/book/" + itemId).get();
+
+                try {
+                    BookModel bst = new BookStatusTask().execute().get();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
             else if(itemType.equals("author"))
             {
@@ -308,7 +316,7 @@ public class ItemActivity extends AppCompatActivity {
         if(itemType.equals("book"))
         {
             try {
-                BookModel bt = new BookTask().execute().get();
+                BookModel fbt = new favoriteBookTask().execute().get();
             } catch (ExecutionException e) {
                 e.printStackTrace();
             } catch (InterruptedException e) {
@@ -317,13 +325,39 @@ public class ItemActivity extends AppCompatActivity {
         }
     }
 
-    private class BookTask extends AsyncTask<Void, Void, BookModel>
+    private class favoriteBookTask extends AsyncTask<Void, Void, BookModel>
     {
         @Override
         protected BookModel doInBackground(Void... voids)
         {
             UtilityService utilityService = new UtilityService();
             BookModel response = utilityService.setBookFavorite(User.id, itemId);
+
+            if(response == null)
+            {
+                return null;
+            }
+
+            if(response.favorite){
+                itemFavorite.setImageDrawable(getBaseContext().getDrawable(R.drawable.ic_baseline_star));
+            }
+            else
+            {
+                itemFavorite.setImageDrawable(getBaseContext().getDrawable(R.drawable.ic_baseline_star_outline));
+            }
+
+            return response;
+
+        }
+    }
+
+    private class BookStatusTask extends AsyncTask<Void, Void, BookModel>
+    {
+        @Override
+        protected BookModel doInBackground(Void... voids)
+        {
+            UtilityService utilityService = new UtilityService();
+            BookModel response = utilityService.getBookStatus(User.id, itemId);
 
             if(response == null)
             {

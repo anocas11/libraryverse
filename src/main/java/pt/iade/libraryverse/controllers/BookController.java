@@ -111,6 +111,36 @@ public class BookController {
         return resp;
     }
 
+    @GetMapping(path = "/book/{bookid}/{userid}/status", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Optional<UserBooks> getUserBookStatus(@PathVariable int bookid, @PathVariable int userid)
+    {
+        Iterable<UserBooksFavoriteView> books = ubRepository.getUserBooks(bookid, userid);
+
+        List<UserBooksFavoriteView> userBooks = new ArrayList<UserBooksFavoriteView>();
+
+        books.forEach(book ->{
+            userBooks.add(book);
+        });
+
+        if(userBooks.size() == 0)
+        {
+            return null;
+        }
+        else 
+        {
+            UserBooks ubToReturn = new UserBooks();
+            ubToReturn.setId(userBooks.get(0).getId());
+            ubToReturn.setUserId(userid);
+            ubToReturn.setBookId(bookid);
+            ubToReturn.setFavorite(userBooks.get(0).getFavorite());
+            ubToReturn.setRead(userBooks.get(0).getRead());
+            ubToReturn.setReading(userBooks.get(0).getReading());
+            ubToReturn.setHas(userBooks.get(0).getHas());
+
+            return ubToReturn;
+        }
+    } 
+
     @PostMapping(path = "/book/{bookid}/{userid}/favorite", produces = MediaType.APPLICATION_JSON_VALUE)
     public UserBooks saveToFavorites(@PathVariable int bookid, @PathVariable int userid)
     {
