@@ -72,8 +72,8 @@
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:padding="12dp"
-            android:textColor="@color/white"
-            android:text="Favourite Movies" />
+            android:text="Movies"
+            android:textColor="@color/white" />
 
 
         <ImageView
@@ -99,8 +99,8 @@
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:padding="12dp"
-            android:textColor="@color/white"
-            android:text="Favourite Books" />
+            android:text="Books"
+            android:textColor="@color/white" />
 
         <ImageView
             android:layout_width="wrap_content"

@@ -6,7 +6,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.PictureInPictureParams;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -165,12 +164,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void ClickFavouriteMovies(View view){
         //Redirect activity to favourite movies
-        redirectActivity(this, FavmoviesActivity.class);
+        redirectActivity(this, MoviesActivity.class);
     }
 
     public void ClickFavouriteBooks(View view){
         //Redirect activity favourite book
-        redirectActivity(this, FavbooksActivity.class);
+        redirectActivity(this, BooksActivity.class);
     }
 
     public void ClickProfile(View view){

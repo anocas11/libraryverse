@@ -121,7 +121,7 @@ public class EventsActivity extends AppCompatActivity {
 
     public void ClickFavouriteBooks(View view){
         //Recreate activity to favourite books
-        redirectActivity(this, FavbooksActivity.class);
+        redirectActivity(this, BooksActivity.class);
     }
 
     public void ClickLogout(View view){

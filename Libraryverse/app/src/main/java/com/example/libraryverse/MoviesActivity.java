@@ -4,13 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class FavbooksActivity extends AppCompatActivity {
+public class MoviesActivity extends AppCompatActivity {
 
     //Initialize variable
     DrawerLayout drawerLayout;
@@ -18,11 +16,10 @@ public class FavbooksActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favbooks);
+        setContentView(R.layout.activity_movies);
 
         //Assign variable
         drawerLayout = findViewById(R.id.drawer_layout);
-
     }
 
     public void ClickSearch(View view){
@@ -45,23 +42,20 @@ public class FavbooksActivity extends AppCompatActivity {
         MainActivity.redirectActivity(this, MainActivity.class);
     }
 
-    public void ClickFavouriteMovies(View view){
-        //Recreate activity to favourite movies
-        redirectActivity(this, FavmoviesActivity.class);
-
-
+    public void ClickProfile(View view){
+        //Redirect Activity to profile
+        redirectActivity(this, ProfileActivity.class);
     }
 
-
-
-    public void ClickFavouriteBooks(View view){
+    public void ClickFavouriteMovies(View view){
         //Recreate activity
         recreate();
+
     }
 
-    public void ClickProfile(View view){
-        //Redirect activity profile
-        redirectActivity(this, ProfileActivity.class);
+    public void ClickFavouriteBooks(View view){
+        //Recreate activity to favourite books
+        redirectActivity(this, BooksActivity.class);
     }
 
     public void ClickLogout(View view){
@@ -80,11 +74,12 @@ public class FavbooksActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onPause(){
         super.onPause();
         //Close drawer
         MainActivity.closeDrawer(drawerLayout);
     }
+
+
 }

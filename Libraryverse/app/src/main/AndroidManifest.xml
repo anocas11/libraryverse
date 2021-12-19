@@ -53,10 +53,10 @@
             android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".FavbooksActivity"
+            android:name=".BooksActivity"
             android:exported="true" />
         <activity
-            android:name=".FavmoviesActivity"
+            android:name=".MoviesActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"

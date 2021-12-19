@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -288,5 +289,10 @@ public class ItemActivity extends AppCompatActivity {
             e.printStackTrace();
             itemArray = null;
         }
+    }
+
+    public void AddItemClick(View view)
+    {
+
     }
 }

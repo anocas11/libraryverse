@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class FavmoviesActivity extends AppCompatActivity {
+public class BooksActivity extends AppCompatActivity {
 
     //Initialize variable
     DrawerLayout drawerLayout;
@@ -16,10 +16,11 @@ public class FavmoviesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favmovies);
+        setContentView(R.layout.activity_books);
 
         //Assign variable
         drawerLayout = findViewById(R.id.drawer_layout);
+
     }
 
     public void ClickSearch(View view){
@@ -42,20 +43,23 @@ public class FavmoviesActivity extends AppCompatActivity {
         MainActivity.redirectActivity(this, MainActivity.class);
     }
 
-    public void ClickProfile(View view){
-        //Redirect Activity to profile
-        redirectActivity(this, ProfileActivity.class);
-    }
-
     public void ClickFavouriteMovies(View view){
-        //Recreate activity
-        recreate();
+        //Recreate activity to favourite movies
+        redirectActivity(this, MoviesActivity.class);
+
 
     }
+
+
 
     public void ClickFavouriteBooks(View view){
-        //Recreate activity to favourite books
-        redirectActivity(this, FavbooksActivity.class);
+        //Recreate activity
+        recreate();
+    }
+
+    public void ClickProfile(View view){
+        //Redirect activity profile
+        redirectActivity(this, ProfileActivity.class);
     }
 
     public void ClickLogout(View view){
@@ -74,12 +78,11 @@ public class FavmoviesActivity extends AppCompatActivity {
     }
 
 
+
     @Override
     protected void onPause(){
         super.onPause();
         //Close drawer
         MainActivity.closeDrawer(drawerLayout);
     }
-
-
 }

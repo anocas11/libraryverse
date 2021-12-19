@@ -1,7 +1,6 @@
 package com.example.libraryverse;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
@@ -15,19 +14,15 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.libraryverse.APIRequests.DownloadTask;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
-import java.util.logging.Logger;
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -147,13 +142,13 @@ public class SearchActivity extends AppCompatActivity {
 
         public void ClickFavouriteMovies(View view){
             //Redirect activity to Favourite Movies
-            redirectActivity(this, FavmoviesActivity.class);
+            redirectActivity(this, MoviesActivity.class);
         }
 
 
         public void ClickFavouriteBooks(View view){
             //Recreate activity
-            redirectActivity(this, FavbooksActivity.class);
+            redirectActivity(this, BooksActivity.class);
 
         }
 
