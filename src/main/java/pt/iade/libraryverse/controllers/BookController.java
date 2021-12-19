@@ -28,6 +28,8 @@ import pt.iade.libraryverse.models.views.BookCharactersView;
 import pt.iade.libraryverse.models.views.BookInfoView;
 import pt.iade.libraryverse.models.views.UserBooksFavoriteView;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.http.HttpStatus;
 
 @RestController
 @RequestMapping(path = "api/books")
@@ -112,7 +114,7 @@ public class BookController {
     }
 
     @GetMapping(path = "/book/{bookid}/{userid}/status", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Optional<UserBooks> getUserBookStatus(@PathVariable int bookid, @PathVariable int userid)
+    public UserBooks getUserBookStatus(@PathVariable int bookid, @PathVariable int userid)
     {
         Iterable<UserBooksFavoriteView> books = ubRepository.getUserBooks(bookid, userid);
 
@@ -124,7 +126,7 @@ public class BookController {
 
         if(userBooks.size() == 0)
         {
-            return null;
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "");
         }
         else 
         {
