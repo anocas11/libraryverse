@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -13,6 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.libraryverse.APIRequests.DownloadTask;
+import com.example.libraryverse.APIRequests.UtilityService;
+import com.example.libraryverse.models.BookModel;
+import com.example.libraryverse.models.LoginModel;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -25,9 +29,11 @@ public class ItemActivity extends AppCompatActivity {
 
     TextView itemName;
     TextView itemDescription;
-    ImageView itemPoster;
+    ImageView itemPoster, itemFavorite;
     LinearLayout ll;
     JSONArray itemArray = null;
+    String itemId;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +44,14 @@ public class ItemActivity extends AppCompatActivity {
         itemDescription = findViewById(R.id.textViewItemDescription);
         itemPoster = findViewById(R.id.imageViewItemImg);
         ll = findViewById(R.id.linearLayoutIteminfo);
+        itemFavorite = findViewById(R.id.imageViewFavoriteItem);
 
-        String itemId = getIntent().getStringExtra("id");
+        itemId = getIntent().getStringExtra("id");
         String itemType = getIntent().getStringExtra("type");
 
         DownloadTask task = new DownloadTask();
+
+
 
 
 
@@ -64,6 +73,13 @@ public class ItemActivity extends AppCompatActivity {
             {
                 itemArray = task.execute("https://libraryverse.herokuapp.com/api/actors/" + itemId).get();
             }
+
+            itemFavorite.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AddFavoriteClick(itemType);
+                }
+            });
 
             if(itemArray != null)
             {
@@ -291,8 +307,37 @@ public class ItemActivity extends AppCompatActivity {
         }
     }
 
-    public void AddItemClick(View view)
+    public void AddFavoriteClick(String type)
     {
+        if(type.equals("book"))
+        {
 
+        }
+    }
+
+    private class BookTask extends AsyncTask<Void, Void, BookModel>
+    {
+        @Override
+        protected BookModel doInBackground(Void... voids)
+        {
+            UtilityService utilityService = new UtilityService();
+            BookModel response = utilityService.setBookFavorite(User.id, itemId);
+
+            if(response == null)
+            {
+                return null;
+            }
+
+            if(response.favorite){
+                itemFavorite.setImageDrawable(getBaseContext().getDrawable(R.drawable.ic_baseline_star));
+            }
+            else
+            {
+                itemFavorite.setImageDrawable(getBaseContext().getDrawable(R.drawable.ic_baseline_star_outline));
+            }
+
+            return response;
+
+        }
     }
 }
