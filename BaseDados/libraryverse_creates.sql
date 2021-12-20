@@ -131,20 +131,6 @@ create table movieActor (
     primary key (ma_id)
 );
 
-create table venue (
-    venue_id SERIAL not null, 
-    venue_address varchar(200) not null, 
-    venue_city varchar(100) not null, 
-    venue_country varchar(100) not null, 
-    primary key(venue_id)
-);
-
-create table movievenue (
-    mv_id SERIAL not null, 
-    mv_venue_id integer not null, 
-    mv_mc_id integer not null, 
-    primary key (mv_id)
-);
 
 create table moviegenre(
     mg_id SERIAL not null, 
@@ -240,21 +226,6 @@ ON DELETE NO ACTION ON UPDATE NO ACTION;
 alter table movievenue 
 add constraint movievenue_fk_venue
 foreign key (mv_venue_id) references venue(venue_id) 
-ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-alter table question 
-add constraint question_fk_book
-foreign key (question_book_id) references book(book_id) 
-ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-alter table question 
-add constraint question_fk_movie
-foreign key (question_movie_id) references movie(movie_id) 
-ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-alter table answer 
-add constraint answer_fk_question
-foreign key (answer_question_id) references question(question_id) 
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table moviegenre
