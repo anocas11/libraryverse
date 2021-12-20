@@ -19,13 +19,19 @@ import java.util.ArrayList;
 import pt.iade.libraryverse.models.CinematicUniverse;
 import pt.iade.libraryverse.models.Movie;
 import pt.iade.libraryverse.models.Response;
+import pt.iade.libraryverse.models.UserBooks;
+import pt.iade.libraryverse.models.UserMovies;
 import pt.iade.libraryverse.models.repositories.CinematicUniverseRepository;
 import pt.iade.libraryverse.models.repositories.MovieRepository;
+import pt.iade.libraryverse.models.repositories.UserMoviesRepository;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
 import pt.iade.libraryverse.models.views.MovieActorsView;
 import pt.iade.libraryverse.models.views.MovieCharactersView;
 import pt.iade.libraryverse.models.views.MovieInfoView;
-
+import pt.iade.libraryverse.models.views.UserMoviesStatusView;
+import pt.iade.libraryverse.models.exceptions.NotFoundException;
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.http.HttpStatus;
 
 @RestController
 @RequestMapping(path = "api/movies")
@@ -37,6 +43,9 @@ public class MovieController {
 
     @Autowired
     private CinematicUniverseRepository cuRepository;
+
+    @Autowired
+    private UserMoviesRepository umRepository;
 
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<Movie> getMovies()
@@ -105,5 +114,74 @@ public class MovieController {
         var resp = new Response<Iterable<MovieActorsView>>();
         resp.results = movieRepository.getMovieActors(id);
         return resp;
+    }
+
+    @GetMapping(path = "/movie/{movieid}/{userid}/status", produces = MediaType.APPLICATION_JSON_VALUE)
+    public UserMovies getUserMoviesStatus(@PathVariable int movieid, @PathVariable int userid)
+    {
+        Iterable<UserMoviesStatusView> movies = umRepository.getUserMovies(movieid, userid);
+
+        List<UserMoviesStatusView> userMovies = new ArrayList<UserMoviesStatusView>();
+
+        movies.forEach(movie ->{
+            userMovies.add(movie);
+        });
+
+        if(userMovies.size() == 0)
+        {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "");
+        }
+        else
+        {
+            UserMovies umToReturn = new UserMovies();
+            umToReturn.setId(userMovies.get(0).getId());
+            umToReturn.setUserId(userid);
+            umToReturn.setMovieId(movieid);
+            umToReturn.setFavorite(userMovies.get(0).getFavorite());
+            umToReturn.setWatched(userMovies.get(0).getWatched());
+            umToReturn.setHas(userMovies.get(0).getHas());
+
+            return umToReturn;
+        }
+    }
+
+    @PostMapping(path = "/movie/{movieid}/{userid}/favorite", produces = MediaType.APPLICATION_JSON_VALUE)
+    public UserMovies saveToFavorites(@PathVariable int movieid, @PathVariable int userid)
+    {
+        Iterable<UserMoviesStatusView> movies = umRepository.getUserMovies(movieid, userid);
+
+        List<UserMoviesStatusView> userMovies = new ArrayList<UserMoviesStatusView>();
+
+        movies.forEach(movie ->{
+            userMovies.add(movie);
+        });
+
+        if(userMovies.size() == 0)
+        {
+            UserMovies umToInsert = new UserMovies();
+            umToInsert.setUserId(userid);
+            umToInsert.setMovieId(movieid);
+            umToInsert.setFavorite(true);
+            umToInsert.setWatched(false);
+            umToInsert.setHas(false);
+
+            umRepository.save(umToInsert);
+
+            return umToInsert;
+        }
+        else
+        {
+            UserMovies umToUpdate = new UserMovies();
+            umToUpdate.setId(userMovies.get(0).getId());
+            umToUpdate.setUserId(userid);
+            umToUpdate.setMovieId(movieid);
+            umToUpdate.setFavorite(!userMovies.get(0).getFavorite());
+            umToUpdate.setWatched(userMovies.get(0).getWatched());
+            umToUpdate.setHas(userMovies.get(0).getHas());
+
+            umRepository.save(umToUpdate);
+
+            return umToUpdate;
+        }
     }
 }

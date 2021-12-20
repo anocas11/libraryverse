@@ -26,7 +26,7 @@ import pt.iade.libraryverse.models.repositories.CinematicUniverseRepository;
 import pt.iade.libraryverse.models.views.BookAuthorsView;
 import pt.iade.libraryverse.models.views.BookCharactersView;
 import pt.iade.libraryverse.models.views.BookInfoView;
-import pt.iade.libraryverse.models.views.UserBooksFavoriteView;
+import pt.iade.libraryverse.models.views.UserBooksStatusView;
 import pt.iade.libraryverse.models.exceptions.NotFoundException;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.http.HttpStatus;
@@ -116,9 +116,9 @@ public class BookController {
     @GetMapping(path = "/book/{bookid}/{userid}/status", produces = MediaType.APPLICATION_JSON_VALUE)
     public UserBooks getUserBookStatus(@PathVariable int bookid, @PathVariable int userid)
     {
-        Iterable<UserBooksFavoriteView> books = ubRepository.getUserBooks(bookid, userid);
+        Iterable<UserBooksStatusView> books = ubRepository.getUserBooks(bookid, userid);
 
-        List<UserBooksFavoriteView> userBooks = new ArrayList<UserBooksFavoriteView>();
+        List<UserBooksStatusView> userBooks = new ArrayList<UserBooksStatusView>();
 
         books.forEach(book ->{
             userBooks.add(book);
@@ -146,9 +146,9 @@ public class BookController {
     @PostMapping(path = "/book/{bookid}/{userid}/favorite", produces = MediaType.APPLICATION_JSON_VALUE)
     public UserBooks saveToFavorites(@PathVariable int bookid, @PathVariable int userid)
     {
-        Iterable<UserBooksFavoriteView> books = ubRepository.getUserBooks(bookid, userid);
+        Iterable<UserBooksStatusView> books = ubRepository.getUserBooks(bookid, userid);
 
-        List<UserBooksFavoriteView> userBooks = new ArrayList<UserBooksFavoriteView>();
+        List<UserBooksStatusView> userBooks = new ArrayList<UserBooksStatusView>();
 
         books.forEach(book ->{
             userBooks.add(book);
