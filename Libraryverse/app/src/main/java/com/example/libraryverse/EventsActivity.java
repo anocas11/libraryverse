@@ -102,6 +102,23 @@ public class EventsActivity extends AppCompatActivity {
                                     when.setTextColor(Color.parseColor("#FFFFFF"));
                                     linearLayout.addView(when);
 
+                                    int finalI = i;
+                                    linearLayout.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            Intent intent = new Intent(EventsActivity.this, MapsActivity.class);
+
+                                            try {
+                                                intent.putExtra("local", events[finalI].address[0]);
+                                                startActivity(intent);
+                                            }
+                                            catch (Exception e)
+                                            {
+
+                                            }
+                                        }
+                                    });
+
                                     llPrincipal.addView(linearLayout);
                                 }
                             }

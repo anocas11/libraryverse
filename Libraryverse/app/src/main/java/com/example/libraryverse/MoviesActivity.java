@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -25,8 +28,7 @@ public class MoviesActivity extends AppCompatActivity {
 
     //Initialize variable
     DrawerLayout drawerLayout;
-    LinearLayout llVertical, llHorizontal;
-    User user;
+    GridLayout gridLayout;
     JSONArray myMoviesArray;
 
     @Override
@@ -36,10 +38,11 @@ public class MoviesActivity extends AppCompatActivity {
 
         //Assign variable
         drawerLayout = findViewById(R.id.drawer_layout);
+        gridLayout = findViewById(R.id.gridView);
 
         try{
             DownloadTask task = new DownloadTask();
-            String url = "https://libraryverse.herokuapp.com/api/users/user/" + user.id + "/movies";
+            String url = "https://libraryverse.herokuapp.com/api/users/user/" + User.id + "/movies";
             myMoviesArray = task.execute(url).get();
 
             if(myMoviesArray == null)
@@ -50,18 +53,32 @@ public class MoviesActivity extends AppCompatActivity {
             for(int i = 0; i < myMoviesArray.length(); i++)
             {
                 try {
+                    LinearLayout linearLayout = new LinearLayout(getBaseContext());
+                    linearLayout.setOrientation(LinearLayout.VERTICAL);
+
+                    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                    params.setMargins(20, 15, 20, 15);
+
                     JSONObject jsonPart = myMoviesArray.getJSONObject(i);
 
+
+                    LinearLayout.LayoutParams imageParams = new LinearLayout.LayoutParams(convertDpToPixel(105, getBaseContext()), LinearLayout.LayoutParams.WRAP_CONTENT);
+                    imageParams.setMargins(20, 15, 20, 15);
                     ImageView poster = new ImageView(getBaseContext());
                     Picasso.get().load(jsonPart.getString("moviePoster")).into(poster);
-                    //poster.setLayoutParams(params);
-                    llHorizontal.addView(poster);
+                    poster.setLayoutParams(imageParams);
+                    poster.setAdjustViewBounds(true);
+                    linearLayout.addView(poster);
 
+                    LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(convertDpToPixel(100, getBaseContext()), LinearLayout.LayoutParams.WRAP_CONTENT);
+                    textParams.setMargins(20, 15, 20, 15);
                     TextView title = new TextView(getBaseContext());
                     title.setText(jsonPart.getString("movieName"));
                     title.setTextColor(Color.parseColor("#FFFFFF"));
-                    //title.setLayoutParams(params);
-                    llHorizontal.addView(title);
+                    title.setLayoutParams(textParams);
+                    linearLayout.addView(title);
+
+                    gridLayout.addView(linearLayout);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -124,6 +141,10 @@ public class MoviesActivity extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         //Start activity
         activity.startActivity(intent);
+    }
+
+    public static int convertDpToPixel(int dp, Context context){
+        return dp * ((int) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
     }
 
 

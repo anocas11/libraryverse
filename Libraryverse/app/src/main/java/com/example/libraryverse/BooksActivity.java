@@ -57,7 +57,7 @@ public class BooksActivity extends AppCompatActivity {
                     linearLayout.setOrientation(LinearLayout.VERTICAL);
 
                     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                    params.setMargins(5, 10, 5, 10);
+                    params.setMargins(20, 15, 20, 15);
 
                     JSONObject jsonPart = myBooksArray.getJSONObject(i);
 
@@ -67,6 +67,7 @@ public class BooksActivity extends AppCompatActivity {
                     linearLayout.addView(poster);
 
                     LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(convertDpToPixel(100, getBaseContext()), LinearLayout.LayoutParams.WRAP_CONTENT);
+                    textParams.setMargins(20, 10, 20, 15);
                     TextView title = new TextView(getBaseContext());
                     title.setText(jsonPart.getString("bookName"));
                     title.setTextColor(Color.parseColor("#FFFFFF"));
