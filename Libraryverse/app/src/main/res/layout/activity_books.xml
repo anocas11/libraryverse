@@ -14,47 +14,55 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/main_toolbar" />
-
-
+        <include
+            layout="@layout/main_toolbar"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#00FFFFFF" />
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"/>
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="343dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="52dp"
-            android:text="Favourite Books"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:srcCompat="@drawable/ic_book" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="My Books"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
         <ScrollView
-            android:id="@+id/scrollView2"
-            android:layout_width="413dp"
-            android:layout_height="534dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7">
-
-            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <GridLayout
+                android:id="@+id/gridView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" />
+                android:columnCount="3">
+
+            </GridLayout>
         </ScrollView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="300dp"
@@ -63,7 +71,6 @@
         android:background="@android:color/black">
 
         <include layout="@layout/main_nav_drawer" />
-
 
     </RelativeLayout>
 

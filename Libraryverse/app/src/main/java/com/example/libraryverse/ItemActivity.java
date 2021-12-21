@@ -17,6 +17,7 @@ import com.example.libraryverse.APIRequests.DownloadTask;
 import com.example.libraryverse.APIRequests.UtilityService;
 import com.example.libraryverse.models.BookModel;
 import com.example.libraryverse.models.LoginModel;
+import com.example.libraryverse.models.MovieModel;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -323,6 +324,16 @@ public class ItemActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+        else if(itemType.equals("movie"))
+        {
+            try {
+                MovieModel fmt = new favoriteMovieTask().execute().get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private class favoriteBookTask extends AsyncTask<Void, Void, BookModel>
@@ -358,6 +369,58 @@ public class ItemActivity extends AppCompatActivity {
         {
             UtilityService utilityService = new UtilityService();
             BookModel response = utilityService.getBookStatus(User.id, itemId);
+
+            if(response == null)
+            {
+                return null;
+            }
+
+            if(response.favorite){
+                itemFavorite.setImageDrawable(getBaseContext().getDrawable(R.drawable.ic_baseline_star));
+            }
+            else
+            {
+                itemFavorite.setImageDrawable(getBaseContext().getDrawable(R.drawable.ic_baseline_star_outline));
+            }
+
+            return response;
+
+        }
+    }
+
+    private class favoriteMovieTask extends AsyncTask<Void, Void, MovieModel>
+    {
+        @Override
+        protected MovieModel doInBackground(Void... voids)
+        {
+            UtilityService utilityService = new UtilityService();
+            MovieModel response = utilityService.setMovieFavorite(User.id, itemId);
+
+            if(response == null)
+            {
+                return null;
+            }
+
+            if(response.favorite){
+                itemFavorite.setImageDrawable(getBaseContext().getDrawable(R.drawable.ic_baseline_star));
+            }
+            else
+            {
+                itemFavorite.setImageDrawable(getBaseContext().getDrawable(R.drawable.ic_baseline_star_outline));
+            }
+
+            return response;
+
+        }
+    }
+
+    private class MovieStatusTask extends AsyncTask<Void, Void, MovieModel>
+    {
+        @Override
+        protected MovieModel doInBackground(Void... voids)
+        {
+            UtilityService utilityService = new UtilityService();
+            MovieModel response = utilityService.getMovieStatus(User.id, itemId);
 
             if(response == null)
             {

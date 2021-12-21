@@ -11,21 +11,37 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.libraryverse.APIRequests.EventsService;
+import com.example.libraryverse.models.EventsModel;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.ExecutionException;
 
 public class EventsActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     LocationManager locationManager;
     LocationListener locationListener;
+    LinearLayout llPrincipal;
 
     TextView textView;
+    boolean isLoaded = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +50,7 @@ public class EventsActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.textViewLocation);
         drawerLayout = findViewById(R.id.drawer_layout);
+        llPrincipal = findViewById(R.id.linearLayoutPrincipal);
 
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
@@ -42,6 +59,59 @@ public class EventsActivity extends AppCompatActivity {
             public void onLocationChanged(Location location) {
                 textView.setText(location.toString());
                 Log.i("Location", location.toString());
+
+                Geocoder geo = new Geocoder(getBaseContext(), Locale.getDefault());
+                List<Address> addresses = null;
+                try {
+                    addresses = geo.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                if (addresses.isEmpty())
+                {
+                    Toast.makeText(getBaseContext(), "Waiting for Location", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    //yourtextboxname.setText(addresses.get(0).getFeatureName() + ", " + addresses.get(0).getLocality() +", " + addresses.get(0).getAdminArea() + ", " + addresses.get(0).getCountryName());
+                    Toast.makeText(getBaseContext(), addresses.get(0).getLocality(), Toast.LENGTH_LONG).show();
+                    if(!isLoaded){
+                        isLoaded = true;
+                        try {
+                            EventsModel[] events = new EventsTask().execute(addresses.get(0).getLocality()).get();
+
+                            if(events != null){
+                                for(int i = 0; i < events.length; i++)
+                                {
+                                    LinearLayout linearLayout = new LinearLayout(getBaseContext());
+                                    linearLayout.setOrientation(LinearLayout.VERTICAL);
+
+                                    TextView title = new TextView(getBaseContext());
+                                    title.setText(events[i].title);
+                                    title.setTextColor(Color.parseColor("#FFFFFF"));
+                                    title.setTextSize(16);
+                                    linearLayout.addView(title);
+
+                                    TextView address = new TextView(getBaseContext());
+                                    address.setText(events[i].address[0]);
+                                    address.setTextColor(Color.parseColor("#FFFFFF"));
+                                    linearLayout.addView(address);
+
+                                    TextView when = new TextView(getBaseContext());
+                                    when.setText(events[i].date.when);
+                                    when.setTextColor(Color.parseColor("#FFFFFF"));
+                                    linearLayout.addView(when);
+
+                                    llPrincipal.addView(linearLayout);
+                                }
+                            }
+                        } catch (ExecutionException e) {
+                            e.printStackTrace();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
             }
 
             @Override
@@ -85,6 +155,24 @@ public class EventsActivity extends AppCompatActivity {
                         locationListener
                 );
             }
+        }
+    }
+
+    private class EventsTask extends AsyncTask<String, Void, EventsModel[]>
+    {
+
+        @Override
+        protected EventsModel[] doInBackground(String... strings)
+        {
+            EventsService eventsService = new EventsService();
+            EventsModel[] response = eventsService.getEvents("Eventos+em+"+strings[0]);
+
+            if(response == null)
+            {
+                return null;
+            }
+
+            return response;
         }
     }
 

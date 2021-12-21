@@ -5,13 +5,29 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.example.libraryverse.APIRequests.DownloadTask;
+import com.squareup.picasso.Picasso;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.concurrent.ExecutionException;
 
 public class MoviesActivity extends AppCompatActivity {
 
     //Initialize variable
     DrawerLayout drawerLayout;
+    LinearLayout llVertical, llHorizontal;
+    User user;
+    JSONArray myMoviesArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +36,43 @@ public class MoviesActivity extends AppCompatActivity {
 
         //Assign variable
         drawerLayout = findViewById(R.id.drawer_layout);
+
+        try{
+            DownloadTask task = new DownloadTask();
+            String url = "https://libraryverse.herokuapp.com/api/users/user/" + user.id + "/movies";
+            myMoviesArray = task.execute(url).get();
+
+            if(myMoviesArray == null)
+            {
+                return;
+            }
+
+            for(int i = 0; i < myMoviesArray.length(); i++)
+            {
+                try {
+                    JSONObject jsonPart = myMoviesArray.getJSONObject(i);
+
+                    ImageView poster = new ImageView(getBaseContext());
+                    Picasso.get().load(jsonPart.getString("moviePoster")).into(poster);
+                    //poster.setLayoutParams(params);
+                    llHorizontal.addView(poster);
+
+                    TextView title = new TextView(getBaseContext());
+                    title.setText(jsonPart.getString("movieName"));
+                    title.setTextColor(Color.parseColor("#FFFFFF"));
+                    //title.setLayoutParams(params);
+                    llHorizontal.addView(title);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
     }
 
     public void ClickSearch(View view){
