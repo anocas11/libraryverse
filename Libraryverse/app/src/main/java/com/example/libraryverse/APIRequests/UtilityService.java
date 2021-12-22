@@ -1,6 +1,7 @@
 package com.example.libraryverse.APIRequests;
 
 import com.example.libraryverse.models.BookModel;
+import com.example.libraryverse.models.MovieModel;
 
 import java.io.IOException;
 
@@ -32,6 +33,26 @@ public class UtilityService {
     {
         try{
             return utilityServiceInterface.getBookStatus(bookId, userId).execute().body();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public MovieModel setMovieFavorite(String userId, String movieId)
+    {
+        try{
+            return utilityServiceInterface.setMovieFavorite(movieId, userId).execute().body();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public MovieModel getMovieStatus(String userId, String movieId)
+    {
+        try{
+            return utilityServiceInterface.getMovieStatus(movieId, userId).execute().body();
         } catch (IOException e) {
             e.printStackTrace();
         }

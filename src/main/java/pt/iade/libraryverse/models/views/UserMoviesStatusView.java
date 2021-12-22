@@ -1,9 +1,8 @@
 package pt.iade.libraryverse.models.views;
 
-public interface UserBooksFavoriteView {
+public interface UserMoviesStatusView {
     Integer getId();
     Boolean getFavorite();
-    Boolean getRead();
-    Boolean getReading();
+    Boolean getWatched();
     Boolean getHas();
 }

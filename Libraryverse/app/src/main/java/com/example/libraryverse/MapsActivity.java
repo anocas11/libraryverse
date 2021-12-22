@@ -2,8 +2,12 @@ package com.example.libraryverse;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 
+import com.example.libraryverse.APIRequests.EventsService;
+import com.example.libraryverse.models.EventsModel;
+import com.example.libraryverse.models.LocationModel;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -12,10 +16,14 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.libraryverse.databinding.ActivityMapsBinding;
 
+import java.util.concurrent.ExecutionException;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
+
+    public String local;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +31,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        local = getIntent().getStringExtra("local");
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -44,8 +54,33 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        try {
+            LocationModel[] locationResults = new PlaceTask().execute(local).get();
+            LatLng place = new LatLng(locationResults[0].gps_coordinates.latitude, locationResults[0].gps_coordinates.longitude);
+            mMap.addMarker(new MarkerOptions().position(place).title("Evento"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(place));
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private class PlaceTask extends AsyncTask<String, Void, LocationModel[]>
+    {
+
+        @Override
+        protected LocationModel[] doInBackground(String... strings)
+        {
+            EventsService eventsService = new EventsService();
+            LocationModel[] response = eventsService.getPlace(strings[0]);
+
+            if(response == null)
+            {
+                return null;
+            }
+
+            return response;
+        }
     }
 }
