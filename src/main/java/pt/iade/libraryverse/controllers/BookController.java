@@ -184,4 +184,130 @@ public class BookController {
             return ubToUpdate;
         }
     } 
+
+    @PostMapping(path = "/book/{bookid}/{userid}/read", produces = MediaType.APPLICATION_JSON_VALUE)
+    public UserBooks saveToRead(@PathVariable int bookid, @PathVariable int userid)
+    {
+        Iterable<UserBooksStatusView> books = ubRepository.getUserBooks(bookid, userid);
+
+        List<UserBooksStatusView> userBooks = new ArrayList<UserBooksStatusView>();
+
+        books.forEach(book ->{
+            userBooks.add(book);
+        });
+
+        if(userBooks.size() == 0)
+        {
+            UserBooks ubToInsert = new UserBooks();
+            ubToInsert.setUserId(userid);
+            ubToInsert.setBookId(bookid);
+            ubToInsert.setFavorite(false);
+            ubToInsert.setRead(true);
+            ubToInsert.setReading(false);
+            ubToInsert.setHas(false);
+
+            ubRepository.save(ubToInsert);
+
+            return ubToInsert;
+        }
+        else 
+        {
+            UserBooks ubToUpdate = new UserBooks();
+            ubToUpdate.setId(userBooks.get(0).getId());
+            ubToUpdate.setUserId(userid);
+            ubToUpdate.setBookId(bookid);
+            ubToUpdate.setFavorite(userBooks.get(0).getFavorite());
+            ubToUpdate.setRead(!userBooks.get(0).getRead());
+            ubToUpdate.setReading(userBooks.get(0).getReading());
+            ubToUpdate.setHas(userBooks.get(0).getHas());
+
+            ubRepository.save(ubToUpdate);
+
+            return ubToUpdate;
+        }
+    } 
+
+    @PostMapping(path = "/book/{bookid}/{userid}/reading", produces = MediaType.APPLICATION_JSON_VALUE)
+    public UserBooks saveToReading(@PathVariable int bookid, @PathVariable int userid)
+    {
+        Iterable<UserBooksStatusView> books = ubRepository.getUserBooks(bookid, userid);
+
+        List<UserBooksStatusView> userBooks = new ArrayList<UserBooksStatusView>();
+
+        books.forEach(book ->{
+            userBooks.add(book);
+        });
+
+        if(userBooks.size() == 0)
+        {
+            UserBooks ubToInsert = new UserBooks();
+            ubToInsert.setUserId(userid);
+            ubToInsert.setBookId(bookid);
+            ubToInsert.setFavorite(false);
+            ubToInsert.setRead(false);
+            ubToInsert.setReading(true);
+            ubToInsert.setHas(false);
+
+            ubRepository.save(ubToInsert);
+
+            return ubToInsert;
+        }
+        else 
+        {
+            UserBooks ubToUpdate = new UserBooks();
+            ubToUpdate.setId(userBooks.get(0).getId());
+            ubToUpdate.setUserId(userid);
+            ubToUpdate.setBookId(bookid);
+            ubToUpdate.setFavorite(userBooks.get(0).getFavorite());
+            ubToUpdate.setRead(userBooks.get(0).getRead());
+            ubToUpdate.setReading(!userBooks.get(0).getReading());
+            ubToUpdate.setHas(userBooks.get(0).getHas());
+
+            ubRepository.save(ubToUpdate);
+
+            return ubToUpdate;
+        }
+    } 
+
+    @PostMapping(path = "/book/{bookid}/{userid}/owned", produces = MediaType.APPLICATION_JSON_VALUE)
+    public UserBooks saveToOwned(@PathVariable int bookid, @PathVariable int userid)
+    {
+        Iterable<UserBooksStatusView> books = ubRepository.getUserBooks(bookid, userid);
+
+        List<UserBooksStatusView> userBooks = new ArrayList<UserBooksStatusView>();
+
+        books.forEach(book ->{
+            userBooks.add(book);
+        });
+
+        if(userBooks.size() == 0)
+        {
+            UserBooks ubToInsert = new UserBooks();
+            ubToInsert.setUserId(userid);
+            ubToInsert.setBookId(bookid);
+            ubToInsert.setFavorite(false);
+            ubToInsert.setRead(false);
+            ubToInsert.setReading(false);
+            ubToInsert.setHas(true);
+
+            ubRepository.save(ubToInsert);
+
+            return ubToInsert;
+        }
+        else 
+        {
+            UserBooks ubToUpdate = new UserBooks();
+            ubToUpdate.setId(userBooks.get(0).getId());
+            ubToUpdate.setUserId(userid);
+            ubToUpdate.setBookId(bookid);
+            ubToUpdate.setFavorite(userBooks.get(0).getFavorite());
+            ubToUpdate.setRead(userBooks.get(0).getRead());
+            ubToUpdate.setReading(userBooks.get(0).getReading());
+            ubToUpdate.setHas(!userBooks.get(0).getHas());
+
+            ubRepository.save(ubToUpdate);
+
+            return ubToUpdate;
+        }
+    } 
 }

@@ -19,6 +19,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -86,20 +87,29 @@ public class EventsActivity extends AppCompatActivity {
                                     LinearLayout linearLayout = new LinearLayout(getBaseContext());
                                     linearLayout.setOrientation(LinearLayout.VERTICAL);
 
+                                    LinearLayout.LayoutParams titleParams = new LinearLayout.LayoutParams(convertDpToPixel(100, getBaseContext()), LinearLayout.LayoutParams.WRAP_CONTENT);
+                                    titleParams.setMargins(20, 10, 20, 15);
                                     TextView title = new TextView(getBaseContext());
                                     title.setText(events[i].title);
                                     title.setTextColor(Color.parseColor("#FFFFFF"));
                                     title.setTextSize(16);
+                                    title.setLayoutParams(titleParams);
                                     linearLayout.addView(title);
 
+                                    LinearLayout.LayoutParams addressParams = new LinearLayout.LayoutParams(convertDpToPixel(100, getBaseContext()), LinearLayout.LayoutParams.WRAP_CONTENT);
+                                    addressParams.setMargins(30, 10, 20, 15);
                                     TextView address = new TextView(getBaseContext());
                                     address.setText(events[i].address[0]);
                                     address.setTextColor(Color.parseColor("#FFFFFF"));
+                                    address.setLayoutParams(addressParams);
                                     linearLayout.addView(address);
 
+                                    LinearLayout.LayoutParams whenParams = new LinearLayout.LayoutParams(convertDpToPixel(100, getBaseContext()), LinearLayout.LayoutParams.WRAP_CONTENT);
+                                    whenParams.setMargins(20, 10, 20, 15);
                                     TextView when = new TextView(getBaseContext());
                                     when.setText(events[i].date.when);
                                     when.setTextColor(Color.parseColor("#FFFFFF"));
+                                    when.setLayoutParams(whenParams);
                                     linearLayout.addView(when);
 
                                     int finalI = i;
@@ -218,13 +228,12 @@ public class EventsActivity extends AppCompatActivity {
         redirectActivity(this, ProfileActivity.class);
     }
 
-    public void ClickFavouriteMovies(View view){
+    public void ClickMovies(View view){
         //Recreate activity
-        recreate();
-
+        redirectActivity(this, MoviesActivity.class);
     }
 
-    public void ClickFavouriteBooks(View view){
+    public void ClickBooks(View view){
         //Recreate activity to favourite books
         redirectActivity(this, BooksActivity.class);
     }
@@ -242,6 +251,10 @@ public class EventsActivity extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         //Start activity
         activity.startActivity(intent);
+    }
+
+    public static int convertDpToPixel(int dp, Context context){
+        return dp * ((int) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
     }
 
 

@@ -184,4 +184,85 @@ public class MovieController {
             return umToUpdate;
         }
     }
+
+    @PostMapping(path = "/movie/{movieid}/{userid}/watched", produces = MediaType.APPLICATION_JSON_VALUE)
+    public UserMovies saveToWatched(@PathVariable int movieid, @PathVariable int userid)
+    {
+        Iterable<UserMoviesStatusView> movies = umRepository.getUserMovies(movieid, userid);
+
+        List<UserMoviesStatusView> userMovies = new ArrayList<UserMoviesStatusView>();
+
+        movies.forEach(movie ->{
+            userMovies.add(movie);
+        });
+
+        if(userMovies.size() == 0)
+        {
+            UserMovies umToInsert = new UserMovies();
+            umToInsert.setUserId(userid);
+            umToInsert.setMovieId(movieid);
+            umToInsert.setFavorite(false);
+            umToInsert.setWatched(true);
+            umToInsert.setHas(false);
+
+            umRepository.save(umToInsert);
+
+            return umToInsert;
+        }
+        else
+        {
+            UserMovies umToUpdate = new UserMovies();
+            umToUpdate.setId(userMovies.get(0).getId());
+            umToUpdate.setUserId(userid);
+            umToUpdate.setMovieId(movieid);
+            umToUpdate.setFavorite(userMovies.get(0).getFavorite());
+            umToUpdate.setWatched(!userMovies.get(0).getWatched());
+            umToUpdate.setHas(userMovies.get(0).getHas());
+
+            umRepository.save(umToUpdate);
+
+            return umToUpdate;
+        }
+    }
+
+    @PostMapping(path = "/movie/{movieid}/{userid}/owned", produces = MediaType.APPLICATION_JSON_VALUE)
+    public UserMovies saveToOwned(@PathVariable int movieid, @PathVariable int userid)
+    {
+        Iterable<UserMoviesStatusView> movies = umRepository.getUserMovies(movieid, userid);
+
+        List<UserMoviesStatusView> userMovies = new ArrayList<UserMoviesStatusView>();
+
+        movies.forEach(movie ->{
+            userMovies.add(movie);
+        });
+
+        if(userMovies.size() == 0)
+        {
+            UserMovies umToInsert = new UserMovies();
+            umToInsert.setUserId(userid);
+            umToInsert.setMovieId(movieid);
+            umToInsert.setFavorite(false);
+            umToInsert.setWatched(false);
+            umToInsert.setHas(true);
+
+            umRepository.save(umToInsert);
+
+            return umToInsert;
+        }
+        else
+        {
+            UserMovies umToUpdate = new UserMovies();
+            umToUpdate.setId(userMovies.get(0).getId());
+            umToUpdate.setUserId(userid);
+            umToUpdate.setMovieId(movieid);
+            umToUpdate.setFavorite(userMovies.get(0).getFavorite());
+            umToUpdate.setWatched(userMovies.get(0).getWatched());
+            umToUpdate.setHas(!userMovies.get(0).getHas());
+
+            umRepository.save(umToUpdate);
+
+            return umToUpdate;
+        }
+    }
+    
 }

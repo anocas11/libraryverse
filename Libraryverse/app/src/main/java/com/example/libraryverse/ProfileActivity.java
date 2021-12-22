@@ -43,20 +43,20 @@ public class ProfileActivity extends AppCompatActivity {
         redirectActivity(this, MainActivity.class);
     }
 
-    public void ClickFavouriteMovies(View view){
-        //Redirect activity to movies
+    public void ClickMovies(View view){
+        //Recreate activity
         redirectActivity(this, MoviesActivity.class);
+    }
+
+    public void ClickBooks(View view){
+        //Recreate activity to favourite books
+        redirectActivity(this, BooksActivity.class);
     }
 
     public void ClickProfile(View view){
         //Recreate activity
         recreate();
 
-    }
-
-    public void ClickFavouriteBooks(View view){
-        //Recreate activity to favourite books
-        redirectActivity(this, BooksActivity.class);
     }
 
     public void ClickLogout(View view){

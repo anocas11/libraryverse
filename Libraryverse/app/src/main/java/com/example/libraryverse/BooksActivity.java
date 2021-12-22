@@ -108,18 +108,14 @@ public class BooksActivity extends AppCompatActivity {
         MainActivity.redirectActivity(this, MainActivity.class);
     }
 
-    public void ClickFavouriteMovies(View view){
-        //Recreate activity to favourite movies
+    public void ClickMovies(View view){
+        //Recreate activity
         redirectActivity(this, MoviesActivity.class);
-
-
     }
 
-
-
-    public void ClickFavouriteBooks(View view){
-        //Recreate activity
-        recreate();
+    public void ClickBooks(View view){
+        //Recreate activity to favourite books
+        redirectActivity(this, BooksActivity.class);
     }
 
     public void ClickProfile(View view){
