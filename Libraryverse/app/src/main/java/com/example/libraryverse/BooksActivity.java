@@ -118,6 +118,11 @@ public class BooksActivity extends AppCompatActivity {
         redirectActivity(this, BooksActivity.class);
     }
 
+    public void ClickMaps(View view){
+        //Recreate activity to favourite books
+        redirectActivity(this, EventsActivity.class);
+    }
+
     public void ClickProfile(View view){
         //Redirect activity profile
         redirectActivity(this, ProfileActivity.class);

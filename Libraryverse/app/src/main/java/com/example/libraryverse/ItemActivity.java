@@ -1,22 +1,24 @@
 package com.example.libraryverse;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.libraryverse.APIRequests.DownloadTask;
 import com.example.libraryverse.APIRequests.UtilityService;
 import com.example.libraryverse.models.BookModel;
-import com.example.libraryverse.models.LoginModel;
 import com.example.libraryverse.models.MovieModel;
 import com.squareup.picasso.Picasso;
 
@@ -28,9 +30,10 @@ import java.util.concurrent.ExecutionException;
 
 public class ItemActivity extends AppCompatActivity {
 
+    DrawerLayout drawerLayout;
     TextView itemName;
     TextView itemDescription;
-    ImageView itemPoster, itemFavorite;
+    ImageView itemPoster, itemFavorite, itemOwned, itemWatched, itemRead, itemReading;
     LinearLayout ll;
     JSONArray itemArray = null;
     String itemId, itemType;
@@ -41,11 +44,16 @@ public class ItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item);
 
+        drawerLayout = findViewById(R.id.drawer_layout);
         itemName = findViewById(R.id.textViewItemName);
         itemDescription = findViewById(R.id.textViewItemDescription);
         itemPoster = findViewById(R.id.imageViewItemImg);
         ll = findViewById(R.id.linearLayoutIteminfo);
         itemFavorite = findViewById(R.id.imageViewFavoriteItem);
+        itemOwned = findViewById(R.id.imageViewAddItem);
+        itemWatched = findViewById(R.id.imageViewWatched);
+        itemRead = findViewById(R.id.imageViewRead);
+        itemReading = findViewById(R.id.imageViewReading);
 
         itemId = getIntent().getStringExtra("id");
         itemType = getIntent().getStringExtra("type");
@@ -83,6 +91,34 @@ public class ItemActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     AddFavoriteClick();
+                }
+            });
+
+            itemOwned.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AddOwnedClick();
+                }
+            });
+
+            itemRead.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AddReadClick();;
+                }
+            });
+
+            itemReading.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AddReadingClick();
+                }
+            });
+
+            itemWatched.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AddWatchedClick();
                 }
             });
 
@@ -336,6 +372,123 @@ public class ItemActivity extends AppCompatActivity {
         }
     }
 
+    public void AddOwnedClick()
+    {
+        if(itemType.equals("book"))
+        {
+            try {
+                BookModel fbt = new favoriteBookTask().execute().get();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        else if(itemType.equals("movie"))
+        {
+            try {
+                MovieModel fmt = new favoriteMovieTask().execute().get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void AddReadClick()
+    {
+        if(itemType.equals("book"))
+        {
+            try {
+                BookModel fbt = new ReadBookTask().execute().get();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void AddReadingClick()
+    {
+        if(itemType.equals("book"))
+        {
+            try {
+                BookModel fbt = new ReadingBookTask().execute().get();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void AddWatchedClick()
+    {
+        if(itemType.equals("movie"))
+        {
+            try {
+                MovieModel fbt = new watchedMovieTask().execute().get();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private class BookStatusTask extends AsyncTask<Void, Void, BookModel>
+    {
+        @Override
+        protected BookModel doInBackground(Void... voids)
+        {
+            UtilityService utilityService = new UtilityService();
+            BookModel response = utilityService.getBookStatus(User.id, itemId);
+
+            if(response == null)
+            {
+                return null;
+            }
+
+            if(response.favorite){
+                itemFavorite.setImageDrawable(getBaseContext().getDrawable(R.drawable.ic_baseline_star));
+            }
+            else
+            {
+                itemFavorite.setImageDrawable(getBaseContext().getDrawable(R.drawable.ic_baseline_star_outline));
+            }
+
+
+            if(response.read){
+                itemRead.setImageDrawable(getBaseContext().getDrawable(R.drawable.bookmark_solid));
+            }
+            else
+            {
+                itemRead.setImageDrawable(getBaseContext().getDrawable(R.drawable.bookmark_regular));
+            }
+
+            if(response.reading){
+                itemReading.setImageDrawable(getBaseContext().getDrawable(R.drawable.book_open_solid));
+            }
+            else
+            {
+                itemReading.setImageDrawable(getBaseContext().getDrawable(R.drawable.book_solid));
+            }
+
+            if(response.has){
+                itemOwned.setImageDrawable(getBaseContext().getDrawable(R.drawable.check_circle_solid));
+            }
+            else
+            {
+                itemOwned.setImageDrawable(getBaseContext().getDrawable(R.drawable.check_circle_regular));
+            }
+
+            return response;
+
+        }
+    }
+
     private class favoriteBookTask extends AsyncTask<Void, Void, BookModel>
     {
         @Override
@@ -362,13 +515,90 @@ public class ItemActivity extends AppCompatActivity {
         }
     }
 
-    private class BookStatusTask extends AsyncTask<Void, Void, BookModel>
+    private class ReadBookTask extends AsyncTask<Void, Void, BookModel>
     {
         @Override
         protected BookModel doInBackground(Void... voids)
         {
             UtilityService utilityService = new UtilityService();
-            BookModel response = utilityService.getBookStatus(User.id, itemId);
+            BookModel response = utilityService.setBookRead(User.id, itemId);
+
+            if(response == null)
+            {
+                return null;
+            }
+
+            if(response.read){
+                itemRead.setImageDrawable(getBaseContext().getDrawable(R.drawable.bookmark_solid));
+            }
+            else
+            {
+                itemRead.setImageDrawable(getBaseContext().getDrawable(R.drawable.bookmark_regular));
+            }
+
+            return response;
+
+        }
+    }
+
+    private class ReadingBookTask extends AsyncTask<Void, Void, BookModel>
+    {
+        @Override
+        protected BookModel doInBackground(Void... voids)
+        {
+            UtilityService utilityService = new UtilityService();
+            BookModel response = utilityService.setBookReading(User.id, itemId);
+
+            if(response == null)
+            {
+                return null;
+            }
+
+            if(response.reading){
+                itemReading.setImageDrawable(getBaseContext().getDrawable(R.drawable.book_open_solid));
+            }
+            else
+            {
+                itemReading.setImageDrawable(getBaseContext().getDrawable(R.drawable.book_solid));
+            }
+
+            return response;
+
+        }
+    }
+
+    private class OwnedBookTask extends AsyncTask<Void, Void, BookModel>
+    {
+        @Override
+        protected BookModel doInBackground(Void... voids)
+        {
+            UtilityService utilityService = new UtilityService();
+            BookModel response = utilityService.setBookOwned(User.id, itemId);
+
+            if(response == null)
+            {
+                return null;
+            }
+
+            if(response.has){
+                itemOwned.setImageDrawable(getBaseContext().getDrawable(R.drawable.check_circle_regular));
+            }
+            else
+            {
+                itemOwned.setImageDrawable(getBaseContext().getDrawable(R.drawable.check_circle_solid));
+            }
+
+            return response;
+        }
+    }
+
+    private class MovieStatusTask extends AsyncTask<Void, Void, MovieModel>
+    {
+        @Override
+        protected MovieModel doInBackground(Void... voids)
+        {
+            UtilityService utilityService = new UtilityService();
+            MovieModel response = utilityService.getMovieStatus(User.id, itemId);
 
             if(response == null)
             {
@@ -383,6 +613,21 @@ public class ItemActivity extends AppCompatActivity {
                 itemFavorite.setImageDrawable(getBaseContext().getDrawable(R.drawable.ic_baseline_star_outline));
             }
 
+            if(response.watched){
+                itemWatched.setImageDrawable(getBaseContext().getDrawable(R.drawable.eye_solid));
+            }
+            else
+            {
+                itemWatched.setImageDrawable(getBaseContext().getDrawable(R.drawable.eye_regular));
+            }
+
+            if(response.has){
+                itemOwned.setImageDrawable(getBaseContext().getDrawable(R.drawable.check_circle_regular));
+            }
+            else
+            {
+                itemOwned.setImageDrawable(getBaseContext().getDrawable(R.drawable.check_circle_solid));
+            }
             return response;
 
         }
@@ -414,13 +659,13 @@ public class ItemActivity extends AppCompatActivity {
         }
     }
 
-    private class MovieStatusTask extends AsyncTask<Void, Void, MovieModel>
+    private class watchedMovieTask extends AsyncTask<Void, Void, MovieModel>
     {
         @Override
         protected MovieModel doInBackground(Void... voids)
         {
             UtilityService utilityService = new UtilityService();
-            MovieModel response = utilityService.getMovieStatus(User.id, itemId);
+            MovieModel response = utilityService.setMovieWatched(User.id, itemId);
 
             if(response == null)
             {
@@ -438,5 +683,139 @@ public class ItemActivity extends AppCompatActivity {
             return response;
 
         }
+    }
+
+    private class ownedMovieTask extends AsyncTask<Void, Void, MovieModel>
+    {
+        @Override
+        protected MovieModel doInBackground(Void... voids)
+        {
+            UtilityService utilityService = new UtilityService();
+            MovieModel response = utilityService.setMovieOwned(User.id, itemId);
+
+            if(response == null)
+            {
+                return null;
+            }
+
+            if(response.has){
+                itemOwned.setImageDrawable(getBaseContext().getDrawable(R.drawable.check_circle_solid));
+            }
+            else
+            {
+                itemOwned.setImageDrawable(getBaseContext().getDrawable(R.drawable.check_circle_regular));
+            }
+
+            return response;
+
+        }
+    }
+
+    public void ClickSearch(View view){
+        Intent i = new Intent(getApplicationContext(), SearchActivity.class);
+        startActivity(i);
+    }
+
+
+    public void ClickMenu(View view){
+        //open drawer
+        openDrawer(drawerLayout);
+    }
+
+    public static void openDrawer(DrawerLayout drawerLayout) {
+        //Open drawer layout
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
+
+    public void ClickLogo(View view){
+        //Close drawer layout
+        closeDrawer(drawerLayout);
+    }
+
+    public static void closeDrawer(DrawerLayout drawerLayout) {
+        //Close drawer layout
+        //Check condition
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            //When drawer is open
+            //Close drawer
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+    }
+
+    public void ClickHome(View view){
+        //Recreate activty
+        recreate();
+    }
+
+    public void ClickMovies(View view){
+        //Recreate activity
+        redirectActivity(this, MoviesActivity.class);
+    }
+
+    public void ClickBooks(View view){
+        //Recreate activity to favourite books
+        redirectActivity(this, BooksActivity.class);
+    }
+
+    public void ClickProfile(View view){
+        //Redirect activity to profile
+        redirectActivity(this, ProfileActivity.class);
+    }
+
+    public void ClickMaps(View view){
+        //Recreate activity to favourite books
+        redirectActivity(this, EventsActivity.class);
+    }
+
+    public void ClickLogout(View view){
+        //Close app
+        Logout(this);
+    }
+
+    public static void Logout(Activity activity) {
+        //Initialize alert dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        //Set title
+        builder.setTitle("Logout");
+        //Set message
+        builder.setMessage("Are you sure you want to logout?");
+        //Positive yes button
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //Finish activity
+                activity.finishAffinity();
+                //Exit app
+                System.exit(0);
+
+            }
+        });
+
+        //Negative no button
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                //Dismiss dialog
+                dialog.dismiss();
+            }
+        });
+        //Show dialog
+        builder.show();
+    }
+
+    public static void redirectActivity(Activity activity, Class aclass) {
+        //initialize intent
+        Intent intent = new Intent(activity, aclass);
+        //Set Flg
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //Start activity
+        activity.startActivity(intent);
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        //Close drawer
+        closeDrawer(drawerLayout);
     }
 }

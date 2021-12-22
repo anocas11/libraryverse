@@ -75,7 +75,7 @@ public class EventsActivity extends AppCompatActivity {
                 else
                 {
                     //yourtextboxname.setText(addresses.get(0).getFeatureName() + ", " + addresses.get(0).getLocality() +", " + addresses.get(0).getAdminArea() + ", " + addresses.get(0).getCountryName());
-                    Toast.makeText(getBaseContext(), addresses.get(0).getLocality(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getBaseContext(), addresses.get(0).getLocality(), Toast.LENGTH_LONG).show();
                     if(!isLoaded){
                         isLoaded = true;
                         try {
@@ -87,8 +87,8 @@ public class EventsActivity extends AppCompatActivity {
                                     LinearLayout linearLayout = new LinearLayout(getBaseContext());
                                     linearLayout.setOrientation(LinearLayout.VERTICAL);
 
-                                    LinearLayout.LayoutParams titleParams = new LinearLayout.LayoutParams(convertDpToPixel(100, getBaseContext()), LinearLayout.LayoutParams.WRAP_CONTENT);
-                                    titleParams.setMargins(20, 10, 20, 15);
+                                    LinearLayout.LayoutParams titleParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                                    titleParams.setMargins(30, 10, 20, 15);
                                     TextView title = new TextView(getBaseContext());
                                     title.setText(events[i].title);
                                     title.setTextColor(Color.parseColor("#FFFFFF"));
@@ -96,7 +96,7 @@ public class EventsActivity extends AppCompatActivity {
                                     title.setLayoutParams(titleParams);
                                     linearLayout.addView(title);
 
-                                    LinearLayout.LayoutParams addressParams = new LinearLayout.LayoutParams(convertDpToPixel(100, getBaseContext()), LinearLayout.LayoutParams.WRAP_CONTENT);
+                                    LinearLayout.LayoutParams addressParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                                     addressParams.setMargins(30, 10, 20, 15);
                                     TextView address = new TextView(getBaseContext());
                                     address.setText(events[i].address[0]);
@@ -104,8 +104,8 @@ public class EventsActivity extends AppCompatActivity {
                                     address.setLayoutParams(addressParams);
                                     linearLayout.addView(address);
 
-                                    LinearLayout.LayoutParams whenParams = new LinearLayout.LayoutParams(convertDpToPixel(100, getBaseContext()), LinearLayout.LayoutParams.WRAP_CONTENT);
-                                    whenParams.setMargins(20, 10, 20, 15);
+                                    LinearLayout.LayoutParams whenParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                                    whenParams.setMargins(30, 10, 20, 15);
                                     TextView when = new TextView(getBaseContext());
                                     when.setText(events[i].date.when);
                                     when.setTextColor(Color.parseColor("#FFFFFF"));
@@ -242,6 +242,11 @@ public class EventsActivity extends AppCompatActivity {
         //Close app
         MainActivity.Logout(this);
 
+    }
+
+    public void ClickMaps(View view){
+        //Recreate activity to favourite books
+        redirectActivity(this, EventsActivity.class);
     }
 
     public static void redirectActivity(Activity activity, Class aclass) {

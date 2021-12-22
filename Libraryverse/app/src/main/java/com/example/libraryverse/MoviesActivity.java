@@ -127,6 +127,11 @@ public class MoviesActivity extends AppCompatActivity {
         redirectActivity(this, BooksActivity.class);
     }
 
+    public void ClickMaps(View view){
+        //Recreate activity to favourite books
+        redirectActivity(this, EventsActivity.class);
+    }
+
     public void ClickLogout(View view){
         //Close app
         MainActivity.Logout(this);

@@ -19,6 +19,16 @@ public class UtilityService {
         utilityServiceInterface = retrofit.create(UtilityServiceInterface.class);
     }
 
+    public BookModel getBookStatus(String userId, String bookId)
+    {
+        try{
+            return utilityServiceInterface.getBookStatus(bookId, userId).execute().body();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public BookModel setBookFavorite(String userId, String bookId)
     {
         try{
@@ -29,10 +39,40 @@ public class UtilityService {
         return null;
     }
 
-    public BookModel getBookStatus(String userId, String bookId)
+    public BookModel setBookRead(String userId, String bookId)
     {
         try{
-            return utilityServiceInterface.getBookStatus(bookId, userId).execute().body();
+            return utilityServiceInterface.setBookRead(bookId, userId).execute().body();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public BookModel setBookReading(String userId, String bookId)
+    {
+        try{
+            return utilityServiceInterface.setBookReading(bookId, userId).execute().body();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public BookModel setBookOwned(String userId, String bookId)
+    {
+        try{
+            return utilityServiceInterface.setBookOwned(bookId, userId).execute().body();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public MovieModel getMovieStatus(String userId, String movieId)
+    {
+        try{
+            return utilityServiceInterface.getMovieStatus(movieId, userId).execute().body();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -49,13 +89,25 @@ public class UtilityService {
         return null;
     }
 
-    public MovieModel getMovieStatus(String userId, String movieId)
+    public MovieModel setMovieWatched(String userId, String movieId)
     {
         try{
-            return utilityServiceInterface.getMovieStatus(movieId, userId).execute().body();
+            return utilityServiceInterface.setMovieWatched(movieId, userId).execute().body();
         } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
     }
+
+    public MovieModel setMovieOwned(String userId, String movieId)
+    {
+        try{
+            return utilityServiceInterface.setMovieOwned(movieId, userId).execute().body();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
 }

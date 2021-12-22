@@ -153,7 +153,7 @@
             android:layout_weight="1"
             android:padding="12dp"
             android:textColor="@color/white"
-            android:text="Maps" />
+            android:text="Events" />
 
 
         <ImageView

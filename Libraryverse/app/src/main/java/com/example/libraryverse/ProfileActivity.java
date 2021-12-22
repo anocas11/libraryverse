@@ -65,6 +65,11 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
+    public void ClickMaps(View view){
+        //Recreate activity to favourite books
+        redirectActivity(this, EventsActivity.class);
+    }
+
     public static void redirectActivity(Activity activity, Class aclass) {
         //initialize intent
         Intent intent = new Intent(activity, aclass);

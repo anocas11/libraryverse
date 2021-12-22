@@ -69,12 +69,65 @@ public class MainActivity extends AppCompatActivity {
 
                 Picasso.get().load(jsonPart1.getString("bookPoster")).into(imgBooks1);
                 textBooks1.setText(jsonPart1.getString("bookName"));
+                imgBooks1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent itemView = new Intent(MainActivity.this, ItemActivity.class);
+
+                        try
+                        {
+                            itemView.putExtra("id", jsonPart1.getString("id"));
+                            itemView.putExtra("type", "book");
+                            startActivity(itemView);
+                        }
+                        catch (Exception e)
+                        {
+
+                        }
+                    }
+                });
 
                 Picasso.get().load(jsonPart2.getString("bookPoster")).into(imgBooks2);
                 textBooks2.setText(jsonPart2.getString("bookName"));
 
+                imgBooks2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent itemView = new Intent(MainActivity.this, ItemActivity.class);
+
+                        try
+                        {
+                            itemView.putExtra("id", jsonPart2.getString("id"));
+                            itemView.putExtra("type", "book");
+                            startActivity(itemView);
+                        }
+                        catch (Exception e)
+                        {
+
+                        }
+                    }
+                });
+
                 Picasso.get().load(jsonPart3.getString("bookPoster")).into(imgBooks3);
                 textBooks3.setText(jsonPart3.getString("bookName"));
+
+                imgBooks3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent itemView = new Intent(MainActivity.this, ItemActivity.class);
+
+                        try
+                        {
+                            itemView.putExtra("id", jsonPart3.getString("id"));
+                            itemView.putExtra("type", "book");
+                            startActivity(itemView);
+                        }
+                        catch (Exception e)
+                        {
+
+                        }
+                    }
+                });
             }
             catch (Exception e)
             {
@@ -107,11 +160,65 @@ public class MainActivity extends AppCompatActivity {
                 Picasso.get().load(jsonPart1.getString("moviePoster")).into(imgMovies1);
                 textMovies1.setText(jsonPart1.getString("movieName"));
 
+                imgMovies1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent itemView = new Intent(MainActivity.this, ItemActivity.class);
+
+                        try
+                        {
+                            itemView.putExtra("id", jsonPart1.getString("id"));
+                            itemView.putExtra("type", "book");
+                            startActivity(itemView);
+                        }
+                        catch (Exception e)
+                        {
+
+                        }
+                    }
+                });
+
                 Picasso.get().load(jsonPart2.getString("moviePoster")).into(imgMovies2);
                 textMovies2.setText(jsonPart2.getString("movieName"));
 
+                imgMovies2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent itemView = new Intent(MainActivity.this, ItemActivity.class);
+
+                        try
+                        {
+                            itemView.putExtra("id", jsonPart2.getString("id"));
+                            itemView.putExtra("type", "movie");
+                            startActivity(itemView);
+                        }
+                        catch (Exception e)
+                        {
+
+                        }
+                    }
+                });
+
                 Picasso.get().load(jsonPart3.getString("moviePoster")).into(imgMovies3);
                 textMovies3.setText(jsonPart3.getString("movieName"));
+
+                imgMovies3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent itemView = new Intent(MainActivity.this, ItemActivity.class);
+
+                        try
+                        {
+                            itemView.putExtra("id", jsonPart3.getString("id"));
+                            itemView.putExtra("type", "movie");
+                            startActivity(itemView);
+                        }
+                        catch (Exception e)
+                        {
+
+                        }
+                    }
+                });
             }
             catch (Exception e)
             {
@@ -175,6 +282,11 @@ public class MainActivity extends AppCompatActivity {
     public void ClickProfile(View view){
         //Redirect activity to profile
         redirectActivity(this, ProfileActivity.class);
+    }
+
+    public void ClickMaps(View view){
+        //Recreate activity to favourite books
+        redirectActivity(this, EventsActivity.class);
     }
 
     public void ClickLogout(View view){
