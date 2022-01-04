@@ -123,6 +123,22 @@ public class UserController {
         return userToVerify;
     }
 
+    @GetMapping(path="/{id}/user", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response<User> getUser(@PathVariable int id)
+    {
+        Optional<User> _user = userRepository.findById(id);
+
+        if(_user.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.FOUND, "could not find");
+        }
+        else
+        {
+            var resp = new Response<User>();
+            resp.results = _user.get();
+            return resp;
+        }
+    }
+
     @GetMapping(path = "/user/{id}/books", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response<Iterable<UserBooksView>> getUserBooks(@PathVariable int id)
     {

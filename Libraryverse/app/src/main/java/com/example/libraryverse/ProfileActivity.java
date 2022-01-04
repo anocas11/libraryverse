@@ -7,11 +7,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class ProfileActivity extends AppCompatActivity {
 
     //Initialize variable
     DrawerLayout drawerLayout;
+    Button updateButton;
+    EditText nameBox, emailBox, passBox, pass2Box;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,16 @@ public class ProfileActivity extends AppCompatActivity {
 
         //Assign variable
         drawerLayout = findViewById(R.id.drawer_layout);
+        updateButton = findViewById(R.id.buttonUpdateProfile);
+        nameBox = findViewById(R.id.editTextUserName);
+        emailBox = findViewById(R.id.editTextTextEmailAddress);
+        passBox = findViewById(R.id.editTextTextPassword);
+        pass2Box = findViewById(R.id.editTextTextPassword2);
+    }
+
+    public void updateProfile(View view)
+    {
+        
     }
 
 

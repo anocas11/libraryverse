@@ -2,6 +2,8 @@ package com.example.libraryverse.APIRequests;
 
 import com.example.libraryverse.models.CreateAccountModel;
 import com.example.libraryverse.models.CreateAccountRequest;
+import com.example.libraryverse.models.EditProfileModel;
+import com.example.libraryverse.models.EditProfileRequest;
 import com.example.libraryverse.models.LoginModel;
 import com.example.libraryverse.models.LoginRequest;
 
@@ -34,6 +36,20 @@ public class UserService {
         try
         {
             return userServiceInterface.login(body).execute().body();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public EditProfileModel editProfile(EditProfileRequest body)
+    {
+        try
+        {
+            return userServiceInterface.editProfile(body).execute().body();
         }
         catch (IOException e)
         {
