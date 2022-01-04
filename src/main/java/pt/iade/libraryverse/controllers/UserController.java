@@ -99,6 +99,30 @@ public class UserController {
         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "could not login");
     }
 
+    @PostMapping(path="/{id}/userdata", produces = MediaType.APPLICATION_JSON_VALUE)
+    public User saveUserData(@RequestBody User user, @PathVariable int id)
+    {
+        Optional<User> _user = userRepository.findById(id);
+
+        if(_user.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.FOUND, "could not find");
+        }
+
+        User userToUpdate = _user.get();
+        if(!userToUpdate.getName().equals(user.getName()) || !userToUpdate.getEmail().equals(user.getEmail()) || !userToUpdate.getPassword().equals(user.getPassword()))
+        {
+            userToUpdate.setName(user.getName());
+            userToUpdate.setEmail(user.getEmail());
+            userToUpdate.setPassword(user.getPassword());
+            userRepository.save(userToUpdate);
+        }
+
+        User userToVerify = _user.get();
+
+        userToVerify.setPassword(null);
+        return userToVerify;
+    }
+
     @GetMapping(path = "/user/{id}/books", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response<Iterable<UserBooksView>> getUserBooks(@PathVariable int id)
     {
