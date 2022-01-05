@@ -8,13 +8,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="userbooks")
+@Entity //marca a classe para ser uma entidade de dados
+@Table(name="userbooks") //porque o nome da classe não é igual ao nome da tabela
 public class UserBooks 
 {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="ub_id") private int id;
+    @Id //identica a chave da tabela
+    @GeneratedValue(strategy=GenerationType.IDENTITY) //util para quando se guardam novos livros, porque o id é gerado pela bd
+    @Column(name="ub_id") private int id; //ligar o nome do atributo ao nome da coluna
     @Column(name="ub_user_id") private int userId;
     @Column(name="ub_book_id") private int bookId;
     @Column(name="ub_favorite") private boolean favorite;
@@ -22,7 +22,7 @@ public class UserBooks
     @Column(name="ub_reading") private boolean reading;
     @Column(name="ub_has") private boolean has;
 
-    public UserBooks()
+    public UserBooks() //construtor default sem argumentos
     {
         
     }

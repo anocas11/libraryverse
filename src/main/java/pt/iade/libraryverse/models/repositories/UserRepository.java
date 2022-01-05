@@ -9,6 +9,9 @@ import pt.iade.libraryverse.models.views.UserBooksView;
 import pt.iade.libraryverse.models.views.UserMoviesView;
 
 public interface UserRepository extends CrudRepository<User,Integer>{
+    //Criamos a interface que extende CrudRepository que contem todas as funções crud do springboot
+    //Os parâmetros significam que o repositório vai gerir os utilizadores e o id dos utilizadores é um int 
+
     Optional<User> findByUsername(String username);
     
     String QueryGetUserBooks = "select book_name as bookName, book_poster as bookPoster from book " +

@@ -11,16 +11,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="genre")
+@Entity //marca a classe para ser uma entidade de dados
+@Table(name="genre") //porque o nome da classe não é igual ao nome da tabela
 public class Genre
 {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="genre_id") private int id;
+    @Id //identica a chave da tabela
+    @GeneratedValue(strategy=GenerationType.IDENTITY) //util para quando se guardam novos géneros, porque o id é gerado pela bd
+    @Column(name="genre_id") private int id; //ligar o nome do atributo ao nome da coluna
     @Column(name="genre_name") private String name;
 
-    public Genre()
+    public Genre() //construtor default sem argumentos
     {
 
     }

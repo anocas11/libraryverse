@@ -9,6 +9,9 @@ import org.springframework.data.repository.query.Param;
 
 public interface UserBooksRepository extends CrudRepository<UserBooks,Integer>
 {
+    //Criamos a interface que extende CrudRepository que contem todas as funções crud do springboot
+    //Os parâmetros significam que o repositório vai gerir os livros dos utilizadores e o id dos livros dos utilizadores é um int 
+
     String QueryGetUserBooks = "select ub_id as id, ub_favorite as favorite, ub_read as read, ub_reading as reading, ub_has as has " +
     " from userbooks ";
 

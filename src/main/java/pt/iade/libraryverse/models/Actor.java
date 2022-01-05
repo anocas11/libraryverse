@@ -9,19 +9,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="actor")
+@Entity //marca a classe para ser uma entidade de dados
+@Table(name="actor") //porque o nome da classe não é igual ao nome da tabela
 public class Actor 
 {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="actor_id") private int id;
+    @Id //identica a chave da tabela
+    @GeneratedValue(strategy=GenerationType.IDENTITY) //util para quando se guardam novos atores, porque o id é gerado pela bd
+    @Column(name="actor_id") private int id; //ligar o nome do atributo ao nome da coluna
     @Column(name="actor_name") private String name;    
     @Column(name="actor_birthday") private String birthday;
     @Column(name="actor_bio") private String description;
     @Column(name="actor_poster") private String poster;
 
-    public Actor()
+    public Actor() //construtor default sem argumentos
     {
 
     }

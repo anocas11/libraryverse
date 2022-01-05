@@ -11,6 +11,9 @@ import pt.iade.libraryverse.models.views.GenreView;
 
 public interface GenreRepository extends CrudRepository<Genre,Integer>
 {
+    //Criamos a interface que extende CrudRepository que contem todas as funções crud do springboot
+    //Os parâmetros significam que o repositório vai gerir os géneros e o id dos géneros é um int 
+
     String QueryGetMovieGenre = 
     "select genre_name genreName from genre " +
     "inner join moviegenre on genre_id = mg_genre_id " +

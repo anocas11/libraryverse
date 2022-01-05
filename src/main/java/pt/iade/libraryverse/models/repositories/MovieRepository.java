@@ -10,6 +10,9 @@ import pt.iade.libraryverse.models.views.MovieInfoView;
 
 public interface MovieRepository extends CrudRepository<Movie,Integer>
 {
+    //Criamos a interface que extende CrudRepository que contem todas as funções crud do springboot
+    //Os parâmetros significam que o repositório vai gerir os filmes e o id dos filmes é um int 
+
     String QueryGetMovieInfo = "select movie_name as name, movie_duration as duration, movie_date as date, movie_description as description, cu_name as cinematicUniverse, genre_name as genre, movie_poster as poster " +
     "from movie " +
     "left join cinematicuniverse on movie_cu_id = cu_id " +

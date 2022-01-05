@@ -8,19 +8,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="users")
+@Entity //marca a classe para ser uma entidade de dados
+@Table(name="users") //porque o nome da classe não é igual ao nome da tabela
 public class User 
 {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="users_id") private int id;
+    @Id //identica a chave da tabela
+    @GeneratedValue(strategy=GenerationType.IDENTITY) //util para quando se guardam novos utilizadores, porque o id é gerado pela bd
+    @Column(name="users_id") private int id; //ligar o nome do atributo ao nome da coluna
     @Column(name="users_name") private String name;
     @Column(name="users_username") private String username;
     @Column(name="users_email") private String email;
     @Column(name="users_password") private String password;
 
-    public User()
+    public User() //construtor default sem argumentos
     {
 
     }

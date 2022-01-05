@@ -9,16 +9,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="cinematicuniverse")
+@Entity //marca a classe para ser uma entidade de dados
+@Table(name="cinematicuniverse") //porque o nome da classe não é igual ao nome da tabela
 public class CinematicUniverse 
 {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)  
-    @Column(name="cu_id") private int id;
+    @Id //identica a chave da tabela
+    @GeneratedValue(strategy=GenerationType.IDENTITY)  //util para quando se guardam novos universos, porque o id é gerado pela bd
+    @Column(name="cu_id") private int id; //ligar o nome do atributo ao nome da coluna
     @Column(name="cu_name") private String name;
     
-    public CinematicUniverse()
+    public CinematicUniverse() //construtor default sem argumentos
     {
 
     }

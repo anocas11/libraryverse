@@ -6,6 +6,7 @@ import com.example.libraryverse.models.EditProfileModel;
 import com.example.libraryverse.models.EditProfileRequest;
 import com.example.libraryverse.models.LoginModel;
 import com.example.libraryverse.models.LoginRequest;
+import com.example.libraryverse.models.ProfileModel;
 
 import java.io.IOException;
 
@@ -50,6 +51,20 @@ public class UserService {
         try
         {
             return userServiceInterface.editProfile(body).execute().body();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public ProfileModel getProfile(String userid)
+    {
+        try
+        {
+            return userServiceInterface.getProfile(userid).execute().body();
         }
         catch (IOException e)
         {

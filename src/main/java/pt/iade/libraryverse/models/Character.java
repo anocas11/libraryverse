@@ -9,15 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="character")
+@Entity //marca a classe para ser uma entidade de dados
+@Table(name="character") //porque o nome da classe não é igual ao nome da tabela
 public class Character {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="character_id") private int id;
+    @Id //identica a chave da tabela
+    @GeneratedValue(strategy=GenerationType.IDENTITY) //util para quando se guardam novos livros, porque o id é gerado pela bd
+    @Column(name="character_id") private int id; //ligar o nome do atributo ao nome da coluna
     @Column(name="character_name") private String name;
 
-    public Character()
+    public Character() //construtor default sem argumentos
     {
 
     }

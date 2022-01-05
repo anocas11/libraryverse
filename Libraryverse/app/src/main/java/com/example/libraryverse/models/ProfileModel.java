@@ -1,7 +1,7 @@
 package com.example.libraryverse.models;
 
-public class EditProfileRequest {
+public class ProfileModel {
+    public String id;
     public String name;
     public String email;
-    public String password;
 }

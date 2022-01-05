@@ -8,20 +8,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="usermovies")
+@Entity //marca a classe para ser uma entidade de dados
+@Table(name="usermovies") //porque o nome da classe não é igual ao nome da tabela
 public class UserMovies 
 {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="um_id") private int id;
+    @Id //identica a chave da tabela
+    @GeneratedValue(strategy=GenerationType.IDENTITY) //util para quando se guardam novos filmes, porque o id é gerado pela bd
+    @Column(name="um_id") private int id; //ligar o nome do atributo ao nome da coluna
     @Column(name="um_user_id") private int userId;
     @Column(name="um_movie_id") private int movieId;
     @Column(name="um_favorite") private boolean favorite;
     @Column(name="um_watched") private boolean watched; 
     @Column(name="um_has") private boolean has;
 
-    public UserMovies()
+    public UserMovies() //construtor default sem argumentos
     {
         
     }

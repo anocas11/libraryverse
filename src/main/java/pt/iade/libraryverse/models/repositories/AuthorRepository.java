@@ -9,6 +9,9 @@ import pt.iade.libraryverse.models.repositories.AuthorRepository;
 import pt.iade.libraryverse.models.Author;
 
 public interface AuthorRepository extends CrudRepository<Author,Integer> {
+    //Criamos a interface que extende CrudRepository que contem todas as funções crud do springboot
+    //Os parâmetros significam que o repositório vai gerir os autores e o id dos autores é um int 
+
     String QueryGetAuthorBooks = "select book_name as bookName from book " +
     "inner join bookauthor on book_id = ba_book_id ";
 

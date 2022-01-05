@@ -17,13 +17,13 @@ import pt.iade.libraryverse.models.Genre;
 import pt.iade.libraryverse.models.Actor;
 import pt.iade.libraryverse.models.Character;
 
-@Entity
-@Table(name="movie")
+@Entity //marca a classe para ser uma entidade de dados
+@Table(name="movie") //porque o nome da classe não é igual ao nome da tabela
 public class Movie 
 {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="movie_id") private int id;
+    @Id //identica a chave da tabela
+    @GeneratedValue(strategy=GenerationType.IDENTITY) //util para quando se guardam novos filmes, porque o id é gerado pela bd
+    @Column(name="movie_id") private int id; //ligar o nome do atributo ao nome da coluna
     @Column(name="movie_name") private String name;
     @Column(name="movie_date") private String date;
     @Column(name="movie_duration") private String duration;
@@ -34,7 +34,7 @@ public class Movie
     //@OneToMany @JoinColumn(name="mc_character_id") private Character character;
     //@OneToMany @JoinColumn(name="ma_actor_id") private Actor actor;
 
-    public Movie()
+    public Movie() //construtor default sem argumentos
     {
 
     }
