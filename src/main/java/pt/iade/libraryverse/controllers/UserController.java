@@ -124,7 +124,7 @@ public class UserController {
     }
 
     @GetMapping(path="/{id}/user", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response<User> getUser(@PathVariable int id)
+    public User getUser(@PathVariable int id)
     {
         Optional<User> _user = userRepository.findById(id);
 
@@ -133,9 +133,9 @@ public class UserController {
         }
         else
         {
-            var resp = new Response<User>();
-            resp.results = _user.get();
-            return resp;
+            User userToVerify = _user.get();
+            userToVerify.setPassword(null);
+            return userToVerify;
         }
     }
 
