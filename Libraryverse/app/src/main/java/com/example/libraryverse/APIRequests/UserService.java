@@ -46,11 +46,11 @@ public class UserService {
         return null;
     }
 
-    public EditProfileModel editProfile(EditProfileRequest body)
+    public EditProfileModel editProfile(String id, EditProfileRequest body)
     {
         try
         {
-            return userServiceInterface.editProfile(body).execute().body();
+            return userServiceInterface.editProfile(id, body).execute().body();
         }
         catch (IOException e)
         {

@@ -115,7 +115,7 @@ public class ProfileActivity extends AppCompatActivity {
         @Override
         protected EditProfileModel doInBackground(EditProfileRequest... editProfileRequests) {
             UserService userService = new UserService();
-            EditProfileModel response = userService.editProfile(editProfileRequests[0]);
+            EditProfileModel response = userService.editProfile(User.id, editProfileRequests[0]);
 
             if(response == null)
             {

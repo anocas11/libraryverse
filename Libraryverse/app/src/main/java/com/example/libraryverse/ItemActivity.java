@@ -34,7 +34,7 @@ public class ItemActivity extends AppCompatActivity {
     TextView itemName;
     TextView itemDescription;
     ImageView itemPoster, itemFavorite, itemOwned, itemWatched, itemRead, itemReading;
-    LinearLayout ll;
+    LinearLayout ll, llbar;
     JSONArray itemArray = null;
     String itemId, itemType;
     User user;
@@ -49,6 +49,7 @@ public class ItemActivity extends AppCompatActivity {
         itemDescription = findViewById(R.id.textViewItemDescription);
         itemPoster = findViewById(R.id.imageViewItemImg);
         ll = findViewById(R.id.linearLayoutIteminfo);
+        llbar = findViewById(R.id.llbar);
         itemFavorite = findViewById(R.id.imageViewFavoriteItem);
         itemOwned = findViewById(R.id.imageViewAddItem);
         itemWatched = findViewById(R.id.imageViewWatched);
@@ -133,6 +134,7 @@ public class ItemActivity extends AppCompatActivity {
 
                     if(itemType.equals("movie"))
                     {
+                        itemWatched.setVisibility(View.VISIBLE);
                         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                         params.setMargins(20, 20, 0, 0);
 
@@ -211,6 +213,8 @@ public class ItemActivity extends AppCompatActivity {
                     }
                     else if(itemType.equals("book"))
                     {
+                        itemRead.setVisibility(View.VISIBLE);
+                        itemReading.setVisibility(View.VISIBLE);
                         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                         params.setMargins(20, 20, 0, 0);
 

@@ -26,7 +26,7 @@ public interface UserServiceInterface
     Call<LoginModel> login(@Body LoginRequest json);
 
     @POST("api/users/{userid}/userdata/")
-    Call<EditProfileModel> editProfile(@Body EditProfileRequest json);
+    Call<EditProfileModel> editProfile(@Path("userid") String userid, @Body EditProfileRequest json);
 
     @GET("api/users/{userid}/user/")
     Call<ProfileModel> getProfile(@Path("userid") String userid);

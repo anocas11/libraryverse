@@ -62,6 +62,7 @@
                     android:src="@drawable/movieload" />
 
                 <LinearLayout
+                    android:id="@+id/llbar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
@@ -71,20 +72,23 @@
 
                     <ImageView
                         android:id="@+id/imageViewAddItem"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="18dp"
+                        android:adjustViewBounds="true"
                         android:src="@drawable/check_circle_regular" />
 
                     <ImageView
                         android:id="@+id/imageViewFavoriteItem"
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
+                        android:adjustViewBounds="true"
                         android:src="@drawable/ic_baseline_star_outline" />
 
                     <ImageView
                         android:id="@+id/imageViewRead"
                         android:layout_width="wrap_content"
                         android:layout_height="18dp"
+                        android:adjustViewBounds="true"
                         android:src="@drawable/bookmark_regular"
                         android:visibility="gone" />
 
@@ -92,6 +96,7 @@
                         android:id="@+id/imageViewReading"
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
+                        android:adjustViewBounds="true"
                         android:src="@drawable/book_solid"
                         android:visibility="gone" />
 
@@ -99,6 +104,7 @@
                         android:id="@+id/imageViewWatched"
                         android:layout_width="wrap_content"
                         android:layout_height="18dp"
+                        android:adjustViewBounds="true"
                         android:src="@drawable/eye_regular"
                         android:visibility="gone" />
 
