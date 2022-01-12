@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
                         try
                         {
-                            itemView.putExtra("id", jsonPart1.getString("id"));
+                            itemView.putExtra("id", jsonPart1.getString("bookid"));
                             itemView.putExtra("type", "book");
                             startActivity(itemView);
                         }
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
                         try
                         {
-                            itemView.putExtra("id", jsonPart2.getString("id"));
+                            itemView.putExtra("id", jsonPart2.getString("bookid"));
                             itemView.putExtra("type", "book");
                             startActivity(itemView);
                         }
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
                         try
                         {
-                            itemView.putExtra("id", jsonPart3.getString("id"));
+                            itemView.putExtra("id", jsonPart3.getString("bookid"));
                             itemView.putExtra("type", "book");
                             startActivity(itemView);
                         }
@@ -167,8 +167,8 @@ public class MainActivity extends AppCompatActivity {
 
                         try
                         {
-                            itemView.putExtra("id", jsonPart1.getString("id"));
-                            itemView.putExtra("type", "book");
+                            itemView.putExtra("id", jsonPart1.getString("movieid"));
+                            itemView.putExtra("type", "movie");
                             startActivity(itemView);
                         }
                         catch (Exception e)
@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
 
                         try
                         {
-                            itemView.putExtra("id", jsonPart2.getString("id"));
+                            itemView.putExtra("id", jsonPart2.getString("movieid"));
                             itemView.putExtra("type", "movie");
                             startActivity(itemView);
                         }
@@ -209,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
 
                         try
                         {
-                            itemView.putExtra("id", jsonPart3.getString("id"));
+                            itemView.putExtra("id", jsonPart3.getString("movieid"));
                             itemView.putExtra("type", "movie");
                             startActivity(itemView);
                         }

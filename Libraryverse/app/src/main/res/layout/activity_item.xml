@@ -73,7 +73,7 @@
                     <ImageView
                         android:id="@+id/imageViewAddItem"
                         android:layout_width="wrap_content"
-                        android:layout_height="18dp"
+                        android:layout_height="15dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/check_circle_regular" />
 

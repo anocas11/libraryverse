@@ -31,6 +31,18 @@ create table genre (
     primary key (genre_id)
 );
 
+create table cinematicUniverse (
+    cu_id SERIAL not null, 
+    cu_name VARCHAR(30) not null, 
+    primary key (cu_id)
+);
+
+create table character ( 
+    character_id SERIAL not null, 
+    character_name VARCHAR(60) not null, 
+    primary key (character_id)
+);
+
 create table movie (
     movie_id SERIAL not null, 
     movie_name VARCHAR(120), 
@@ -50,28 +62,6 @@ create table actor (
     actor_bio VARCHAR(10000), 
     actor_poster varchar(200),
     primary key(actor_id)
-);
-
-create table question (
-    question_id SERIAL not null, 
-    question_text VARCHAR(300) not null,
-    question_book_id integer not null,
-    question_movie_id integer not null, 
-    primary key(question_id)
-);
-
-create table answer (
-    answer_id SERIAL not null, 
-    answer_text VARCHAR(300), 
-    answer_iswrong boolean,
-    answer_question_id integer,
-    primary key(answer_id)
-);
-
-create table cinematicUniverse (
-    cu_id SERIAL not null, 
-    cu_name VARCHAR(30) not null, 
-    primary key (cu_id)
 );
 
 create table bookAuthor (
@@ -104,12 +94,6 @@ create table userMovies (
     primary key (um_id)
 );
 
-create table character ( 
-    character_id SERIAL not null, 
-    character_name VARCHAR(60) not null, 
-    primary key (character_id)
-);
-
 create table bookcharacter ( 
     bc_id SERIAL not null, 
     bc_character_id int not null, 
@@ -124,13 +108,12 @@ create table moviecharacter (
     primary key (mc_id)
 );
 
-create table movieActor (
+create table movieactor (
     ma_id SERIAL not null, 
     ma_mc_id integer not null, 
     ma_actor_id integer not null, 
     primary key (ma_id)
 );
-
 
 create table moviegenre(
     mg_id SERIAL not null, 
@@ -216,16 +199,6 @@ ON DELETE NO ACTION ON UPDATE NO ACTION;
 alter table movieActor 
 add constraint movieActor_fk_actor
 foreign key (ma_actor_id) references actor(actor_id) 
-ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-alter table movievenue 
-add constraint movievenue_fk_moviecharacter
-foreign key (mv_mc_id) references moviecharacter(mc_id) 
-ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-alter table movievenue 
-add constraint movievenue_fk_venue
-foreign key (mv_venue_id) references venue(venue_id) 
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 alter table moviegenre
