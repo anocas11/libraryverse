@@ -238,6 +238,16 @@ public class EventsActivity extends AppCompatActivity {
         redirectActivity(this, BooksActivity.class);
     }
 
+    public void ClickFavMovies(View view){
+        //Recreate activity
+        redirectActivity(this, FavoriteMoviesActivity.class);
+    }
+
+    public void ClickFavBooks(View view){
+        //Recreate activity to favourite books
+        redirectActivity(this, FavoriteBooksActivity.class);
+    }
+
     public void ClickLogout(View view){
         //Close app
         MainActivity.Logout(this);

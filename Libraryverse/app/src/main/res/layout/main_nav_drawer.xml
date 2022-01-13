@@ -57,14 +57,12 @@
 
     </LinearLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:onClick="ClickMovies"
         android:orientation="horizontal">
-
 
         <TextView
             android:layout_width="0dp"
@@ -75,7 +73,6 @@
             android:text="Movies"
             android:textColor="@color/white" />
 
-
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -84,6 +81,29 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:onClick="ClickFavMovies"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="Favorite Movies"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
+            android:src="@drawable/ic_baseline_star" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -91,7 +111,6 @@
         android:gravity="center_vertical"
         android:onClick="ClickBooks"
         android:orientation="horizontal">
-
 
         <TextView
             android:layout_width="0dp"
@@ -108,6 +127,29 @@
             android:layout_marginEnd="48dp"
             android:src="@drawable/ic_book" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:onClick="ClickFavBooks"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="Favorite Books"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
+            android:src="@drawable/ic_baseline_star" />
 
     </LinearLayout>
 
@@ -118,7 +160,6 @@
         android:onClick="ClickProfile"
         android:orientation="horizontal">
 
-
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -128,13 +169,11 @@
             android:textColor="@color/white"
             android:text="Profile" />
 
-
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
             android:src="@drawable/ic_profile" />
-
 
     </LinearLayout>
 
@@ -145,7 +184,6 @@
         android:onClick="ClickMaps"
         android:orientation="horizontal">
 
-
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -155,7 +193,6 @@
             android:textColor="@color/white"
             android:text="Events" />
 
-
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -164,8 +201,7 @@
 
     </LinearLayout>
 
-
-        <LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
@@ -186,7 +222,6 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="48dp"
             android:src="@drawable/ic_logout"/>
-
 
     </LinearLayout>
 

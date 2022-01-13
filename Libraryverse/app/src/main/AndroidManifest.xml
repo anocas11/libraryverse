@@ -20,10 +20,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Libraryverse">
         <activity
+            android:name=".FavoriteMoviesActivity"
+            android:exported="false" />
+        <activity
             android:name=".OwnedActivity"
             android:exported="false" />
         <activity
-            android:name=".FavoritesActivity"
+            android:name=".FavoriteBooksActivity"
             android:exported="false" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

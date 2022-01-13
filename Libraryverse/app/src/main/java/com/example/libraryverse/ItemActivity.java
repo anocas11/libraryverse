@@ -761,6 +761,16 @@ public class ItemActivity extends AppCompatActivity {
         redirectActivity(this, BooksActivity.class);
     }
 
+    public void ClickFavMovies(View view){
+        //Recreate activity
+        redirectActivity(this, FavoriteMoviesActivity.class);
+    }
+
+    public void ClickFavBooks(View view){
+        //Recreate activity to favourite books
+        redirectActivity(this, FavoriteBooksActivity.class);
+    }
+
     public void ClickProfile(View view){
         //Redirect activity to profile
         redirectActivity(this, ProfileActivity.class);

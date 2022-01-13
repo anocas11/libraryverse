@@ -24,17 +24,16 @@ import org.json.JSONObject;
 
 import java.util.concurrent.ExecutionException;
 
-public class BooksActivity extends AppCompatActivity {
+public class FavoriteMoviesActivity extends AppCompatActivity {
 
-    //Initialize variable
     DrawerLayout drawerLayout;
     GridLayout gridLayout;
-    JSONArray myBooksArray;
+    JSONArray myFavMoviesArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_books);
+        setContentView(R.layout.activity_favorite_movies);
 
         //Assign variable
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -42,15 +41,15 @@ public class BooksActivity extends AppCompatActivity {
 
         try {
             DownloadTask task = new DownloadTask();
-            String url = "https://libraryverse.herokuapp.com/api/users/user/" + User.id + "/books";
-            myBooksArray = task.execute(url).get();
+            String url = "https://libraryverse.herokuapp.com/api/users/user/" + User.id + "/favoritemovies";
+            myFavMoviesArray = task.execute(url).get();
 
-            if(myBooksArray == null)
+            if(myFavMoviesArray == null)
             {
                 return;
             }
 
-            for(int i = 0; i < myBooksArray.length(); i++)
+            for(int i = 0; i < myFavMoviesArray.length(); i++)
             {
                 try {
                     LinearLayout linearLayout = new LinearLayout(getBaseContext());
@@ -59,17 +58,17 @@ public class BooksActivity extends AppCompatActivity {
                     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                     params.setMargins(20, 15, 20, 15);
 
-                    JSONObject jsonPart = myBooksArray.getJSONObject(i);
+                    JSONObject jsonPart = myFavMoviesArray.getJSONObject(i);
 
                     ImageView poster = new ImageView(getBaseContext());
-                    Picasso.get().load(jsonPart.getString("bookPoster")).into(poster);
+                    Picasso.get().load(jsonPart.getString("moviePoster")).into(poster);
                     poster.setLayoutParams(params);
                     linearLayout.addView(poster);
 
                     LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(convertDpToPixel(100, getBaseContext()), LinearLayout.LayoutParams.WRAP_CONTENT);
                     textParams.setMargins(20, 10, 20, 15);
                     TextView title = new TextView(getBaseContext());
-                    title.setText(jsonPart.getString("bookName"));
+                    title.setText(jsonPart.getString("movieName"));
                     title.setTextColor(Color.parseColor("#FFFFFF"));
                     title.setLayoutParams(textParams);
                     linearLayout.addView(title);
@@ -80,12 +79,12 @@ public class BooksActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+
         } catch (ExecutionException e) {
             e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-
     }
 
     public void ClickSearch(View view){
@@ -156,9 +155,6 @@ public class BooksActivity extends AppCompatActivity {
     public static int convertDpToPixel(int dp, Context context){
         return dp * ((int) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
     }
-
-
-
 
     @Override
     protected void onPause(){

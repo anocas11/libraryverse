@@ -127,6 +127,16 @@ public class MoviesActivity extends AppCompatActivity {
         redirectActivity(this, BooksActivity.class);
     }
 
+    public void ClickFavMovies(View view){
+        //Recreate activity
+        redirectActivity(this, FavoriteMoviesActivity.class);
+    }
+
+    public void ClickFavBooks(View view){
+        //Recreate activity to favourite books
+        redirectActivity(this, FavoriteBooksActivity.class);
+    }
+
     public void ClickMaps(View view){
         //Recreate activity to favourite books
         redirectActivity(this, EventsActivity.class);
