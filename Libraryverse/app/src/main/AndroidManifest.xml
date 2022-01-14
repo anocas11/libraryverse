@@ -23,9 +23,6 @@
             android:name=".FavoriteMoviesActivity"
             android:exported="false" />
         <activity
-            android:name=".OwnedActivity"
-            android:exported="false" />
-        <activity
             android:name=".FavoriteBooksActivity"
             android:exported="false" />
         <!--
