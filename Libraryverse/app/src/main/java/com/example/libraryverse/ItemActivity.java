@@ -134,6 +134,7 @@ public class ItemActivity extends AppCompatActivity {
 
                     if(itemType.equals("movie"))
                     {
+                        itemOwned.setVisibility(View.VISIBLE);
                         itemWatched.setVisibility(View.VISIBLE);
                         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                         params.setMargins(20, 20, 0, 0);
@@ -213,6 +214,7 @@ public class ItemActivity extends AppCompatActivity {
                     }
                     else if(itemType.equals("book"))
                     {
+                        itemOwned.setVisibility(View.VISIBLE);
                         itemRead.setVisibility(View.VISIBLE);
                         itemReading.setVisibility(View.VISIBLE);
                         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -381,7 +383,7 @@ public class ItemActivity extends AppCompatActivity {
         if(itemType.equals("book"))
         {
             try {
-                BookModel fbt = new favoriteBookTask().execute().get();
+                BookModel fbt = new OwnedBookTask().execute().get();
             } catch (ExecutionException e) {
                 e.printStackTrace();
             } catch (InterruptedException e) {
@@ -391,7 +393,7 @@ public class ItemActivity extends AppCompatActivity {
         else if(itemType.equals("movie"))
         {
             try {
-                MovieModel fmt = new favoriteMovieTask().execute().get();
+                MovieModel fmt = new ownedMovieTask().execute().get();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } catch (ExecutionException e) {
@@ -559,11 +561,15 @@ public class ItemActivity extends AppCompatActivity {
             }
 
             if(response.reading){
-                itemReading.setImageDrawable(getBaseContext().getDrawable(R.drawable.book_open_solid));
+                runOnUiThread(() -> {
+                    itemReading.setImageDrawable(getBaseContext().getDrawable(R.drawable.book_open_solid));
+                });
             }
             else
             {
-                itemReading.setImageDrawable(getBaseContext().getDrawable(R.drawable.book_solid));
+                runOnUiThread(() -> {
+                    itemReading.setImageDrawable(getBaseContext().getDrawable(R.drawable.book_solid));
+                });
             }
 
             return response;

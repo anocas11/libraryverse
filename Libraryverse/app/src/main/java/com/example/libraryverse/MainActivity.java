@@ -197,6 +197,7 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                     }
+
                 });
 
                 Picasso.get().load(jsonPart3.getString("moviePoster")).into(imgMovies3);

@@ -14,13 +14,13 @@ public interface UserRepository extends CrudRepository<User,Integer>{
 
     Optional<User> findByUsername(String username);
     
-    String QueryGetUserBooks = "select book_name as bookName, book_poster as bookPoster from book " +
+    String QueryGetUserBooks = "select book_id as bookid, book_name as bookName, book_poster as bookPoster from book " +
     "inner join userbooks on book_id = ub_book_id ";
 
     @Query(value = QueryGetUserBooks + " where ub_user_id =:id", nativeQuery = true)
     Iterable<UserBooksView> getUserBooks(@Param("id") int id);
 
-    String QueryGetUserMovies = "select movie_name as movieName, movie_poster as moviePoster from movie " +
+    String QueryGetUserMovies = "select movie_id as movieid, movie_name as movieName, movie_poster as moviePoster from movie " +
     "inner join usermovies on movie_id = um_movie_id ";
 
     @Query(value = QueryGetUserMovies + " where um_user_id =:id", nativeQuery = true)

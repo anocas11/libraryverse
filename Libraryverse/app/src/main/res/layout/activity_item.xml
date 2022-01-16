@@ -75,7 +75,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="15dp"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/check_circle_regular" />
+                        android:src="@drawable/check_circle_regular"
+                        android:visibility="gone" />
 
                     <ImageView
                         android:id="@+id/imageViewFavoriteItem"
@@ -126,7 +127,16 @@
         </LinearLayout>
 
     </ScrollView>
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/black">
 
+        <include layout="@layout/main_nav_drawer" />
+
+
+    </RelativeLayout>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

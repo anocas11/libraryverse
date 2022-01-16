@@ -65,6 +65,19 @@ public class BooksActivity extends AppCompatActivity {
                     Picasso.get().load(jsonPart.getString("bookPoster")).into(poster);
                     poster.setLayoutParams(params);
                     linearLayout.addView(poster);
+                    poster.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent itemView = new Intent(BooksActivity.this, ItemActivity.class);
+                            try {
+                                itemView.putExtra("id", jsonPart.getString("bookid"));
+                                itemView.putExtra("type", "book");
+                                startActivity(itemView);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
 
                     LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(convertDpToPixel(100, getBaseContext()), LinearLayout.LayoutParams.WRAP_CONTENT);
                     textParams.setMargins(20, 10, 20, 15);

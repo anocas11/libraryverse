@@ -69,6 +69,19 @@ public class MoviesActivity extends AppCompatActivity {
                     poster.setLayoutParams(imageParams);
                     poster.setAdjustViewBounds(true);
                     linearLayout.addView(poster);
+                    poster.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent itemView = new Intent(MoviesActivity.this, ItemActivity.class);
+                            try {
+                                itemView.putExtra("id", jsonPart.getString("movieid"));
+                                itemView.putExtra("type", "movie");
+                                startActivity(itemView);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
 
                     LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(convertDpToPixel(100, getBaseContext()), LinearLayout.LayoutParams.WRAP_CONTENT);
                     textParams.setMargins(20, 15, 20, 15);
