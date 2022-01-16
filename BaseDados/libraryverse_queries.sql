@@ -51,11 +51,11 @@ inner join moviecharacter on movie_id = mc_movie_id
 inner join movieactor on mc_id = ma_mc_id
 where ma_actor_id = id;
 
-/*select actor_name, character_name from actor
+select actor_name, character_name from actor
 inner join movieactor on actor_id = ma_actor_id
 inner join moviecharacter on ma_mc_id = mc_id
 inner join character on character_id = mc_character_id
-where mc_movie_id = id;*/
+where mc_movie_id = id;
 
 select book_name, book_poster from book
 inner join userbooks on book_id = ub_book_id
@@ -68,4 +68,4 @@ where ub_user_id = id and ub_favorite = true;
 select book_name from book
 inner join userbooks on book_id = ub_book_id
 where ub_user_id = 3 order by ub_timestamp
-limit 3
+limit 3;
