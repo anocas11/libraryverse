@@ -12,6 +12,8 @@ public interface AuthorRepository extends CrudRepository<Author,Integer> {
     //Criamos a interface que extende CrudRepository que contem todas as funções crud do springboot
     //Os parâmetros significam que o repositório vai gerir os autores e o id dos autores é um int 
 
+    Iterable<Author> getAuthorById(int id);
+
     String QueryGetAuthorBooks = "select book_name as bookName from book " +
     "inner join bookauthor on book_id = ba_book_id ";
 

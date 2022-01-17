@@ -11,6 +11,8 @@ public interface ActorRepository extends CrudRepository<Actor,Integer> {
     //Criamos a interface que extende CrudRepository que contem todas as funções crud do springboot
     //Os parâmetros significam que o repositório vai gerir os atores e o id dos atores é um int 
 
+    Iterable<Actor> getActorById(int id);
+    
     String QueryGetActorMovies = "select movie_name movieName from movie " +
     "inner join moviecharacter on movie_id = mc_movie_id " +
     "inner join movieactor on mc_id = ma_mc_id ";

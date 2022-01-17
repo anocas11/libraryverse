@@ -87,7 +87,6 @@ public class ItemActivity extends AppCompatActivity {
             {
                 itemArray = task.execute("https://libraryverse.herokuapp.com/api/actors/" + itemId).get();
             }
-
             itemFavorite.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
