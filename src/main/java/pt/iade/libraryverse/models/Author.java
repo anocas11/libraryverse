@@ -17,7 +17,7 @@ public class Author
     @GeneratedValue(strategy=GenerationType.IDENTITY) //util para quando se guardam novos autores, porque o id é gerado pela bd
     @Column(name="author_id") private int id; //ligar o nome do atributo ao nome da coluna
     @Column(name="author_name") private String name;
-    @Column(name="author_bio") private String bio;
+    @Column(name="author_bio") private String description;
     @Column(name="author_poster") private String poster;
 
     public Author() //construtor default sem argumentos
@@ -41,12 +41,12 @@ public class Author
         this.name = name;
     }
 
-    public String getBio() {
-        return bio;
+    public String getDescription() {
+        return description;
     }
 
-    public void setBio(String bio) {
-        this.bio = bio;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getPoster() {
