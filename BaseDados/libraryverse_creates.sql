@@ -34,6 +34,7 @@ create table genre (
 create table cinematicUniverse (
     cu_id SERIAL not null, 
     cu_name VARCHAR(30) not null, 
+    cu_poster VARCHAR(500) not null, 
     primary key (cu_id)
 );
 

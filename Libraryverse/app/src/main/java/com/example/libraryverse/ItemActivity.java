@@ -81,7 +81,7 @@ public class ItemActivity extends AppCompatActivity {
             }
             else if(itemType.equals("author"))
             {
-                itemArray = task.execute("https://libraryverse.herokuapp.com/api/authors/author/" + itemId).get();
+                itemArray = task.execute("https://libraryverse.herokuapp.com/api/authors/" + itemId).get();
             }
             else if(itemType.equals("actor"))
             {
@@ -138,6 +138,13 @@ public class ItemActivity extends AppCompatActivity {
                         itemWatched.setVisibility(View.VISIBLE);
                         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                         params.setMargins(20, 20, 0, 0);
+
+                        TextView cuText = new TextView((getBaseContext()));
+                        cuText.setText("Cinematic Universe: " + jsonPart.getString("cinematicUniverse"));
+                        cuText.setTextColor(Color.parseColor("#FFFFFF"));
+                        cuText.setTextSize(16);
+                        cuText.setLayoutParams(params);
+                        ll.addView(cuText);
 
                         TextView durationText = new TextView((getBaseContext()));
                         durationText.setText("Duration: " + jsonPart.getString("duration"));
@@ -219,6 +226,13 @@ public class ItemActivity extends AppCompatActivity {
                         itemReading.setVisibility(View.VISIBLE);
                         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                         params.setMargins(20, 20, 0, 0);
+
+                        TextView cuText = new TextView((getBaseContext()));
+                        cuText.setText("Cinematic Universe: " + jsonPart.getString("cinematicUniverse"));
+                        cuText.setTextColor(Color.parseColor("#FFFFFF"));
+                        cuText.setTextSize(16);
+                        cuText.setLayoutParams(params);
+                        ll.addView(cuText);
 
                         TextView genresLabel = new TextView(getBaseContext());
                         genresLabel.setText("Genres");
@@ -682,12 +696,12 @@ public class ItemActivity extends AppCompatActivity {
                 return null;
             }
 
-            if(response.favorite){
-                itemFavorite.setImageDrawable(getBaseContext().getDrawable(R.drawable.ic_baseline_star));
+            if(response.watched){
+                itemWatched.setImageDrawable(getBaseContext().getDrawable(R.drawable.eye_regular));
             }
             else
             {
-                itemFavorite.setImageDrawable(getBaseContext().getDrawable(R.drawable.ic_baseline_star_outline));
+                itemWatched.setImageDrawable(getBaseContext().getDrawable(R.drawable.eye_solid));
             }
 
             return response;
@@ -754,7 +768,7 @@ public class ItemActivity extends AppCompatActivity {
 
     public void ClickHome(View view){
         //Recreate activty
-        recreate();
+        redirectActivity(this, MainActivity.class);
     }
 
     public void ClickMovies(View view){

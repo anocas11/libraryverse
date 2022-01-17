@@ -56,10 +56,10 @@
 
                 <ImageView
                     android:id="@+id/imageViewItemImg"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:layout_centerHorizontal="true"
-                    android:src="@drawable/movieload" />
+                    tools:src="@drawable/movieload" />
 
                 <LinearLayout
                     android:id="@+id/llbar"

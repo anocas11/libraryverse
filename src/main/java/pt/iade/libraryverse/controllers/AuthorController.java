@@ -38,7 +38,7 @@ public class AuthorController {
     }
 
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Author getAuthor(@PathVariable int id)
+    public Response<Author> getAuthor(@PathVariable int id)
     {
         logger.info("Sending author with id " + id);
         Optional<Author> _author = authorRepository.findById(id);
@@ -48,7 +48,9 @@ public class AuthorController {
         }
         else
         {
-            return _author.get();
+            var resp = new Response<Author>();
+            resp.results = _author.get();
+            return resp;
         }
     }
 

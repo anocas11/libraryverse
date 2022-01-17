@@ -118,7 +118,7 @@ public class BooksActivity extends AppCompatActivity {
 
     public void ClickHome(View view){
         //Redirect activity to home
-        MainActivity.redirectActivity(this, MainActivity.class);
+        redirectActivity(this, MainActivity.class);
     }
 
     public void ClickMovies(View view){

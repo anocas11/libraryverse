@@ -38,7 +38,7 @@ public class ActorController {
     }
 
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Actor getActor(@PathVariable int id)
+    public Response<Actor> getActor(@PathVariable int id)
     {
         logger.info("Sending actor with id" + id);
         Optional<Actor> _actor = actorRepository.findById(id);
@@ -48,7 +48,9 @@ public class ActorController {
         }
         else
         {
-            return _actor.get();
+            var resp = new Response<Actor>();
+            resp.results = _actor.get();
+            return resp;
         }
     }
 
